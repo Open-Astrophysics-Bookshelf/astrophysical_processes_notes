@@ -1,0 +1,316 @@
+\ifx\bookloaded\undefined
+\documentclass[pdftex,10pt]{article}
+\begin{document}
+\fi
+\section{Chapter 4}
+\begin{enumerate}
+\item{\bf The Ladder and the Barn: A Spacetime Diagram:}
+
+This problem will work best if you have a sheet of graph paper.
+In a spacetime diagram one draws a particular coordinate (in our case
+$x$)  along the horizontal direction and the time coordinate
+vertically.  People also generally draw the path of a light ray at
+45$^\circ$.  This sets the relative units of the two axes.
+\begin{enumerate}
+\item Draw a spacetime diagram and label the axes $x$ and
+  $t$.  The $t$-axis is the path of Emma through the spacetime.
+
+\item Draw the world line of someone travelling at
+  $\frac{3}{5}$ of the speed of light.  The world line should
+  intersect with the origin of the spacetime diagram.  Label this
+  world line $t'$.  The $t'$-axis is the path of Kara through the
+  spacetime. 
+
+\item Draw the $x'$ axis on the graph.   Here's a hint about
+  where it should go.   The light ray bisects the angle between the
+  $x$ and $t$ axes.  Kara who is travelling along $t'$ will find that
+  the speed of light is the same for her, so the light ray must also
+  bisect the angle between $x'$ and $t'$.
+
+\item Parallel to Emma's time axis draw the walls of the barn
+  in pencil.  The barn is 4.5 meters wide in Emma's frame.
+
+\item Draw Kara's ladder along Kara's $x$-axis.   The ladder
+is 5 meters long in Kara's frame.  How long is it in Emma's frame.
+
+\item Draw the world lines of the ends of Kara's ladder.
+These lines are parallel to Kara's time axis.
+
+\item Erase a portion of the barn walls to allow Kara's ladder
+  to fit through.   
+
+\item Using the diagram, explain how Kara and Emma can
+  understand how the too-long ladder fits in the too-small barn.
+\end{enumerate}
+\medskip
+
+\begin{picture}(200,200)(0,0)
+\put(-10,205){$t$ Emma}
+\put(0,0){\line(0,1){200}}
+\put(0,0){\line(1,0){200}}
+\put(210,0){$x$}
+\put(0,0){\line(3,5){120}}
+\put(110,205){$t'$ Kara}
+\put(0,0){\line(5,3){175}}
+\put(175,105){ $x'$}
+\put(50,-10){\line(0,1){210}}
+\put(95,-10){\line(0,1){210}}
+\put(55,200){Barn}
+\put(53,40){\line(5,3){40}}
+\put(53,40){\line(3,5){100}}
+\put(93,64){\line(3,5){90}}
+\put(53,40){\line(-3,-5){24}}
+\put(93,64){\line(-3,-5){45}}
+\put(30,36){\vector(1,0){20}}
+\put(30,-8){\vector(1,0){20}}
+\put(115,67){\vector(-1,0){20}}
+\put(115,110){\vector(-1,0){20}}
+\end{picture}
+
+\medskip
+
+Erase the sections between the arrows.   Emma sees the ladder inside
+the barn with the two doors closed at the same time.  Kara sees the
+forward door open before the back door has shut.
+
+\item{\bf The Fermi Process:}
+
+One model to understand how cosmic rays are accelerated is through
+shocks. The main idea is that a charge particle can cross a shock and
+turned around by the tangled mangetic field and recross the shock.
+Each time the charge does this it gains energy.   
+
+To understand this let's use a simplified model in which two mirrors
+are travelling toward each other at some velocity $v$.  When a
+particle hits the mirror, its energy in the frame of the mirror
+remains unchanged but its velocity and therefore the spacelike
+components of the four-momentum change sign.
+\begin{enumerate}
+\item Draw a diagram with the two mirrors.
+\bigskip
+
+\begin{picture}(80,80)(0,0)
+\put(60,40){\line(0,1){50}}
+\put(60,65){\vector(1,0){20}}
+\put(80,65){$v= \beta c$}
+\put(240,40){\line(0,1){50}}
+\put(240,65){\vector(-1,0){20}}
+\put(180,65){$v=-\beta c$}
+\end{picture}
+
+\item For argument's
+sake, let's first focus on the mirror on the left and consider that
+the mirror on the right is moving.   What is the four-velocity in this
+frame of the mirror on the left ($U_{l}^\mu$)?  What is the four-velocity in this
+frame of the mirror on the right ($U_{r}^\mu$)?
+
+\begin{center}
+$
+U_{l}^\mu = \left [ \begin{array}{c} c \\ 0 \\ 0 \\ 0 \end{array}
+  \right ]
+$
+\hspace{1in}
+$
+U_{r}^\mu = \left [ \begin{array}{c} \gamma c \\ -\gamma v \\ 0 \\ 0 \end{array}
+  \right ]
+$
+\end{center}
+
+\item Now let's focus on the mirror on the right and consider that
+the mirror on the left is moving.  What is the four-velocity in this
+frame of the mirror on the left ($U'^\mu_l$)?  What is the
+four-velocity in this frame of the mirror on the right ($U'^\mu_r$)?
+
+\begin{center}
+$
+U_{l}^\mu = \left [ \begin{array}{c} \gamma c \\ \gamma v \\ 0 \\ 0 \end{array}  \right ]
+$
+\hspace{1in}
+$
+U_{r}^\mu = \left [ \begin{array}{c} c \\ 0 \\ 0 \\ 0 \end{array}
+  \right ]
+$
+\end{center}
+
+\item To start let's assume that the particle of mass $m$
+  approaches the mirror on the left at the velocity of the mirror on
+  the right.  What is the four-momemtum of the particle ($p^\mu$) in
+  the frame of the mirror on the left?
+
+$$
+p^\mu = \left [ \begin{array}{c} m\gamma c \\ -m\gamma v \\ 0 \\ 0 \end{array}
+  \right ]
+$$
+
+\item The particle bounces off of the mirror.  What is its
+  four-momentum now?
+
+$$
+p^\mu = \left [ \begin{array}{c} m\gamma c \\ m\gamma v \\ 0 \\ 0 \end{array}
+  \right ]
+$$
+
+\item Now the particle is approaching the mirror on the
+  right.  What is the zeroth component of the four-momentum of the
+  particle in the frame of the right-hand mirror?   One could do a
+  Lorentz transformation but it is easier to use $U^\mu_r p_\mu$ to
+  determine the energy of the particle in the primed frame.
+
+$$
+U^\mu_r p_\mu =
+ \left [ \begin{array}{c} \gamma c \\ -\gamma v \\ 0 \\ 0 \end{array}
+  \right ]
+\left [ \begin{array}{cccc} m\gamma c & -m\gamma v & 0 & 0 \end{array}
+  \right ] = m \gamma^2 \left ( c^2 + v^2 \right )
+$$
+
+\item Using the answer to 6, construct the four-momentum of
+  the particle in the frame of the right-hand mirror ($p'_\mu$).
+
+$$
+p^\mu = \left [ \begin{array}{c} m c \frac{1+\beta^2}{1-\beta^2} \\ m
+    \frac{2v}{1-\beta^2} \\ 0 \\ 0 \end{array}
+  \right ]
+$$
+
+\item The particle bounces off of the mirror.  What is its
+  four-momentum now?
+
+$$
+p^\mu = \left [ \begin{array}{c} m c \frac{1+\beta^2}{1-\beta^2} \\ -mc
+    \frac{2\beta}{1-\beta^2} \\ 0 \\ 0 \end{array}
+  \right ]
+$$
+
+\item Now the particle is approaching the mirror on the
+  left.  What is the zeroth component of the four-momentum of the
+  particle in the frame of the left-hand mirror?   Again one could 
+  do a Lorentz transformation but it is easier to use $U'^\mu_l p'_\mu$ to
+  determine the energy of the particle in the unprimed frame.
+
+$$
+U^\mu_l p_\mu =
+ \left [ \begin{array}{c} \gamma c \\ \gamma v \\ 0 \\ 0 \end{array}
+  \right ]
+\left [ \begin{array}{cccc}  m c \gamma^2 (1+\beta^2) & 
+2 \beta \gamma^2 mc & 0 & 0 \end{array}
+  \right ] = m c^2 \gamma^3 \left ( 1 + 3 \beta^2 \right)
+$$
+
+\item Compare the energy of the particle in step (d) to the
+  energy of the particle in step (i).  Has the energy of the particle
+  increased?  Let's let the relative velocity of the mirrors approach
+  the speed of light.
+$$
+\beta \approx 1 - \frac{1}{2\gamma^2}
+$$
+  By what factor does the energy of the particle increase each time it
+  goes back and forth.
+
+The energy has increased by a factor of
+$$
+\gamma^2 \left ( 1 + 3 \beta^2 \right ) \approx 4 \gamma^2
+$$
+\item  The final element is the fact that only a tiny
+  fraction of the particles bounce back and forth.  Let's take that
+  fraction to be $10^{-5}$ and $\gamma=100$.  What can you say about
+  the final distribution of particle energies?
+
+The final distribution will be a power-law with slope given by
+$$
+s = \ln 10^{-5} / \ln ( 4 \gamma^2) \approx -1.1
+$$
+\end{enumerate}
+\item{\bf Boosting}
+We are going to figure out how times and energies measured by someone in motion differ from what we might measure.
+\begin{enumerate}
+
+\item Use special relativity (the Minkowski metric) to figure this
+  out. I measure a photon to have an energy $E$. What is the
+  four-momentum of the photon?
+
+\item My pal is travelling toward me in the opposite direction of the
+  photon at a velocity $\beta c$. What is his four-velocity? Use the
+  definition $\gamma = \left ( 1- \beta^2\right)^{-1/2}$ to simplify
+  the expression. What energy would he measure for the photon? What
+  does the expression look like as $\gamma$ gets much larger than one?
+
+\item If my pal observes the photon to have an energy of 100~MeV while
+  I say its energy is less than 500~keV, what is the minimal value of
+  $\gamma$ for my pal (take $\beta \approx 1$ to make life easier)?
+
+\item My pal is still coming toward me at a velocity $\beta c$. When
+  he is a distance $r$ away from me (at a time $t_0$) he emits a photon
+  toward me. How long does it take this photon to reach me?
+
+\item From his point of view a short time $\Delta t$ later he emits
+  another photon toward me. How long is $\Delta t$ in my frame and
+  when do I receive the second photon? What is the difference in time
+  between when I receive the first and second photons? What does the
+  expression look like as $\gamma$ gets much larger than one? Compare
+  it with you answer to (b).
+\end{enumerate}
+
+{\bf Answer:}
+\begin{enumerate}
+\item 
+\begin{equation}
+p^\mu = \frac{E}{c} \left [ \begin{array}{c} 
+    1 \\
+    {\bf n} 
+  \end{array}
+\right ]
+~\mathrm{Take}~
+p^\mu = \left [ \begin{array}{c} 
+    \frac{E}{c} \\
+    \frac{E}{c} \\
+    0 \\
+    0 \\
+  \end{array}
+\right ]
+\end{equation}
+\item
+\begin{equation}
+u^\mu = \left [ \begin{array}{c} 
+    \gamma c \\
+    -\beta \gamma c \\
+    0 \\
+    0 \\
+  \end{array}
+\right ]
+~\mathrm{and}~E'=-u_\mu p^\mu = \gamma E + \beta \gamma E \approx 2
+\gamma E
+\end{equation}
+\item 
+$E=500$~keV and $E'=100~\mathrm{Mev}=2\gamma (500~\mathrm{keV})$ so
+$\gamma_\mathrm{min} =100$.
+\item
+$t_\mathrm{Arrival} = t_0 + \frac{r}{c}$
+\item
+\begin{eqnarray}
+\Delta t_\mathrm{me} &=& \gamma \Delta t_\mathrm{him} \\
+t_\mathrm{Arrival,2} &=& t_0 + \gamma \Delta t_\mathrm{him} +
+\frac{1}{c} \left ( r - \beta c \gamma \Delta t_\mathrm{him}
+\right )  \\
+ &=& t_0 + \frac{r}{c} + \gamma \Delta t_\mathrm{him} \left ( 1 -
+   \beta \right ) \\
+\Delta t_\mathrm{Arrival} &=& \Delta t_\mathrm{him} \gamma \left (1 - \beta
+\right ) \\
+\Delta t_\mathrm{Arrival} &=& \Delta t_\mathrm{him} \frac{1}{\gamma \left (1 + \beta
+\right )} \approx \Delta t_\mathrm{him} \frac{1}{2\gamma}.
+\end{eqnarray} 
+where to get the penultimate result, one uses the identity
+$(1-\beta)(1+\beta) = \gamma^{-2}$ and in general we have
+\begin{equation}
+\frac{\Delta t_\mathrm{Arrival}}{\Delta t_\mathrm{him}} = \frac{E}{E'}.
+\end{equation}
+\end{enumerate}
+\end{enumerate}
+\ifx\bookloaded\undefined
+\end{document}
+\end
+\fi
+
+%%% Local Variables:
+%%% TeX-master: "book"
+%%% End:

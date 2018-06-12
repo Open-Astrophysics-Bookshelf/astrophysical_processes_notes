@@ -1,0 +1,178 @@
+\ifx\bookloaded\undefined
+\documentclass{article}
+\usepackage{graphicx}
+\newcommand{\be}{\begin{equation}}
+\newcommand{\ee}{\end{equation}}
+\newcommand{\rmmat}[1]{\hbox{\rm #1}}
+\newcommand{\rmscr}[1]{{\hbox{\rm \scriptsize #1}}}
+\newcommand{\comment}[1]{\relax}
+\begin{document}
+\fi
+\section{Chapter 7}
+
+\begin{enumerate}
+\item{ \bf The Sunyaev-Zeldovich Effect}
+\begin{enumerate}
+\item Let's say that you have a blackbody spectrum of temperature $T$
+  of photons passing through a region of hot plasma ($T_e$).   You can assume
+  that $T \ll T_e \ll m c^2/k$ 
+
+  What is the brightness temperature of the photons in the
+  Rayleigh-Jeans limits after passing through the plasma in terms of
+  the Compton $y-$parameter?
+
+{\bf Answer:}
+\begin{equation}
+T_{b,\rmscr{initial}} = \frac{c^2}{2\nu^2 k } I_\nu
+\end{equation}
+In Compton scattering, $I = I_\nu/(h\nu)$ is constant but $\nu_f = \nu_i e^y$ so
+we have
+\begin{equation}
+T_{b,\rmscr{final}} = \frac{c^2}{2\nu^2 e^{2y} k } e^y I_\nu = e^{-y} T_{b,\rmscr{initial}}
+\end{equation}
+
+\item Let's suppose that the gas has a uniform density $\rho$ and
+  consists of hydrogen with mass-fraction $X$ and helium with
+  mass-fraction $Y$ and other stuff $Z$.  You can assume that
+  $Z/A=1/2$ is for the other stuff.  What is the number density of
+  electrons in the gas?
+
+{\bf Answer:}
+One gram of the gas has $X$ grams of hydrogen which provide $X/m_p$
+  electrons.  It has $Y$ grams of helium which provides $(Z/A) Y/m_p=
+  2/4 Y/m_p$ electrons and $Z$ grams of other stuff which provides
+  $1/2 Y/m_p$ electrons.  Adding it up gives
+\begin{equation}
+n_e = \frac{\rho}{m_p} \left ( X + \frac{1}{2} Y + \frac{1}{2} Z
+  \right ) = \frac{\rho}{2 m_p} \left ( 2 X + 1 - X \right ) =
+  \frac{\rho}{2 m_p} (1 + X )
+\end{equation}
+\item
+  If you assume that the gas is spherical with radius $R$, what is the
+  value of the Compton $y-$parameter as a function of $b$, the
+  distance between the line of sight and the center of the cluster?
+  You can assume that the optical depth is much less than one.
+
+{\bf Answer:}
+The distance through the cluster is given by
+\begin{equation}
+l = 2 \sqrt{ R^2 - b^2}
+\end{equation}
+so the optical depth is
+\begin{equation}
+\tau_{es} = l n_e \sigma_T = 2\sqrt{R^2 - b^2} \frac{\rho}{2m_p} (1 +
+X) \sigma_T
+\end{equation}
+so
+\begin{equation}
+y_{NR} = \frac{4kT}{mc^2} \tau_{es} =  \frac{4kT}{mc^2} \sqrt{R^2 - b^2} \frac{\rho}{m_p} (1 +
+X) \sigma_T
+\end{equation}
+\item 
+  Let's assume that the sphere contains $10^{12}$~M$_\odot$ of gas and
+  that the radius of the sphere is 10 Mpc, $X=0.7, Y=0.27$ and
+  $Z=0.03$ what is the value of the $y-$parameter?
+
+{\bf Answer:}
+The density of the cluster gas is 
+\begin{equation}
+\rho = \frac{10^{12}\rmmat{M}_\odot (2 \times
+  10^{33}\rmmat{g/M}_\odot)}{\frac{4}{3} \pi
+  (10\rmmat{Mpc}(3.08 \times 10^{24}\rmmat{cm/Mpc}))^3} = 0.16 \times
+10^{-31} \rmmat{g/cm}^3
+\end{equation}
+This is actually really low.  A realistic cluster is more massive that
+this.  Let's plug these values in the formula for $y_{NR}$ and pick a
+reasonable value for $kT = 10$~keV so we get
+\begin{equation}
+y_{NR} = 2 \times 10^{-8} M_{12} R_{10}^{-2} T_{10}
+\end{equation}
+We can estimate the temperature of the cluster gas using the virial
+theorem
+\begin{equation}
+2 \frac{M}{m_p} k T \approx \frac{3}{5} \frac{G M^2}{R}
+\end{equation}
+so
+\begin{equation}
+k T \approx \frac{3}{10} \frac{G M m_p}{R} \approx 1.3 \rmmat{eV}
+M_{12} R_{10}^{-1}
+\end{equation}
+\item
+  Let's suppose that the blackbody photons are from the cosmic
+  microwave background.   What is the difference in the brightness 
+  temperature of the photons that pass through the cluster and those
+  that don't (including the sign)?   How does this difference compare
+  with the primordial fluctuations in the CMB?  How can you tell this
+  change in the spectrum due to the cluster from the primordial
+  fluctuations? 
+
+{\bf Answer:}
+
+The photons that pass through the cluster have a brightness
+temperature that is lower by $2y T_\rmscr{CMB}$.
+The fluctuations of the CMB are around $10^{-5} T_\rmscr{CMB}$, so for
+such a puny cluster the S-Z would be hard to see.  However, clusters
+are generally much more massive so the S-Z dominates over the
+fluctuations.  Furthermore, the S-Z shifts photons to higher energies
+which is different than CMB fluctuations which change the temperature,
+so observations at energies in the Rayleigh-Jeans and Wein tail of the
+CMB spectrum can distinguish between the S-Z effect and primordial
+fluctuations. 
+\end{enumerate}
+
+\item{\bf Synchrotron Self-Compton Emission Blazars}
+
+\begin{enumerate}
+\item
+What is the synchrotron emission from a single electron passing
+through a magnetic field in terms of the energy density of the
+magnetic field and the Lorentz factor of the electron?
+
+{\bf Answer:}
+\begin{equation}
+P_B = \frac{4}{3} \gamma^2 c \beta^2 \sigma_T U_B
+\end{equation}
+\item 
+The number density of the electrons is $n_e$ and they fill a
+spherical region of radius $R$.  What is the energy density of photons
+within the sphere, assuming that it is optically thin?
+
+{\bf Answer:}
+$P n_e$ gives the power per unit volume.  To get the energy per unit
+volume we have to multiply by the typical time for photons to escape the
+spherical region typically $R/c$ because it is optically thin so we have
+\begin{equation}
+U_\rmscr{photon} = \frac{4}{3} \gamma^2 \sigma_T c \beta^2 U_B n_e \frac{R}{c}
+\end{equation}
+\item
+What is the inverse Compton emission from a single electron passing
+through a gas of photons field in terms of the energy density of the
+photons and the Lorentz factor of the electron?
+
+{\bf Answer:}
+\begin{equation}
+P_\rmscr{IC} = \frac{4}{3} \gamma^2 c \beta^2 \sigma_T U_\rmscr{photon}
+\end{equation}
+\item
+What is the total inverse Compton emission from the region if you
+assume that the synchrotron emission provides the seed photons for the
+inverse Compton emission?  
+
+{\bf Answer:}
+\begin{equation}
+P_\rmscr{IC} = \frac{4}{3} \gamma^2 c \beta^2 \sigma_T \left ( 
+\frac{4}{3} \gamma^2 c \beta^2 \sigma_T U_B n_e \frac{R}{c} \right
+) n_e V
+\end{equation}
+so
+\begin{equation}
+P_\rmscr{IC} = \frac{64}{27} \gamma^4 \beta^4 c \sigma_T^2
+U_B n_e^2 R^4
+\end{equation}
+
+\end{enumerate}
+\end{enumerate}
+\ifx\bookloaded\undefined
+\end{document}
+\end
+\fi

@@ -1,0 +1,794 @@
+\chapter{Radiative Transitions}
+\label{cha:radi-trans}
+\index{atomic structure!radiative transitions}
+\section{Perturbation Theory}
+\label{sec:perturbation-theory}
+\index{atomic structure!time-dependent perturbations}
+
+After we figured out the wavefunctions for the hydrogen atom, we
+examine the energy states of atoms with more than one electron.  We
+didn't resolve Schrodinger's equation, but rather we used the
+spherical harmonic solutions to understand how various additional
+terms like the interaction between the electrons would affect the
+energies of the states.  This powerful technique is called
+perturbation theory (specifically time-independent perturbation
+theory).  
+
+Through this process we built up a picture of the structure of atoms
+from two simple ideas: Schrodinger's equation and that the
+wavefunction of a bunch of electrons is odd under interchange of any
+pair of electrons.   Our atoms are elegant, we know their energy
+levels, angular momenta \ldots but they never do anything.
+
+To understand how atoms change with time we could use the
+time-dependent Schrodinger equation, but like for the problem of the
+energies of multi-electron systems this is probably too hard and not
+really worth the effort.  On the other hand, maybe there is something
+called {\em time-dependent perturbation theory} that will do the
+heavy-lifting for us.
+
+Let's start with the {\em time-dependent Schrodinger equation} and add
+a small extra time-dependent term in the potential.
+\begin{equation}
+i\hbar \pp{\Psi}{t} = H \Psi + \lambda H'({\bf r},t) \Psi
+\label{eq:494}
+\end{equation}
+If the $\lambda H'({\bf r},t)$ bit weren't there we would know the solutions:
+\begin{equation}
+\Psi({\bf r}, t) = \psi({\bf r}) e^{-iEt/\hbar}
+\label{eq:495}
+\end{equation}
+such that
+\begin{equation}
+H\psi = E \psi.
+\label{eq:496}
+\end{equation}
+Solutions to equations like Eq.~\ref{eq:496} form a complete set.  This means
+that you can use a sum of them to represent any function, so let's
+imagine that the real solution to Eq.~\ref{eq:494} is the sum of the solutions
+to Eq.~\ref{eq:495} but let's allow the coefficients to be a function of time
+\begin{equation}
+\Psi({\bf r}, t) = \sum_j \sum_{l=0}^\infty A_{jl}(t) \lambda^l \psi_j({\bf r}) e^{-iE_j t/\hbar}
+\label{eq:497}
+\end{equation}
+and substitute into Eq.~\ref{eq:494}
+\begin{eqnarray}
+i\hbar \sum_j \sum_{l=0}^\infty 
+\left [
+ -\frac{i E_j}{\hbar} A_{jl}(t) + \dd{A_{jl}(t)}{t} \right ] 
+\lambda^l  \psi_j({\bf r})  & \!\!\!\!\!\!\!\!\!\!\!\! e^{-iE_j t/\hbar}  \nonumber \\
+= \sum_j \sum_{l=0}^\infty 
+\left [ E_j + \lambda H'({\bf r},t) \right ] &\!\!\!\!\!\! \lambda^l  \psi_j({\bf r}) e^{-iE_j t/\hbar}.
+\label{eq:498}
+\end{eqnarray}
+To make some progress we multiply both sides by $\psi^*_f({\bf r})$ and
+integrate over all space.  We remember that the wavefunctions $\psi_f$
+are orthonormal so that the integral of a product of two wavefunctions 
+over all space is $\delta_{jf}$.
+\begin{eqnarray}
+  i\hbar \sum_{l=0}^\infty 
+  \left [
+    -\frac{i E_f}{\hbar} A_{fl}(t) + \dd{A_{fl}(t)}{t} \right ] 
+  \lambda^l   & \hspace{-2in}e^{-iE_f t/\hbar}  \nonumber \\
+  =\sum_{i} \sum_{l=0}^\infty A_{il}(t) \lambda^l 
+&  \!\!\!\!\!\!\! \Biggr[ \langle \psi_f | \psi_j \rangle E_j + \lambda \langle\psi_f | H'({\bf r},t) |\psi_j \rangle
+  \Biggr] e^{-iE_j t/\hbar} \\
+  = \sum_{l=0}^\infty \lambda^l \Biggr  [ A_{fl}(t) E_f
+  e^{-iE_f t/\hbar} 
+  &\!\!\!\!\!\!\!\!\!\!\!\!\! + \lambda \sum_{j}  A_{jl}(t)  \langle\psi_f | H'({\bf r},t) |\psi_j \rangle
+  e^{-iE_j t/\hbar} \Biggr ]
+\label{eq:499}
+\end{eqnarray}
+where we have used the Dirac notation
+\begin{equation}
+\langle\psi_f | H'({\bf r},t) |\psi_j \rangle = \int d^3 x \psi_f^*
+H'({\bf r},t) \psi_j .
+\label{eq:500}
+\end{equation}
+The integral is also over the spin coordinates if necessary.
+
+Now we look at this summation in powers of $\lambda$.  First let's do
+$\lambda^0$ 
+\begin{equation}
+i\hbar 
+\left [
+ -\frac{i E_f}{\hbar} A_{f0}(t) + \dd{A_{f0}(t)}{t} \right ] 
+  e^{-iE_f t/\hbar} = A_{f0}(t) E_f e^{-iE_f t/\hbar}.
+\label{eq:501}
+\end{equation}
+This equation implies that
+\begin{equation}
+\dd{A_{f0}(t)}{t}=0 \Rightarrow A_{f0}(t) = A_{f0}(0).
+\label{eq:502}
+\end{equation}
+Let's now look at the $\lambda^1$ term 
+\begin{eqnarray}
+i\hbar \left [ -\frac{i E_f}{\hbar} A_{f1}(t) + \dd{A_{f1}(t)}{t}
+  \right ]  e^{-iE_f t/\hbar} &=& 
+  A_{f1}(t) E_f  
+e^{-iE_f t/\hbar} + \nonumber \\ 
+ & & \hspace{-1in} \sum_{j}  A_{j0}(0)  \langle\psi_f | H'({\bf r},t) |\psi_j \rangle
+ e^{-iE_j t/\hbar}  
+\label{eq:503}
+\end{eqnarray}
+Canceling terms and rearranging gives
+\begin{equation}
+i\hbar\dd{A_{f1}(t)}{t} =  \sum_{j}  A_{j0}(0)  \langle\psi_f | H'({\bf r},t) |\psi_j \rangle
+ e^{-i(E_j-E_f) t/\hbar} 
+\label{eq:504}
+\end{equation}
+Let's assume that $H'({\bf r},t) = \frac{1}{2} H'({\bf r}) (
+e^{i\omega t} + e^{-i\omega t})$ for $t>0$
+and that at $t=0$, $A_{j0}(0)=\delta_{ij}$
+\begin{equation}
+A_{f1}(t) = \frac{1}{2} \langle\psi_f | H'({\bf r}) |\psi_i \rangle 
+\left [ \frac{e^{-i [  E_i - E_f - \hbar \omega ]
+      t/\hbar}-1}{E_i-E_f-\hbar \omega} +
+\frac{e^{-i [  E_i - E_f + \hbar \omega ] t/\hbar}-1}{E_i-E_f+\hbar
+  \omega} \right ]
+\label{eq:505}
+\end{equation}
+Let's calculate the probability that the atom is in the state $f$
+after a time $t$,
+\begin{eqnarray}
+A^*_{f1}(t) A_{f1}(t) &=& \frac{1}{4} |\langle\psi_f | H'({\bf r}) |\psi_i \rangle
+|^2
+\Biggr [ \frac{2(1-\cos(\omega_{fi}-\omega)t)}{\hbar^2
+    (\omega_{fi}-\omega)^2} + \nonumber \\ 
+& & ~~
+4 \cos(\omega t) \frac{\cos(\omega t)-\cos(\omega_{fi}
+  t)}{\omega_{fi}^2-\omega^2} +
+\frac{2(1-\cos(\omega_{fi}+\omega)t)}{\hbar^2 (\omega_{fi}+\omega)^2}
+\Biggr ]
+\\
+&=&  \frac{|\langle\psi_f | H'({\bf r}) |\psi_i \rangle|^2}{\hbar^2}
+ \Biggr \{
+\frac{\sin^2 \left [ \frac{1}{2} ( \omega_{fi}-\omega ) t \right
+]}{{ (\omega_{fi}-\omega)^2}} + \nonumber \\
+& & ~~~ 
+ \cos(\omega t) \frac{\cos(\omega t)-\cos(\omega_{fi}
+  t)}{\omega_{fi}^2-\omega^2} +
+\frac{\sin^2 \left [ \frac{1}{2} ( \omega_{fi}+\omega ) t \right
+]}{{ (\omega_{fi}+\omega)^2}}\Biggr \} 
+\label{eq:506}
+\end{eqnarray}
+where $\omega_{fi}=(E_f-E_i)/\hbar$.
+
+We see that if $E_f - E_i \approx \hbar \omega$, then 
+$A^*_{f1}A_{f1}$ is big and the first term dominates if $t\omega \gg
+1$.  This corresponds to absorption of radiation.
+The frequency range over which the
+transition probablility is large is $\Delta \omega \approx 4\pi/t$.
+
+Let's imagine that the perturbation $H'({\bf r})$ is due to a
+quasimonochromatic radiation field such that the phases for different
+frequencies are not correlated and that the amplitude of 
+$H'_\omega({\bf r})$ is constant over a frequency range much larger
+than $\Delta \omega$.  We can integrate the transition probability
+(keeping only the dominant first term)
+over all frequencies to get
+\begin{equation}
+A^*_{f1}(t) A_{f1}(t) = \frac{\pi}{2} t  \frac{|\langle\psi_f | H'_\omega({\bf r})
+  |\psi_i \rangle |^2}{\hbar^2}
+\label{eq:507}
+\end{equation}
+so we get a transition rate of 
+\begin{equation}
+W(i\rightarrow f)=  \frac{\pi}{2}  \frac{|\langle\psi_f | H'_\omega({\bf r})
+  |\psi_i \rangle |^2}{\hbar^2}
+\label{eq:508}
+\end{equation}
+
+\subsection{The Perturbation to the Hamiltonian}
+\label{sec:pert-hamilt}
+
+The Hamiltonian of an electron in a external electromagnetic field
+is given by
+\begin{eqnarray}
+H &=& \frac{1}{2m} \left ( {\bf p} - \frac{e{\bf A}}{c} \right )^2 +
+e\phi \\
+H &=& \frac{p^2}{2m} - \frac{e}{mc} {\bf A} \cdot {\bf p} + \frac{e^2
+  A^2}{2mc^2} + e\phi
+\label{eq:509}
+\end{eqnarray}
+To go from the first to the second equation we have assumed that
+$\nabla \cdot {\bf A}=0$, the Coulomb gauge, so that the momentum
+commutes with the vector potential.
+\begin{equation}
+H' =  - \frac{e}{mc} {\bf A} \cdot {\bf p} + \frac{e^2 A^2}{2mc^2} 
++ e\phi
+\label{eq:510}
+\end{equation}
+In the Coulomb gauge, $\nabla^2 \phi = 4\pi \rho$ but because there
+are no other charges around we can take $\phi=0$, so we are left with
+\begin{equation}
+H' =  - \frac{e}{mc} {\bf A} \cdot {\bf p} + \frac{e^2 A^2}{2mc^2} .
+\label{eq:511}
+\end{equation}
+The second term is generally smaller than the first for weak waves, so
+let's focus on the first term.  We know that
+\begin{equation}
+{\bf E}({\bf r}, t) = -\frac{1}{c} \pp{A}{t} = -i \frac{\omega}{c} {\bf A}
+\label{eq:512}
+\end{equation}
+so we can write
+\begin{equation}
+H'({\bf r},t) =  -i \frac{e}{mc} \frac{c}{\omega} \left ( {\bf E}  e^{i{\bf k}\cdot{\bf
+    r}} e^{-i\omega t} \right ) \cdot {\bf p}
+\label{eq:513}
+\end{equation}
+where we can expand the exponential to yield
+\begin{equation}
+e^{i{\bf k}\cdot {\bf r}} = 1 + {\bf k}\cdot {\bf r} + \cdots.
+\label{eq:516}
+\end{equation}
+If we take the electric field to be constant in space (the dipole
+approximation), it is handy to write 
+\begin{equation}
+H'({\bf r}) = {\bf E} \cdot {\bf d}
+\label{eq:514}
+\end{equation}
+where
+\begin{equation}
+{\bf d} = -i \frac{e}{m\omega} {\bf p} .
+\label{eq:515}
+\end{equation}
+This expression is generally applicable.  Classically however, the
+dipole moment of a charge is $e{\bf r}$.  It would be nice to get a
+similar expression for the quantum mechanical system.
+
+We can proceed in several ways.   We intend to focus on the electric 
+dipole approximation which is appropriate if $v\ll c$.  If one looks
+at Eq.~\ref{eq:509} one sees that if $p \ll mc$, the dominant term in the
+perturbation is 
+\begin{equation}
+H' = e\phi + {\cal O}\left ( \frac{v}{c} \right )
+\label{eq:517}
+\end{equation}
+and we could write $\phi={\bf E} \cdot {\bf r}$ and get
+\begin{equation}
+{\bf d} = e {\bf r}.
+\label{eq:518}
+\end{equation}
+This derivation is not really valid.  However, the expression above
+does turn out to be useful in particular situations.  Let's first
+prove
+\begin{eqnarray}
+\left ( {\bf r} H_0 - H_0 {\bf r} \right ) \psi &=&
+- {\bf r} \frac{\hbar^2}{2m} \nabla^2 \psi + {\bf r} V({\bf r})\psi
++ \frac{\hbar^2}{2m} \nabla^2 \left ( {\bf r} \psi \right ) -
+V({\bf r}) {\bf r} \psi \\
+&=&
+- {\bf r} \frac{\hbar^2}{2m} \nabla^2 \psi 
++ \frac{\hbar^2}{2m} \nabla \cdot \left ( \psi \nabla {\bf r} + {\bf
+  r} \nabla \psi \right ) \\
+&=&
+- {\bf r} \frac{\hbar^2}{2m} \nabla^2 \psi 
++ \frac{\hbar^2}{2m}  \left ( \nabla  \psi \cdot \nabla {\bf r} 
++ {\bf r} \nabla^2 \psi + \nabla \psi \cdot \nabla {\bf r} \right ) \\
+&=&
+- {\bf r} \frac{\hbar^2}{2m} \nabla^2 \psi 
++ \frac{\hbar^2}{2m}  \left ( 2 \nabla \psi + {\bf r} \nabla^2 \psi
+\right ) \\
+&=& \frac{\hbar^2}{m} \nabla \psi = i\frac{\hbar}{m} {\bf p} \psi
+\label{eq:519}
+\end{eqnarray}
+and substitute this result into Eq.~\ref{eq:518} to get
+\begin{equation}
+\langle \psi_f | {\bf d} | \psi_i \rangle =
+-\frac{e}{\hbar\omega} \langle \psi_f | {\bf r} H_0 - H_0 {\bf r} |
+\psi_i \rangle
+\label{eq:520}
+\end{equation}
+Let's suppose that $H_0 \psi_f= E_f \psi_f$ and $H_0 \psi_i = E_i
+\psi_i$ ({\em i.e.} they are eigenstates of the unperturbed
+Hamiltonian) we have
+\begin{equation}
+\langle \psi_f | {\bf d} | \psi_i \rangle =
+-\frac{e}{\hbar\omega} (E_i - E_f) \langle \psi_f | {\bf r} |
+\psi_i \rangle = e \langle \psi_f | {\bf r} |
+\psi_i \rangle
+\label{eq:521}
+\end{equation}
+so 
+\begin{equation}
+{\bf d} = e {\bf r}
+\label{eq:522}
+\end{equation}
+when and only when ${\bf d}$ operates on two eigenstates of the
+unperturbed Hamiltonian.
+
+
+
+\subsection{Dipole Approximation}
+\label{sec:dipole-approximation}
+
+Let's assume that $H'_\omega({\bf r})=e {\bf E}_{\omega} \cdot {\bf r}$.  This implicitly
+assumes that the wavelength of the radiation is much bigger than the
+atom, then we get
+\begin{equation}
+W(i\rightarrow f)=  \frac{\pi}{2}  
+e^2 \frac{|\langle\psi_f | {\bf E}_{\omega} \cdot {\bf r} |\psi_i \rangle
+  |^2}{\hbar^2} = \frac{\pi}{2{\hbar^2}}  
+{\bf E}_{{\bf d}, \omega}^2 |d_{if}|^2
+\label{eq:523}
+\end{equation}
+where
+\begin{equation}
+|{\bf d}_{if}|^2 = e^2 \left ( |\langle\psi_f | x |\psi_i \rangle |^2 +
+|\langle\psi_f | y |\psi_i \rangle |^2 +
+|\langle\psi_f | z |\psi_i \rangle |^2 \right )
+\label{eq:524}
+\end{equation}
+The energy density of the field is
+\begin{equation}
+u_\nu = (2\pi) \frac{3 E_{{\bf d},\omega}^2}{8\pi} = 4\pi \frac{J_\nu}{c}.
+\label{eq:525}
+\end{equation}
+so
+\begin{equation}
+E_{x,\omega}^2 = \frac{16 \pi}{3} \frac{J_\nu}{c}
+\label{eq:526}
+\end{equation}
+The factor of threes arise because we assume that the radiation is
+isotropic so the value of $E_x^2$ is typically one third of $E^2$
+Using this in the transition rate gives
+\begin{equation}
+W(i\rightarrow f)=  \frac{8 \pi^2}{3}  \frac{|{\bf d}_{if}|^2}{\hbar^2 c}
+ J_\nu.
+\label{eq:527}
+\end{equation}
+
+We can write this result as an Einstein coefficient
+\begin{equation}
+B_{if}=  \frac{8 \pi^2}{3}  \frac{|{\bf d}_{if}|^2}{\hbar^2 c}
+\label{eq:528}
+\end{equation}
+
+\subsection{Oscillator Strengths}
+\label{sec:oscillator-strengths}
+\index{atomic structure!oscillator strengths}
+\index{oscillator strengths}
+A classical harmonic oscillator driven by electromagnetic radiation
+has a cross-section to absorb radiation of 
+\begin{equation}
+\sigma(\omega) = \sigma_T \frac{\omega^4}{\left
+  (\omega^2-\omega_0^2\right )^2+\left(\omega_0^3 \tau\right)^2}
+\label{eq:529}
+\end{equation}
+If we integrate this over all frequencies around the resonance
+we obtain
+\begin{equation}
+\int_0^\infty \sigma(\omega) d\nu = \frac{\pi e^2}{mc} =
+B_{if}^\rmscr{classical} \frac{h\nu_{fi}}{4\pi}
+\label{eq:530}
+\end{equation}
+so
+\begin{equation}
+B_{if}^\rmscr{classical} = \frac{4\pi^2 e^2}{h\nu_{fi} m c}
+\label{eq:531}
+\end{equation}
+We can write the Einstein coefficients in term of this classical one
+\begin{equation}
+f_{if} = \frac{B_{if}}{B_{if}^\rmscr{classical}} = \frac{2 m }{3
+  \hbar^2 g_i e^2} \left ( E_f - E_i \right )  \sum |{\bf d}_{if}|^2
+\label{eq:532}
+\end{equation}
+Here we have included the possibility that the lower state has a
+$g_f$-fold degeneracy and we have summed over the degenerate upper
+states. 
+
+In Eq.~\ref{eq:508} the final term could be important if the $E_i-E_f \approx
+-\hbar \omega$ this corresponds to stimulated emission of radiation.
+Except for the degeneracy factors for the two states, the Einstein
+coefficients will be the same, so we can define an oscillator strength
+for stimulated emission as well,
+\begin{equation}
+f_{if} = \frac{2 m}{3
+  \hbar^2 g_i e^2} \left ( E_i - E_f \right )  \sum |{\bf d}_{if}|^2
+\label{eq:533}
+\end{equation}
+Here $E_i > E_f$ so the oscillator strength is negative.
+
+There are several summation rules that restrict the values of the
+oscillator strengths,
+\begin{equation}
+\sum_{n'} f_{nn'} = N
+\label{eq:534}
+\end{equation}
+where $N$ is the total number of electrons in the atom and the
+summation is over all the states.  One must include transitions to the
+continuum in this summation.  If there is a closed shell of electrons
+we can focus on just the $q$ electrons in the open shell to get
+\begin{equation}
+\sum_{n'} f_{nn'} = q
+\label{eq:535}
+\end{equation}
+where the sum is over transitions that involve the outermost
+electrons.  We can also separate the emission from absorption
+oscillator strengths
+\begin{equation}
+\sum_{n', E_n'>E_n} f_{nn'} + 
+\sum_{n', E_n'<E_n} f_{nn'} = q
+\label{eq:536}
+\end{equation}
+Because the second term is for stimulated emission.  All of the values
+of $f_{nn'}$ are negative so
+\begin{equation}
+\sum_{n', E_n'>E_n} f_{nn'} \ge q.
+\label{eq:537}
+\end{equation}
+
+\section{Selection Rules}
+\label{sec:selection-rules}
+\index{atomic structure!selection rules}
+\index{selection rules}
+We can determine the selection rules for dipole emission by examining
+the defintion of the dipole matrix element
+\begin{equation}
+{\bf d}_{fi} \equiv e \int \psi_f^* \sum_j {\bf r}_j \psi_i d^3 x
+\label{eq:538}
+\end{equation}
+where $j$ sums over the electrons in the atom.
+First let's calculate the dipole matrix element after a parity
+transformation that takes ${\bf r} \rightarrow -{\bf r}$.  Unless
+$\psi_f* \psi_i$ is odd under the parity transformation, the integral
+will vanish, so the parity of the initial and final states must be
+different. The parity of a particular configuration is $(-1)^{\sum
+  l_j}$ where $l_j$ are the orbital angular momentum quantum numbers
+of each electron.
+
+We can also prove that only one electron can change its state during
+the transition, {\em the one-electron jump rule}.  If we examine the
+integral in detail, especially the spatial part we have
+\begin{equation}
+\Delta l = \pm 1, \Delta m = 0, \pm 1
+\label{eq:539}
+\end{equation}
+for the jumping electron.  For the total configuration we have
+\begin{equation}
+\Delta S=0,  \Delta L=0, \pm 1, \Delta J=0, \pm 1 (\rmmat{except}~ J=0
+~\rmmat{to}~ J=0)
+\label{eq:540}
+\end{equation}
+The first condition holds because the dipole operator does not couple
+to the spin of the electrons and the final condition exists because a
+photon carries away one unit of angular momentum.
+
+Transitions that follow these rules are know as {\em allowed} and they
+are written using the name of the species and the wavelength.  For
+example, HI 1219\AA\ is Lyman-$\alpha$.  On the other hand transitions
+that don't follow these rules can proceed through magnetic dipole or
+higher order multipole interactions.  These transitions are called
+{\em forbidden} and are designated by [OII] 3727 \AA.   The transition
+between $J=0$ and $J=0$ cannot proceed through the emission of a
+single photon but through the emission of two photons.  An example is
+the relaxation of the $2s$ state of to the $1s$ which has a lifetime
+of about 0.1~s (really slow) compared to $\sim 1$ns for the $2p$ to
+the $1s$ state. 
+
+\section{Bound-Free Transitions and Milne Relations}
+\label{sec:bound-free-trans}
+\index{atomic structure!bound-free transitions}
+\index{atomic structure!Milne relations}
+\index{bound-free transitions}
+\index{Milne relations}
+
+We have covered bound-bound transitions and free-free transitions
+(Bremmstrahlung). We would also like to understand bound-free
+transitions or ionization.  In this case we have to calculate the
+transition rate for the atom to ionize with the freed electron to be
+in a particular range of momentum travelling
+\begin{equation}
+dw = \frac{8\pi^2}{3 \hbar^2 c} | {\bf d}_{if} |^2 \left [
+  \frac{dn}{dp d\Omega} dp d\Omega \right ] J_\nu
+\label{eq:541}
+\end{equation}
+in the dipole approximation.
+
+We want to calculate an ionization cross section such that
+\begin{equation}
+dw = d\sigma \frac{dN}{dA dt}
+\label{eq:542}
+\end{equation}
+where $dN/(dA dt)$ is the number of incident photons per unit area per
+unit time.  We know that
+\begin{equation}
+\frac{dN}{dA dt} = 4\pi \frac{J_\nu}{\hbar \omega} d\nu =
+4\pi \frac{J_\nu}{2\pi \hbar\omega} d\omega
+\label{eq:543}
+\end{equation}
+Let's divide Eq.~\ref{eq:549} by Eq.~\ref{eq:550} to obtain
+\begin{equation}
+d\sigma = \frac{8\pi^2}{3 \hbar^2 c} \frac{\hbar\omega}{2 d\omega} | {\bf d}_{if} |^2 \left [
+  \frac{dn}{dp d\Omega} dp d\Omega \right ] 
+\label{eq:544}
+\end{equation}
+We know that by conservation of energy that the electron final
+momentum must satisfy
+\begin{equation}
+\hbar d \omega = \frac{p dp}{m}.
+\label{eq:545}
+\end{equation}
+Furthermore, we know that if the electron is localized to a volume
+$V$, the density of states is
+\begin{equation}
+\frac{dn}{dpd\Omega} = \frac{p^2 V}{h^3}
+\label{eq:546}
+\end{equation}
+Combining these results yields
+\begin{equation}
+\frac{d\sigma}{d\Omega} = \frac{p V m \omega}{6\pi c \hbar^3} |{\bf d}_{if} |^2 .
+\label{eq:547}
+\end{equation}
+
+Let's calculate the cross-section for a photon with $\hbar\omega \gg
+13.6 Z^2$~eV to ionize a hydrogen-like ion from the ground state.
+Because the energy of the outgoing electron is much greater than the
+binding energy of hydrogen it is safe to assume that
+\begin{equation}
+\psi_f = \frac{1}{\sqrt{V}} e^{i {\bf q}\cdot {\bf r}}
+\label{eq:548}
+\end{equation}
+where ${\bf q}={\bf p}/\hbar$.
+
+The initial state is
+\begin{equation}
+\psi_i = \left ( \frac{Z^3}{\pi a_0^3} \right )^{1/2} e^{-Zr/a_0}
+\label{eq:549}
+\end{equation}
+The dipole operator is
+\begin{equation}
+{\bf d}=\frac{ie}{m \omega_{if}} {\bf p} = -\frac{e}{m
+  \omega_{if}} \hbar \nabla_{\bf r}.
+\label{eq:550}
+\end{equation}
+We cannot use the simpler expression ${\bf d}=e{\bf r}$
+because the final plane wave is not strictly an eigenstate of the
+Hamiltonian. 
+
+Let's apply it to the initial and final states
+\begin{eqnarray}
+{\bf d}_{if} &=& -\frac{e\hbar}{m \omega_{if}} \frac{1}{\sqrt{V}} \left ( \frac{Z^3}{\pi a_0^3} \right )^{1/2}\int  
+  e^{-Zr/a_0} \nabla_{\bf r} e^{i {\bf q}\cdot {\bf r}} d^3 x \\
+  &=& -\frac{i e\hbar {\bf q} }{m \omega_{if}} \frac{1}{\sqrt{V}} \left ( \frac{Z^3}{\pi a_0^3} \right )^{1/2}\int  
+  e^{-Zr/a_0} e^{i {\bf q}\cdot {\bf r}} d^3 x \\
+&=& -\frac{ie \hbar {\bf q}}{m \omega_{if}} \frac{1}{\sqrt{V}} \left ( \frac{Z^3}{\pi a_0^3} \right )^{1/2}2\pi \int_0^\infty r^2 dr \int_{-1}^1
+ d \mu e^{-i q r \mu} e^{-Zr/a_0} \\
+&=& -\frac{i e \hbar {\bf q}}{m \omega_{if}} \frac{1}{\sqrt{V}} \left ( \frac{Z^3}{\pi
+  a_0^3} \right )^{1/2}\frac{4\pi}{q} \int_0^\infty r dr e^{-Zr/a_0}
+  \sin qr  \\
+&=& -\frac{i e\hbar {\bf q}}{m \omega_{if}} \frac{1}{\sqrt{V}} \left ( \frac{Z^3}{\pi
+  a_0^3} \right )^{1/2} \frac{8\pi a_0^3 Z}{\left (Z^2 + q^2 a_0^2\right)^2} 
+\label{eq:551}
+\end{eqnarray}
+%Let's focus on the integral
+%\begin{eqnarray}
+%\int  
+% e^{-i {\bf q}\cdot {\bf r}} {\bf r}  e^{-Zr/a_0} d^3 x &=&
+% i \frac{\partial}{\partial {\bf q}} \int  
+% e^{-i {\bf q}\cdot {\bf r}} e^{-Zr/a_0} d^3 x  \\
+%&=& i \frac{\partial}{\partial {\bf q}} 2\pi \int_0^\infty r^2 dr \int_{-1}^1
+% d \mu e^{-i q r \mu} e^{-Zr/a_0} \\
+%&=& i \frac{\partial}{\partial {\bf q}}
+%\frac{4\pi}{q} \int_0^\infty r dr e^{-Zr/a_0} \sin qr \\
+%&=& 4\pi i
+%\frac{\partial}{\partial {\bf q}} \frac{2 a_0^3 Z}{\left (Z^2 + q^2
+% a_0^2\right)^2} = -32 \pi i \frac{a_0^5 Z {\bf q}}{\left (Z^2 + q^2
+% a_0^2\right)^3}
+\label{eq:552}
+%\end{eqnarray}
+%\begin{equation}
+%{\bf d}_{if} = e \frac{1}{\sqrt{V}} \left ( \frac{Z^3}{\pi a_0^3} \right )^{1/2}\int  
+% e^{-i {\bf q}\cdot {\bf r}} {\bf r}  e^{-Zr/a_0} d^3 x
+\label{eq:553}
+%\end{equation}
+%Let's focus on the integral
+%\begin{eqnarray}
+%\int  
+% e^{-i {\bf q}\cdot {\bf r}} {\bf r}  e^{-Zr/a_0} d^3 x &=&
+% i \frac{\partial}{\partial {\bf q}} \int  
+% e^{-i {\bf q}\cdot {\bf r}} e^{-Zr/a_0} d^3 x  \\
+%&=& i \frac{\partial}{\partial {\bf q}} 2\pi \int_0^\infty r^2 dr \int_{-1}^1
+% d \mu e^{-i q r \mu} e^{-Zr/a_0} \\
+%&=& i \frac{\partial}{\partial {\bf q}}
+%\frac{4\pi}{q} \int_0^\infty r dr e^{-Zr/a_0} \sin qr \\
+%&=& 4\pi i
+%\frac{\partial}{\partial {\bf q}} \frac{2 a_0^3 Z}{\left (Z^2 + q^2
+% a_0^2\right)^2} = -32 \pi i \frac{a_0^5 Z {\bf q}}{\left (Z^2 + q^2
+% a_0^2\right)^3}
+\label{eq:554}
+%\end{eqnarray}
+Let's substitute the value of $\omega_{if}$
+\begin{equation}
+\hbar \omega_{if} = \frac{Z^2 e^2}{2 a_0} + \frac{\hbar^2 q^2}{2 m} =
+\frac{e^2}{2 a_0} \left ( Z^2 + \frac{\hbar^2 q^2}{2 m} a_0 \right )
+\label{eq:555}
+\end{equation}
+to get
+\begin{equation}
+{\bf d}_{if} = -16 \pi i \frac{1}{\sqrt{V}} \left ( \frac{Z^3}{\pi
+  a_0^3} \right )^{1/2} \frac{a_0^5 Z e {\bf q}}{\left (Z^2 + q^2
+a_0^2\right)^3}
+\label{eq:556}
+\end{equation}
+and 
+\begin{equation}
+  |{\bf d}_{if} |^2 = \frac{256\pi}{V} \left ( \frac{Z}{a_0} \right )^5 
+  \left ( \frac{Z^2}{a_0^2} + q^2 \right )^{-6} e^2 q^2 \approx
+  \frac{256\pi e^2}{V}  \left ( \frac{Z}{a_0} \right )^5  q^{-10}.
+\label{eq:557}
+\end{equation}
+Using this in the formula for the differential cross-section and multiplying by
+$4\pi$ gives
+\begin{equation}
+\sigma_{bf}\approx \frac{16 \sqrt{2} e^2 \pi Z^5}{3 m^{7/2} \omega^{7/2} c
+  a_0^5} =  \frac{(2 \alpha)^{9/2} \pi Z^5 c^{7/2}}{3 a_0^{3/2} \omega^{7/2} } 
+\label{eq:558}
+\end{equation}
+Had we used the classical dipole operator ${\bf d} = e {\bf r}$ we
+would have twice the true value of ${\bf d}_{if}$ and four times the
+cross section, so the difference is not subtle.
+
+We can improve upon the assumption that we made that the electron's
+energy is much greater than the ionization energy by using Coulomb
+wavefunctions which are solutions to the Schrodinger equation for
+positive ({\em i.e.} continuum) energy values.
+
+The total cross-section for a photon of frequency $\omega$ to ionize 
+an electron from a hydrogenic atom in
+state $n$ is 
+\be 
+\sigma_{bf} = \left ( \frac{64\pi n g}{3\sqrt{3} Z^2}
+\label{sec:bound-free-trans-1}\right ) \alpha a_0^2 \left ( \frac{\omega_n}{\omega} \right )^3 \end{equation}
+where $g$ is a Gaunt factor and \be \omega_n = \frac{\alpha^2 mc^2
+Z^2}{2\hbar n^2}.  
+\label{sec:bound-free-trans-2}\end{equation}
+
+More interesting is the fact that you can relate the cross section for
+ionization to that of recombination, through the {\em Milne
+relations}.  These are derived using the principle of detailed balance
+simliar to the derivation of the Einstein relations.
+
+If we assume that the photons are in equilibrium with a set of ions
+and atoms we can use the blackbody formula for the photon distirbution
+and the Saha equation for the ions.  Let $\sigma_{fb}(v)$ be the cross
+section for recombination for electrons with velocity $v$, then we
+have a recombination rate per unit volume of
+\begin{equation}
+N_+ N_e \sigma_{fb} f(v) v dv
+\label{eq:559}
+\end{equation}
+where $f(v)$ is the Maxwellian velocity distribution, $N_e$ is the
+electron density and $N_+$ is the ion density.
+
+The ionization rate is given by
+\begin{equation}
+\frac{4\pi}{h\nu} N_n \sigma_{bf} ( 1 - e^{-h\nu/kT} ) B_\nu d\nu
+\label{eq:560}
+\end{equation}
+where $N_n$ is the number density of neutrals and the factor in front
+of the blackbody function accounts for stimulated recombination.
+These two rates must be equal in equilibrium so we have
+\begin{equation}
+\frac{\sigma_{bf}}{\sigma_{fb}} = \frac{N_+ N_e}{N_n} e^{h\nu/kT}
+\frac{f(v) c^2 h}{8\pi m \nu^2}
+\label{eq:561}
+\end{equation}
+where we have used $h\nu = \frac{1}{2} m v^2 + E_I$ to eliminate
+$d\nu$ and $dv$.
+
+We know that
+\begin{equation}
+\frac{N^+ N_e}{N} = \left ( \frac{2\pi m_e kT}{h^2} \right)^{3/2}
+\frac{2 U^+(T)}{U(T)} e^{-E_I/kT}.
+\label{eq:562}
+\end{equation}
+and
+\begin{equation}
+f(v) = 4\pi \left ( \frac{m}{2\pi k T} \right )^{3/2} v^2 \exp \left
+(-\frac{mv^2}{2kT} \right )
+\label{eq:563}
+\end{equation}
+Putting all of this together give us the Milne relation:
+\begin{equation}
+\frac{\sigma_{bf}}{\sigma_{fb}} = \frac{m^2 c^2 v^2}{\nu^2 h^2}
+\frac{g_e g_+}{2 g_n}.
+\label{eq:564}
+\end{equation}
+
+\section{Line Broadening Mechanisms}
+\label{sec:line-broad-mech}
+\index{atomic structure!line broadening}
+\index{line broadening}
+There are two types of broadening mechanisms.  The first type is
+called {\em inhomogeneous broadening} which results from different
+atoms experiencing different conditions so the energy of the
+transition photons that we observe is different.  Some examples of
+this are rotation, random bulk motions, thermal motions and 
+varying magnetic field.   In all but the last of these examples the
+energy of the photon is shifted due to the Doppler effect.
+
+The profile function is 
+\begin{equation}
+\phi(\nu) = \frac{1}{\Delta \nu_D \sqrt{\pi}} e^{-(\nu-\nu_0)^2/\Delta\nu_D^2}
+\label{eq:565}
+\end{equation}
+where
+\begin{equation}
+\Delta \nu_D = \frac{\nu_0}{c} \left ( \frac{2kT}{m_a} + \xi^2 \right
+)^{1/2}.
+\label{eq:566}
+\end{equation}
+The $T$ is the temperature of the gas and $m_a$ is the mass of the
+atoms. 
+
+The second type is called {\em homogeneous broadening}.  Here each
+atom emits photons over a range of energies inherently.  The main
+source of homogeneous broadening is that the atom has a finite
+lifetime or it can only emit phase-connected wavetrain for a finite
+time.   Both of these effects result in a Lorentz profile for the
+line of the form
+\begin{equation}
+\phi(\nu) = \frac{\Gamma/4\pi^2}{(\nu-\nu_0)^2 + (\Gamma/4\pi)^2}
+\label{eq:567}
+\end{equation}
+where
+\begin{equation}
+\Gamma = \gamma_u + \gamma_l + 2 \nu_\rmscr{col}.
+\label{eq:568}
+\end{equation}
+The first two terms are the lifetime of the upper and lower states and
+$\nu_\rmscr{col}$ is the frequency of collisions.  For example,
+\begin{equation}
+\gamma_u = \sum_{n'<n} \left ( A_{un} + B_{un} J_\nu \right ).
+\label{eq:569}
+\end{equation}
+
+The Gaussian convolution of the Lorentz profile  profiles has a special
+name: the {\em Voigt function}
+\begin{equation}
+H(a,u) \equiv \frac{a}{\pi} \int_{-\infty}^\infty \frac{e^{-y^2}}{a^2+(u-y)^2}
+\label{eq:570}
+\end{equation}
+and the combined profile is
+\begin{equation}
+\phi(\nu) = (\delta \nu_D)^{-1} \pi^{-1/2} H(a,u)
+\label{eq:571}
+\end{equation}
+where
+\begin{equation}
+a \equiv \frac{\Gamma}{4\pi \delta \nu_D}
+~\rmmat{and}~u\equiv\frac{\nu-\nu_0}{\Delta \nu_D}
+\label{eq:572}
+\end{equation}
+
+\section{Problems}
+\begin{enumerate}
+\item{\bf Lifetime}
+
+Derive the lifetime of the $n=2, l=1, m=0$ state of hydrogen to emit a
+photon and end up in the $n=1, l=0, m=0$ state.
+
+
+\item{\bf Hydrogen-Like Absorption}
+
+How much energy does a photon need to ionize the following atoms by
+removing a K-shell electron?  
+
+Hydrogen, Helium, Carbon, Oxygen, Iron
+
+Using the formula that I derived in class, draw an energy diagram that
+shows the total cross section for one gram of gas as a function of
+energy between 10eV and 10keV.   It would be great if you used the
+initial expression in Eq.~\ref{eq:557} for the dipole matrix element rather
+than the final answer given by Eq.~\ref{eq:558}.
+
+Consider that the mass fraction of the different atoms are hydrogen
+(0.7), helium (0.27), carbon (0.008), oxygen (0.016) and iron (0.004).
+
+
+\end{enumerate}
+%%% Local Variables:
+%%% TeX-master: "book"
+%%% End:

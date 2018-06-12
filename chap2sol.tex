@@ -1,0 +1,341 @@
+\ifx\bookloaded\undefined
+\documentclass{article}
+\usepackage{graphicx}
+\input book_defs
+\begin{document}
+\fi
+\section{Chapter 2}
+\begin{enumerate}
+\item{\bf  Coulomb's Law}
+
+Derive Coulomb's law from Maxwell's Equations
+
+{\bf Answer:}
+
+The first of Maxwell's equations is
+\begin{equation}
+\nabla \cdot {\vec E} = 4 \pi \rho
+\end{equation}
+Let's assume that there is a single charge q located at r=0 and integrate over a spherical region centered on the origin we get
+\begin{equation}
+\int_V dV \nabla \cdot {\vec E} = \int dV 4 \pi \rho = 4 \pi q
+\end{equation}
+However the integral of the left-hand side is a integral of a divergence over a volume so we have
+\begin{equation}
+\int_{\partial V} dV \nabla \cdot {\vec E} = \int {\vec E} \cdot d A = |{\vec E}| 4 \pi R^2 = 4 \pi q
+\end{equation}
+so 
+\begin{equation}
+{\vec E} = \frac{q}{R^2} {\hat r}
+\end{equation}
+
+\item{\bf Ohm's Law}
+
+In certain cases the process of aborption of radiation can be treated
+by means of the macroscopic Maxwell equations. For example, suppose we
+have a conducting medium so that the current density j is related to
+the electric field E by Ohm's law: 
+${\vec j} = \sigma {\vec E}$ where
+$\sigma$ is the conductivity (cgs unit = sec$^{-1}$</sup>). 
+Investigate the propagation of electromagnetic waves in such a medium
+and show that:
+\begin{enumerate}
+\item
+ The wave vector ${\vec k}$ is complex
+ ${\vec k}^2 = \frac{\omega^2 m^2}{c^2}$
+ where $m$ is the complex index of refraction with
+ \begin{equation}
+     m^2 = \mu \epsilon \left ( 1 + \frac{4 \pi i \sigma}{\omega \epsilon}
+         \right )
+         \end{equation}
+\item The waves are attenuated as they propagate, corresponding to an
+          absorption coefficient.
+          \begin{equation}
+          \alpha = \frac{2\omega}{c} \Im (m)
+          \end{equation}
+
+{\bf Answer:}
+
+Let's take the third and fourth of Maxwell's equations
+\begin{equation}
+{\nabla} \times {\vec E} = -\frac{1}{c} \frac{\partial \vec B}{\partial t}
+\end{equation}
+and
+\begin{equation}
+{\nabla} \times {\vec H} = \frac{4\pi}{c} {\vec J} +\frac{1}{c} 
+\frac{\partial \vec D}{\partial t} 
+\end{equation}
+Let's substitute
+\begin{equation}
+\mu {\vec H}={\vec B}, {\vec D}=\epsilon {\vec E}
+\end{equation}
+and
+\begin{equation}
+{\vec J} = \sigma {\vec E}
+\end{equation}
+to get
+\begin{equation}
+{\nabla} \times {\vec B} = \mu \sigma \frac{4\pi}{c} {\vec E} +\frac{1}{c} 
+\mu \epsilon \frac{\partial \vec E}{\partial t} 
+\end{equation}
+Let's take the curl of this equation to get 
+\begin{equation}
+-{\nabla}^2 {\vec B} = \mu \sigma \frac{4\pi}{c} \nabla \times {\vec E} +\frac{1}{c} 
+\mu \epsilon \frac{\partial \nabla \times \vec E}{\partial t} 
+\end{equation}
+and substitute in the other Maxwell's equation to get
+\begin{equation}
+-{\nabla}^2 {\vec B} = -\mu \sigma \frac{4\pi}{c^2} \frac{\partial \vec B}{\partial t} - \frac{1}{c^2} 
+\mu \epsilon \frac{\partial^2 \vec B}{\partial t^2}
+\end{equation}
+Let's substitute 
+\begin{equation}{\vec B} = {\vec B}_0 \exp \left [ i \left ({\vec k}\cdot {\vec x} - \omega t \right ) \right ]\end{equation} 
+to get
+\begin{equation}
+k^2 = i \mu \sigma \frac{4\pi}{c^2} \omega + \frac{1}{c^2} 
+\mu \epsilon \omega^2 = \frac{\omega^2 m^2}{c^2}
+\end{equation}
+with
+\begin{equation}
+m^2 = \mu \epsilon \left ( 1 + i \frac{4\pi\sigma}{\omega \epsilon} \right )
+\end{equation}
+If we substitute this into the formula for the wave we find
+\begin{equation}
+{\vec B} = {\vec B}_0 \exp \left [ i \left ({\vec k}\cdot {\vec x} - \omega t \right ) \right ]
+= {\vec B}_0 \exp \left [ i \left (\Re {\vec k}\cdot {\vec x} - \omega t \right ) \right ]
+\exp \left [ -\Im {\vec k} \cdot {\vec x} \right ] 
+\end{equation}
+so the magnetic field decreases with a mean-free path $\frac{c}{\omega
+  \Im m}$.  The energy is proportional to $B^2$ so the absorption coefficient is $\frac{2\omega}{c}\Im
+m$
+\end{enumerate}
+\item {\bf The Edge of the Crab}
+
+  Fig.~\ref{fig:crab-edge} shows the x-ray emission of the Crab pulsar
+  wind nebula at a distance of 2~kpc.  The x-ray emitting gas is
+  contained by magnetic fields causing the x-ray emission regions to
+  end sharply.  We can relate the frequency of the emission to the energy
+  of the electrons and the strength of the magnetic field by
+\begin{equation}
+\omega = \left ( \frac{E}{m_e c^2}
+\right )^2 \frac{e B}{m_e c} 
+\end{equation}
+and assume that the electrons are relativistic so their inertial mass
+is $E/c^2$.  Use the sharpness of the emission
+regions to determine the energy of the electrons and the strength of
+the magnetic field.
+
+{\bf Answer:}
+
+Let's assume that the particles are doing cyclotron motion so
+\begin{equation}
+F = \frac{m v^2}{r} = \frac{ e v B}{c}, v\approx c, m\approx
+\frac{E}{c^2}
+\end{equation}
+so
+$$
+\frac{E}{r} = e B, E = e B r
+$$
+where $r < 2~\mathrm{kpc} \times 1~\mathrm{arcsecond} = 2000~\mathrm{AU}$
+and we also know that $\omega$ lies in the X-rays, so $\hbar \omega \sim
+1$~keV and
+$$
+\omega = E^2 B \frac{e}{m_e^3 c^5} = E^2 \frac{E}{er} \frac{e}{m_e^3 c^5}
+$$
+so
+$$
+E^3 = m_e^3 c^5 \omega r, B^3 = \frac{m_e^3 c^5 \omega}{e^3 r^2}.
+$$
+The fact the the edge is unresolved yields an upper limit on the energy
+and a lower limit on the magnetic field strength.  If we use $\hbar
+\omega=1~\mathrm{keV}$, we obtain
+$$
+E < 6 \times 10^{13}~\mathrm{eV}, B > 7 \times 10^{-11}~\mathrm{G}
+$$
+
+
+\item{\bf Momenta}
+This problem is meant to deduce the momentum and angular momentum
+properties of radiation and does not recesarily represent any real
+physical system of interest. Consider a charge $Q$ in a viscous medium
+where the viscous force is proportional to velocity: 
+\begin{equation}
+F_{visc} = -\beta v
+\end{equation}
+Suppose a circular polarized wave passes through the medium. The
+equation of motion of the charge is 
+\begin{equation}
+m \frac{dv}{dt} = F_{visc} + F_{Lorentz}
+\end{equation}
+We assume that the terms on the right dominate the inertial term on the
+left, so that approximately 
+\begin{equation}
+0 = F_{visc} + F_{Lorentz}
+\end{equation}
+Let the frequency of the wave be $\omega$ and the strength of the
+electric field be E.
+\begin{enumerate}
+\item Show that to lowest order (neglecting the magnetic force) the charge
+   moves on a circle in a plane normal to the direction of propagation of
+   the wave with speed $QE/\beta$ and with radius $QE/(\beta \omega)$.
+\item Show that the power transmitted to the fliud by the wave is $Q^2 E^2/\beta$
+\item. By considering the small magnetic force acting on the particle show
+   that the momentum per unit time (force) given to the fluid by the wave
+   is in the direction of propagation and has the magnitude 
+   $Q^2 E^2/(\beta c)$.
+\item Show that the angular momentum per unit time (torque) given to the
+   fluid by the wave is in the direction of propagation and has magnitude
+   $\pm Q^2 E^2/(\beta \omega)$ where the $+$ is for left and $-$ is for
+   right circular polarization.
+\item Show that the absorption cross section of the charge is
+   $4\pi Q^2/(\beta c)$.
+\item  If we regard the radiation to be composed of circular polarized
+   photons of energy $E_\gamma= h \nu$, show that these results imply that the
+   photon has momemtum $p=h/\lambda=E_\gamma/c$ and has angular momemtum 
+   $J=\pm \hbar$ along the direction of propagation.
+\item Repeat this problem for a linearly polarized wave
+\end{enumerate}
+
+{\bf Answer:}
+
+\begin{enumerate}
+\item
+ We have ${\vec v} = \frac{Q}{\beta} {\vec E}$.  The electric field traces a circle so the 
+particle traces a circle with a speed $\frac{QE}{\beta}$.  The angular velocity of the particle is $\omega$ of the wave, so $\omega r=\frac{QE}{\beta}$ so $r=\frac{QE}/{\beta\omega}$.
+
+\item Power is $Q{\vec v}\cdot {\vec E} = \frac{Q^2 E^2}{\beta}$.
+
+\item The magnetic force is in the direction ${\vec v}\times {\vec B}$ but the velocity points in the
+direction of the electric field so the force is in the direction ${\vec E}\times {\vec B}$, the direction of propagation.   The magnitude of magnetic field equals that of the electric field so we have
+$F = \frac{Q^2 E^2}{\beta c}$
+
+\item Torque is ${\vec r} \times {\vec F} = \frac{Q^2 E^2}{\beta \omega}$ 
+
+\item The cross section is power absorbed divided by the Poynting vector 
+\begin{equation}
+\sigma = \frac{Q^2 E^2}{\beta} \left [ \frac{c}{4\pi} E^2 \right ]^{-1} = \frac{4 \pi Q^2}{\beta c}
+\end{equation}
+
+\item If the wave comes in energy units of $h\nu$.  The ratio of the momentum unit to the energy unit must 
+be the ratio of the force (momentum per unit time) to the power (energy per unit time), so we get
+\begin{equation}
+h\nu \frac{Q^2 E^2}{\beta c} \frac{\beta}{Q^2 E^2} = \frac{h\nu}{c}
+\end{equation}
+The ratio of the angular momentum unit to the energy unit must be the
+ratio of the torque (angular momentum per unit time) to the power
+(energy per unit time), so we get
+\begin{equation}
+h\nu \frac{Q^2 E^2}{\beta \omega} \frac{\beta}{Q^2 E^2} = \frac{h\nu}{\omega} = \hbar
+\end{equation}
+\item For the linearly polarized wave, the particle moves up and down sinusoidally.  The size of the up and down path is twice the value of R above (the circle is squished along one axis to be a line).  The velocity varies sinusoidally, the power magnetic force vary as $\sin^2 \omega t$.  The torque vanishes.  The cross section is the same as is the momentum of a photon.  The angular momentum vanishes (because the torque vanishes).
+\end{enumerate}
+
+
+\item{\bf Maxwell before Maxwell}
+
+Show that Maxwell's equations before Maxwell, that is, without the
+``displacement current'' term, $c^{-1} \frac{\partial D}{\partial t}$, unacceptably constrained the
+sources of the field and also did not permit the existence of waves.
+
+{\bf Answer:}
+
+Let's take the divergence of the Maxwell's equation
+\begin{equation}
+{\nabla} \times {\vec H} = \frac{4\pi}{c} {\vec J} +\frac{1}{c} 
+\frac{\partial \vec D}{\partial t} 
+\end{equation}
+to get
+\begin{equation}
+0 = \frac{4\pi}{c} \nabla \cdot {\vec J} 
+\end{equation}
+where we have left the displacement current out.  This states that the
+divergence of the current must vanish, which means that either charge
+is not conserved or that the charge density is constant (neither is
+good).
+
+Let's take the curl of the Maxwell's equation
+\begin{equation}
+{\nabla}^2 {\vec B} = 0
+\end{equation}
+and we would get the same thing for the electric field.  This is not a
+wave equation.
+
+\item {\bf Coulomb gauge} 
+Derive the equations describing the dynamics of the electric and
+vector potentials in the Coulomb gauge
+$$
+\nabla \cdot {\bf A} = 0
+$$
+Look at the equation for the electric potential. What is the solution
+to the electric potential given the charge density $\rho$? Why is this
+called the Coulomb gauge?
+
+How does the expression for the scalar potential in the Coulomb gauge
+differ from that in the Lorenz gauge? What is strange about it? Is it
+physical?
+
+Now look at the equation for the vector potential. Show that the LHS
+can be arranged to be the same as in the Lorenz gauge but the RHS is
+not just the current but the current plus something else.
+
+Show that the RHS can be expressed as 
+$$
+\frac{4\pi}{c} \left ( {\bf J} - {\bf J}_\rmscr{long} \right ) 
+$$
+where
+$$
+{\bf J}_\rmscr{long} = -\frac{1}{4\pi} \nabla \int \frac{\nabla' \cdot
+{\bf J}}{|{\bf x}-{\bf x}'|} d^3 x
+$$
+
+{\bf Answer:}
+In the Coulomb gauge the scalar potential follows Coulomb's law
+$$
+\nabla^2 \phi = -4\pi \rho.
+$$
+That is why it is called the Coulomb gauge.  The potential everywhere
+right now depends on the charge here right now, so it is acausal
+(strange); however, because we cannot actually measure the scalar
+potential the acausality has no physical consequence.
+
+Now for the vector potential
+$$
+\nabla^2 {\bf A} - \frac{1}{c^2} \pp{^2 {\bf A}}{t^2} - \nabla \left
+  ( \frac{1}{c} \pp{\phi}{t} \right ) = -\frac{4\pi}{c} {\bf J}
+$$
+$$
+\nabla^2 {\bf A} - \frac{1}{c^2} \pp{^2 {\bf A}}{t^2}  =
+-\frac{4\pi}{c} \left ( {\bf J} - {\bf J}_\mathrm{long} \right )
+$$
+where
+\begin{eqnarray*}
+{\bf J}_\mathrm{long} &=& \frac{1}{4\pi} \nabla \left
+  ( \pp{\phi}{t} \right ) =  \frac{1}{4\pi} \nabla \left 
+  ( \int \pp{\rho}{t} \frac{1}{\left |{\bf x} - {\bf x}'\right|} d^3 x
+\right ) \\
+&=& -\frac{1}{4\pi} \nabla \left 
+  ( \int \frac{\nabla \cdot {\bf J}}{\left |{\bf x} - {\bf x}'\right|} d^3 x
+\right )  = -\frac{1}{4\pi} \nabla \left 
+  ( \int \frac{\nabla' \cdot {\bf J}}{\left |{\bf x} - {\bf x}'\right|} d^3 x
+\right )  
+\end{eqnarray*}
+What remains of the current after subtracting the longitudinal current
+is the transverse current which is given by the expression
+$$
+{\bf J}_\mathrm{trans} = \frac{1}{4\pi} \nabla \times \nabla \left 
+  ( \int \frac{{\bf J}}{\left |{\bf x} - {\bf x}'\right|} d^3 x
+\right )  
+$$
+so the source for the wave equation for ${\bf A}$ is given by the
+transverse current alone.
+\end{enumerate}
+
+\ifx\bookloaded\undefined
+\end{document}
+\fi
+%%% Local Variables:
+%%% TeX-master: "book"
+%%% End:
+
+
+

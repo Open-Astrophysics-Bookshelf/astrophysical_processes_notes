@@ -1,0 +1,242 @@
+\ifx\bookloaded\undefined
+\documentclass{article}
+\ifx\pdftexversion\undefined
+  \usepackage[dvips]{graphicx}
+\else
+  \usepackage[pdftex]{graphicx}
+\fi
+\newcommand{\be}{\begin{equation}}
+\newcommand{\ee}{\end{equation}}
+\newcommand{\rmmat}[1]{\hbox{\rm #1}}
+\newcommand{\rmscr}[1]{{\hbox{\rm \scriptsize #1}}}
+\newcommand{\comment}[1]{\relax}
+\newcommand{\dd}[2]{\frac{d {#1}}{d {#2}}}
+\newcommand{\pp}[2]{\frac{\partial {#1}}{\partial {#2}}}
+\begin{document}
+\fi
+
+\section{Chapter 13}
+\begin{enumerate}
+\item{\bf Exact Solutions}
+
+For which values of $\gamma$ can the Bernoulli equation
+(Eq.~\ref{eq:725}) be solved using elementary methods (linear,
+quadratic and cubic equations of the form in Eq.~\ref{eq:676}).  There
+are many, however only a few have $1< \gamma < 5/3$.
+
+{\bf Answer: }
+
+Let's start with the Bernoulli equation,
+\begin{equation}
+\frac{v^2}{2} + \frac{c_s^2 - c_s^2(\infty)}{\gamma - 1} - \frac{G M}{r} = 0.
+\end{equation}
+First let's divide both sides by $c_s^2$ to get
+\begin{equation}
+\frac{1}{2} \frac{v^2}{c_s^2} + \frac{1 - c_s^2(\infty)/c_s^2}{\gamma -
+  1} - \frac{G M}{r c_s^2} =
+\frac{1}{2} \frac{v^2}{c_s^2} + \frac{1 - c_s^2(\infty)/c_s^2}{\gamma -
+  1} - \frac{r_c}{r} \frac{4}{5-3\gamma} \frac{c_s^2(\infty)}{c_s^2} = 0.
+\end{equation}
+We need to express the sound speed in terms of $r$ and $v$.  We have
+\begin{equation}
+P = K \rho^\gamma
+\end{equation}
+so
+\begin{equation}
+c_s^2 = \gamma K \rho^{\gamma-1} = c_s^2(\infty) \left ( \frac
+{\rho}{\rho(\infty)} \right )^{\gamma - 1}
+\end{equation}
+We can relate $v$, $r$ and $\rho$ through ${\dot M}=4\pi r^2 v \rho$
+We are interested in a plot of $y=v/c_s$ versus $x=r/r_c$, so let's
+substitute for $x$ and $y$ to get
+\begin{equation}
+\frac{y^2}{2} + \frac{1}{\gamma-1} - \left ( \frac{1}{\gamma-1}  - \frac{1}{x}
+\frac{4}{5-3\gamma} \right ) \frac{c_s^2(\infty)}{c_s^2} = 0.
+\end{equation}
+Now we need to find $c_s^2(\infty)/c_s^2$ in terms of $x$ and $y$.  We
+can determine $\rho$ at any point through ${\dot M}=4\pi \rho v$ and 
+the formula above.  
+The key is to write ${\dot M}=\alpha {\dot M}_\rmscr{crit}$.  First,
+we have
+\begin{equation}
+\dot M = 4 \pi r^2 v \rho = 4 \pi \alpha r_c^2 c_s(r_c) \rho(r_c)
+\end{equation}
+so
+\begin{equation}
+\frac{\rho}{\rho(r_c)} = \frac{\alpha}{x^2 y} \frac{c_s(r_c)}{c_s}
+= \frac{\alpha}{x^2 y} \left (
+  \frac{\rho(r_c)}{\rho} \right )^{(\gamma-1)/2} = \left ( \frac{\alpha}{x^2 y} \right )^{2/(\gamma+1)}\kern-0.5cm.
+\end{equation}
+and
+\begin{equation}
+\frac{\rho}{\rho(\infty)} = \frac{\rho}{\rho(r_c)}
+\frac{\rho(r_c)}{\rho(\infty)}
+= \left ( \frac{\alpha}{x^2 y} \right )^{2/(\gamma+1)} \left ( \frac{2}{5-3\gamma} \right )^{1/(\gamma-1)}
+\end{equation}
+using Eq.~\ref{eq:729} and giving an expression for
+\begin{equation}
+\frac{c_s^2}{c_s^2(\infty)} = \left ( \frac{\alpha}{x^2 y} \right )^{2(\gamma-1)/(\gamma+1)}  \frac{2}{5-3\gamma} 
+\end{equation}
+Let's substitute this into the Bernoulli equation to yield
+\begin{eqnarray}
+ y^{2(1-\gamma)/(\gamma+1)} \left ( \frac{y^2}{2} + \frac{1}{\gamma-1}
+ \right ) \frac{2 \alpha^{2(\gamma-1)/(\gamma+1)}}{5 -3\gamma} -
+ \nonumber \\
+x^{4(\gamma-1)/(\gamma+1)}\left ( \frac{1}{\gamma-1}  
++ \frac{4}{x(5 - 3\gamma)} \right )
+=0
+\label{eq:789}
+\end{eqnarray}
+There could be many possibilities: we could solve for $x$ or $y$ in
+terms of the other, and the resulting equation could be a cubic,
+quadratic or linear in the three terms.  Let's begin with solving for
+$x$.
+
+{\bf Solution for $x$:}
+
+On the second line there are two terms in $x$ that differ by a
+single power of $x$.  We can make substitutions of the form $x=u^{\pm 2}$,
+$x=w^{\pm 3}$ that will transform the equation into a quadratic or cubic
+with the correct choice of $\gamma$, or we could solve for $x$ directly
+which would require that $4(\gamma-1)/(\gamma+1)=2,1,0,-1,-2$,
+yielding quadratic, linear, linear, quadratic and cubic equations,
+respectives.  A value of $4(\gamma-1)/(\gamma-1)=3$ would also yield a
+cubic equation but not of the simply solvable form
+(Eq.~\ref{eq:676}).  There are also simply solvable quartics, but this
+is beyond the scope of the question.
+\begin{table}[h]
+\centering
+\begin{tabular}{ccccc}
+$\frac{4(\gamma-1)}{\gamma-1}$ & $\gamma$ & Type & Substitution & Comment \\ \hline
+2 & 3 & quadratic & $x$ & Non-Ideal \\
+1 & $5/3$ & linear & $x$ & Divergent \\
+0 & 1 & linear & $x$ & Divergent \\
+$-1$ & $3/5$ & quadratic & $x$ & Unphysical\\
+$-2$ & $1/3$ & cubic & $x$ & Unphysical \\
+$1/2$  & $9/7$ & quadratic & $x=u^2$ & Good \\
+$-1/2$ & $7/9$ & cubic & $x=u^{-2}$ & Unphysical  \\
+$2/3$ & $7/5$ & cubic & $x=w^3$ & Good \\
+$1/3$ & $13/11$ & cubic & $x=w^{-3}$ & Good \\
+\end{tabular} 
+\end{table}
+
+{\bf Solution for $y$:}
+
+We can also solve for $y$ in terms of $x$.  Here the two terms in $y$
+differ by two powers of $y$; this naturally leads to a quadratic
+without substitution.  Some of the various possibilities are listed in
+the following table.
+\begin{table}[h]
+\centering
+\begin{tabular}{ccccc}
+$\frac{2(1-\gamma)}{\gamma+1}$ & $\gamma$ & Type & Substitution &
+Comment \\ \hline
+2 & 0 & quadratic & $w=y^2$ & Unphysical \\
+1 & $1/3$ & cubic & $y$ & Unphysical \\
+0 & 1 & linear & $w=y^2$ & Divergent \\
+$-2/3$ & 2 & cubic & $w^3=y^2$ & Non-Ideal \\
+-1 & 3 & quadratic & $y$ & Non-Ideal \\
+$-4/3$ & 5 & cubic & $w^{-3}=y^2$ & Non-Ideal \\
+\end{tabular} 
+\end{table}
+
+\setcounter{enumi}{3}
+\item{\bf Bondi Solution}
+
+Generate a picture like the figure in the lecture notes for the Bondi
+solution to spherical accretion.  Use $\gamma=9/7$.
+
+{\bf Answer: }
+
+The answer starts as the first question up to the Bernoulli equation
+(Eq.~\ref{eq:789}) where we substitute $\gamma=9/7$ to yield
+
+\begin{equation}
+\frac{7}{2} x^{1/2} - \frac{7}{2} x^{-1/2} - \frac{7}{8} \alpha^{1/4}
+y^{7/4} - \frac{49}{8} \frac{\alpha^{1/4}}{y^{7/4}} = 0
+\end{equation}
+Let $u=\sqrt{x}$ and multiply everything by $u$ to give a quadratic
+equation for $u$
+\begin{equation}
+\frac{7}{2} u^2 - \left [ \frac{7}{8} \frac{\alpha^{1/4}}{y^{1/4}}
+  (y^2 + 7 ) \right ]u -
+\frac{7}{2} = 0
+\end{equation}
+
+\item{\bf Bondi Solution --- Harder}
+
+Generate a picture like the figure in the lecture notes for the Bondi
+solution to spherical accretion.  Use $\gamma=7/5$.
+
+{\bf Answer: }
+
+The answer starts as the first question up to the Bernoulli equation
+(Eq.~\ref{eq:789}) where we substitute $\gamma=7/5$ to yield
+\begin{equation}
+\frac{5}{2} x^{2/3} - 5 x^{-1/3} - \frac{5}{4} \alpha^{1/3} y^{5/3} -
+\frac{25}{4} \frac{\alpha^{1/3}}{y^{1/3}} = 0.
+\end{equation}
+Let $w^3=x$ and multiply everything by $u$ to give a cubic
+equation for $w$
+\begin{equation}
+\frac{5}{2} w^3 - \frac{5}{4} \frac{\alpha^{1/3}}{y^{1/3}} \left ( y^2
+  - 5 \right ) w - 5= 0.
+\end{equation}
+of the form Eq.~\ref{eq:676}.  This equation can be solved analytically
+
+\item{\bf Accretion Energetics}
+
+\begin{enumerate}
+\item $T=\frac{G M m}{R}$
+\item $T=\frac{G M m}{2 R}$
+\item $T_\textrm{\scriptsize NS}/m=2 \times 10^{20}$ erg/g,
+  $T_\textrm{\scriptsize WD}/m=8
+  \times 10^{16}$ erg/g. The accretion energy for a neutron star
+  greatly exceeds the nuclear energy.  The opposite holds for a white
+  dwarf.
+\item The total energy per gram is essentially the value given in part
+  c).  The Eddington luminosity is $1.8\times 10^{38}$~erg/s for a
+  neutron star (see problem 3.6).  This yields an Eddington accretion
+  rate of approximately $10^{18}$~g/s. 
+\end{enumerate}
+
+\item{\bf A simplified accretion disk}
+
+\begin{enumerate}
+\item $dE = -\frac{G M dm}{2 r}$
+\item $\frac{d}{dr} dE = \frac{G M dm}{2 r^2}$, $\frac{dE}{dr dt}=
+  \frac{GM}{2 r^2} \frac{dm}{dt}$
+\item $\frac{dE}{dA dt}= \frac{GM}{4 \pi r^3} \frac{dm}{dt}$
+\item $\sigma T^4 =  \frac{GM}{4 \pi r^3} \frac{dm}{dt}$
+\item $\frac{dE}{dt} = \int_{r_0}^{r_A}   \frac{GM}{2 r^2}
+  \frac{dm}{dt} dr = \frac{GM}{2} \frac{dm}{dt} \left ( r_0^{-1} -
+    r_A^{-1} \right )$, the peak temperature is at $r_0$ and the
+  minimum temperature is at $r_A$.
+\item To sketch the spectrum we will assume that the BB emission
+  emerges exclusively at the peak of the BB, so we need to translate
+  $dE/(dr dt)$ to $dE/(dT dt)$.
+$$
+\frac{dP}{dT} = \frac{dP}{dr} \frac{dr}{dT} = 
+  \frac{GM}{2 r^2} \frac{dm}{dt} \left ( \frac{\sigma T^3 4 \pi r^4}{3
+      G M {\dot m}} \right ) = \frac{4 \pi r^2 \sigma T^3}{3}
+$$
+and substituting yields
+$$
+\frac{dP}{dT} = \frac{4\pi \sigma}{3} \left ( \frac{G M}{4\pi \sigma}
+  {\dot m} \right )^{2/3} T^{1/3}
+$$
+or $F_\nu \propto \nu^{1/3}$.
+\item If the accretion rate exceeds the Eddington rate, some matter
+  must be expelled.
+\item Viscosity
+\end{enumerate}
+\end{enumerate}
+
+\ifx\bookloaded\undefined
+\end{document}
+\end
+\fi
+
+%%% Local Variables:
+%%% TeX-master: "book"
+%%% End:

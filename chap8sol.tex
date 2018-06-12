@@ -1,0 +1,159 @@
+\ifx\bookloaded\undefined
+\documentclass{article}
+\usepackage{graphicx}
+\newcommand{\be}{\begin{equation}}
+\newcommand{\ee}{\end{equation}}
+\newcommand{\rmmat}[1]{\hbox{\rm #1}}
+\newcommand{\rmscr}[1]{{\hbox{\rm \scriptsize #1}}}
+\newcommand{\comment}[1]{\relax}
+\begin{document}
+\fi
+
+\section{Chapter 8}
+\begin{enumerate}
+\item{\bf Particles in a Box}
+
+A reasonable model for the neutrons and protons in a nucleus is that
+they are confined to a small region.   Let's take a one-dimensional
+model of this.  The potential is $V(x)$ is zero everywhere for $0<x<l$
+and infinite otherwise.  This means that 
+\begin{equation}
+-\frac{\hbar^2}{2m} \frac{d^2 \psi}{d x^2} = E_n \psi ~\rmmat{if}~0<x<l
+\end{equation}
+and $\psi=0$ if $x<0$ or $x>l$.  
+What are the energy levels of this system?
+
+
+{\bf Answer:}
+The harmonic functions the sine and cosine have the property that the
+second derivative is proportional to the function itself.  We have
+$\psi=0$ at $x=0$ and at $x=l$ so 
+\begin{equation}
+\psi_n = N \sin \left ( \frac{\pi n x}{l} \right )
+\end{equation}
+where $n=1,2,3,\ldots$.  Let's calculate,
+\begin{equation}
+-\frac{\hbar^2}{2m} \frac{d^2 \psi}{dx^2} = \frac{\hbar^2}{2m}
+\frac{\pi^2 n^2}{l^2} N \sin \left ( \frac{\pi n x}{l} \right ) = \frac{\hbar^2}{2m}
+\frac{\pi^2}{l^2} n^2 \psi
+\end{equation}
+so
+\begin{equation}
+E_n = \frac{\hbar^2}{2m}
+\frac{\pi^2}{l^2} n^2
+\end{equation}
+
+\item{\bf Hyperfine Transition}
+
+Calculate the energy and wavelength of the hyperfine transition of the
+hyodrgen atom.  You may use the following formula for the energy of
+two magnets near to each other
+\begin{equation}
+E = -\frac{{\bf \mu}_1 \cdot {\bf \mu}_2}{r^3}
+\end{equation}
+We are looking for an order of magnitude estimate of the wavelength.
+I got 151~cm which is in the ballpark.
+
+{\bf Answer:}
+First let's write the values of the magnetic moments,
+\begin{equation}
+\mu_1 = \mu_p = g_p \frac{e}{2 M c} \frac{\hbar}{2}
+\end{equation}
+and 
+\begin{equation}
+\mu_2 = \mu_e = g_e \frac{e}{2 m c} \frac{\hbar}{2}
+\end{equation}
+The spins can be aligned or antialigned so the energy difference
+is $2 \mu_1 \mu_2 / r^3$ so we get
+\begin{equation}
+\Delta E \sim \frac{g_p g_e}{8} \frac{e^2}{m c^2} \frac{\hbar^2}{M r^3}
+\end{equation}
+Let's take $r=a_0=\hbar^2/(me^2)$ to get
+\begin{equation}
+\Delta E \sim \frac{g_p g_e}{8} \frac{e^2}{m c^2} \frac{m^3 e^6}{\hbar^4 M} = 
+\frac{g_p g_e}{8} \frac{\alpha \hbar c}{m c^2} \frac{m^3 \alpha^3
+  \hbar^3 c^3}{\hbar^4 M}
+ =  \frac{g_p g_e}{8} \alpha^4 \frac{m}{M} m c^2 = 10^{-6}~\rmmat{eV} 
+\end{equation}
+so $\lambda=123$~cm.
+
+{\bf A Better Answer:}
+
+First let's write the values of the magnetic moments,
+\begin{equation}
+\mu_1 = \mu_p = g_p \frac{e}{2 M c} \hbar {\bf s}_1
+\end{equation}
+and 
+\begin{equation}
+\mu_2 = \mu_e = g_e \frac{e}{2 m c} \hbar {\bf s}_2
+\end{equation}
+so we get
+\begin{equation}
+E = \frac{g_p g_e}{4} \frac{e^2}{m c^2} \frac{\hbar^2}{M r^3} {\bf
+  s}_1 \cdot {\bf s}_2
+\end{equation}
+Let's take $r=a_0=\hbar^2/(me^2)$ to get
+\begin{equation}
+E = \frac{g_p g_e}{4} \frac{e^2}{m c^2} \frac{m^3 e^6}{\hbar^4 M} = 
+\frac{g_p g_e}{4} \frac{\alpha \hbar c}{m c^2} \frac{m^3 \alpha^3
+  \hbar^3 c^3}{\hbar^4 M}
+ =  \frac{g_p g_e}{4} \alpha^4 \frac{m}{M} m c^2 \left ({\bf
+  s}_1 \cdot {\bf s}_2 \right ).
+\end{equation}
+Let's calculate ${\bf F} = {\bf s}_1 + {\bf s}_2$ and square it
+\begin{eqnarray}
+{\bf F} \cdot {\bf F} &=&
+\left ( {\bf s}_1 + {\bf s}_2 \right )^2 = 
+{\bf s}_1^2 + {\bf s}_2^2 + 2 {\bf s}_1 \cdot {\bf s}_2 \\
+F (F+1)  &=& S_1 (S_1 + 1)  + S_2 (S_2 + 1) + 2 {\bf s}_1 \cdot {\bf
+  s}_2 \\
+F(F+1) &=& \frac{3}{4} + \frac{3}{4} + 2 {\bf s}_1 \cdot {\bf
+  s}_2
+\end{eqnarray}
+so
+\begin{equation}
+{\bf s}_1 \cdot {\bf s}_2 = \frac{1}{2} F(F+1) - \frac{3}{4}
+= -\frac{3}{4}, \frac{1}{4}
+\end{equation}
+so
+\begin{equation}
+\Delta E_{F=0,F=1} = 
+  \frac{g_p g_e}{4} \alpha^4 \frac{m}{M} m c^2 = 2 \times 10^{-6} \rmmat{eV}
+\end{equation}
+and $\lambda = 60$~cm.
+
+\item{\bf Density and Ionization}
+
+Calculate the ionized fraction of pure hydrogen as a function of the
+density for a fixed temperature.  You may take $U(T)=g_0=2$ and 
+$U^+(T)=g_0^+=2$.
+
+{\bf Answer:}
+
+Let's take the Saha equation,
+\begin{equation}
+\frac{N^+ N_e}{N} = \left ( \frac{2\pi m_e kT}{h^2} \right)^{3/2}
+\frac{2 U^+(T)}{U(T)} e^{-E_I/kT}.
+\end{equation}
+Let $\xi$ be the ionized fraction,
+\begin{equation}
+\xi = \frac{N^+}{N+N^+} = \frac{N^+}{N_\rmscr{tot}}
+\end{equation}
+so using the values of $U(T)$ and $U^+(T)$ given in the problem
+\begin{equation}
+\frac{\xi^2 N_\rmscr{tot}^2}{(1-\xi) N_\rmscr{tot}} = 2 \left ( \frac{2\pi m_e kT}{h^2} \right)^{3/2} e^{-E_I/kT}.
+\end{equation}
+Rearranging
+\begin{equation}
+\frac{\xi^2}{1-\xi} = 2 \frac{2}{N_\rmscr{tot}} \left ( \frac{2\pi m_e
+    kT}{h^2} \right)^{3/2} e^{-E_I/kT} = 2 y
+\end{equation}
+so
+\begin{equation}
+\xi = \sqrt{y^2+2y} - y \approx \sqrt{2y} \propto N_\rmscr{tot}^{-1/2}
+\end{equation}
+\end{enumerate}
+\ifx\bookloaded\undefined
+\end{document}
+\end
+\fi

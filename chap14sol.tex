@@ -1,0 +1,126 @@
+\ifx\bookloaded\undefined
+\documentclass{article}
+\ifx\pdftexversion\undefined
+  \usepackage[dvips]{graphicx}
+\else
+  \usepackage[pdftex]{graphicx}
+\fi
+\newcommand{\be}{\begin{equation}}
+\newcommand{\ee}{\end{equation}}
+\newcommand{\rmmat}[1]{\hbox{\rm #1}}
+\newcommand{\rmscr}[1]{{\hbox{\rm \scriptsize #1}}}
+\newcommand{\comment}[1]{\relax}
+\newcommand{\dd}[2]{\frac{d {#1}}{d {#2}}}
+\newcommand{\pp}[2]{\frac{\partial {#1}}{\partial {#2}}}
+\begin{document}
+\fi
+
+\section{Chapter 14}
+\begin{enumerate}
+\item{\bf X-ray Bursts:}
+
+We will try to model Type-I X-ray bursts using a simple model for the instability. We will calculate how much material will accumulate on a neutron star before it bursts.
+\begin{enumerate}
+\item Let us assume that the star accretes pure helium, that the
+  temperature of the degenerate layer is constant down to the core
+  ($T_c$), how much luminosity emerges from the surface of the star? 
+
+\item Let us assume that the helium layer has a mass, $dM$, and that the enregy generation rate for helium burning is given by
+$$
+\epsilon_{3\alpha} = 3.5 \times 10^{20} T_9^{-3} \exp(-4.32/T_9) \mathrm{erg s}^{-1} \mathrm{g}^{-1}
+$$
+where $T_9=T/10^9 \mathrm{K}$. The energy generation rate is a
+function of density too, but let's forget about that to keep things
+simple. How much power does the helium layer generate as a function of
+$dM$?
+
+\item Equate your answer to (a) to the answer to (b) and solve for
+  $dM$. This is the thickness of a layer in thermal equilibrium.
+
+\item Let's assume that the potential burst starts by the temperature
+  in the accreted layer jiggling up by a wee bit. If the surface
+  luminosity increases faster with temperature than the helium burning
+  rate, then the layer is stable. Calculate $dL_\mathrm{surface}/dT$ and
+  $dP_\mathrm{helium}/dT$.
+
+\item Calculate the value of $dM$ for which $dP_\mathrm{helium}/dT$
+  exceeds $dL_\mathrm{surface}/dT$ and the layer bursts.
+
+\item Equate your value of $dM$ in (c) and (e) and solve for $T$. What
+  is $dM$? How long will it take for such a layer to accumulate if the
+  star is accreting at one-tenth of the Eddington accretion rate?
+
+\end{enumerate}
+{\bf Answer:}
+\begin{enumerate}
+\item If you assume free-free opacity you get using results from
+  Chapter 1
+$$
+L_{\gamma,ff} = 2.35 \times 10^{8} \textrm{erg/s} \left (
+  \frac{T}{1\textrm{K}}\right )^{7/2}
+$$
+or if you used the black-body formula you get
+$$
+L_{\gamma,BB} = 7 \times 10^{8} \textrm{erg/s} \left (
+  \frac{T}{1\textrm{K}}\right )^4
+$$
+\item
+$$
+P_\textrm{\scriptsize He} = \epsilon_{3\alpha} dM =
+3.5 \times 10^{20} T_9^{-3} \exp(-4.32/T_9) \mathrm{erg s}^{-1}
+\mathrm{g}^{-1} dM
+$$
+\item 
+$$
+dM_{ff} = 2.12 \times 10^{19} T_9^{13/2} \exp (4.32/T_9) \textrm{g}
+$$
+and 
+$$
+dM_{BB} = 2 \times 10^{24} T_9^{7} \exp (4.32/T_9) \textrm{g}
+$$
+\item
+$$
+\frac{dL_{\gamma,ff}}{dT} = 8.2 \times 10^8 \textrm{erg/s/K} \left (
+  \frac{T}{1\textrm{K}} \right)^{5/2}
+$$
+and
+$$
+\frac{dL_{\gamma,BB}}{dT} = 2.8 \times 10^9 \textrm{erg/s/K} \left (
+  \frac{T}{1\textrm{K}} \right)^3.
+$$
+For the helium burning we get
+$$
+\frac{dP_\textrm{\scriptsize He}}{dT} = 4.2 \times 10^{10}
+\textrm{erg/s/g/K} T_9^{-5} \exp (4.32/T_9) (36 - 25 T_9) dM.
+$$
+\item
+Let's solve for $dM$ again where the various derivatives are equal
+$$
+dM_{ff} = 6.19 \times 10^{20} T_9^{15/2} \exp(4.32/T_9) (36 - 25
+T_9)^{-1} \textrm{g}
+$$
+and
+$$
+dM_{ff} = 6.67 \times 10^{25} T_9^{8} \exp(4.32/T_9) (36 - 25
+T_9)^{-1} \textrm{g}.
+$$
+\item
+We find that $T_9 = 0.664$ for the free-free opacity and $T_9=0.617$
+for the BB-case (no insulation).  The layer thicknesses are
+$$
+dM_{ff} = 10^{21}~\textrm{g}
+$$
+and
+$$
+dM_{BB} = 7 \times 10^{25}~\textrm{g},
+$$
+yielding accretion times of 2.8 hours and 24 years, respectively.  The insulation of the envelope makes a big difference. Type-I bursts typically recur on a timescale of hours at one-tenth of the Eddington accretion rate.
+\end{enumerate}
+\end{enumerate}
+\ifx\bookloaded\undefined
+\end{document}
+\end
+\fi
+%%% Local Variables:
+%%% TeX-master: "book"
+%%% End:

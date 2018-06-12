@@ -1,0 +1,232 @@
+\ifx\bookloaded\undefined
+\documentclass{article}
+\ifx\pdftexversion\undefined
+  \usepackage[dvips]{graphicx}
+\else
+  \usepackage[pdftex]{graphicx}
+\fi
+\newcommand{\be}{\begin{equation}}
+\newcommand{\ee}{\end{equation}}
+\newcommand{\rmmat}[1]{\hbox{\rm #1}}
+\newcommand{\rmscr}[1]{{\hbox{\rm \scriptsize #1}}}
+\newcommand{\comment}[1]{\relax}
+\newcommand{\dd}[2]{\frac{d {#1}}{d {#2}}}
+\newcommand{\pp}[2]{\frac{\partial {#1}}{\partial {#2}}}
+\begin{document}
+\fi
+
+\section{Chapter 11}
+\begin{enumerate}
+ 
+\item{\bf Maximum Flux}
+
+Calculate from the Euler equation and the continuity equation, at what
+velocity does the flux ($\rho V$) reach its maximum for fluid flowing 
+through a tube of variable cross-sectional area?   
+At which velocities does the flux vanish?  You can consider the flow
+to be adiabatic.
+
+{\bf Answer:}
+
+From Euler's equation we have
+\begin{equation}
+({\bf v} \cdot \nabla ){\bf v}=-\frac{\nabla P}{\rho}
+\end{equation}
+so
+\begin{equation}
+v \dd{v}{x} = -\frac{1}{\rho} \dd{P}{x}
+\end{equation}
+and we have
+\begin{equation}
+\dd{P}{\rho} = c_s^2
+\end{equation}
+Combining these two gives
+\begin{equation}
+\dd{\rho}{v} = -\rho \frac{v}{c_s^2}
+\end{equation}
+We have
+\begin{equation}
+\dd{(\rho v)}{v} = \rho + v \dd{\rho}{v} = \rho \left ( 1  -
+\frac{v^2}{c_s^2} \right )
+\end{equation}
+This function reaches an extremum at $v=c_s$.  Because the flux is
+zero for $v=0$ and increases with $v$ for $v \ll c_s$, this must be a
+maximum for $jv$.
+
+If we assume that the sound speed is constant (isothermal gas), 
+this integrates to give
+\begin{equation}
+\rho v = \rho_0 v e^{-v^2/(2c_s^2)}
+\end{equation}
+where $\rho_0$ is the density at zero velocity.  This has a maximum of
+$\rho_0 c e^{-1/2}$ at
+$v=c_s$.  We can let the gas expand and accelerate to arbitrarily high
+velocities.   In a more realistic situation, the sound speed is a
+function of density
+\begin{equation}
+c_s^2 = c_{s,0}^2 \left ( \frac{\rho}{\rho_0} \right )^{\gamma-1},
+\end{equation}
+and we have 
+\begin{equation}
+\dd{j}{v} = \rho \left [ 1  -
+\frac{v^2}{c_{s,0}^2} \left ( \frac{\rho}{\rho_0} \right )^{1-\gamma} \right ]
+ = \frac{j}{v} \left [ 1  -
+\frac{v^2}{c_{s,0}^2} (\rho_0 v)^{\gamma-1} j^{1-\gamma} \right ]
+\end{equation}
+with $j=\rho v$.  This differential equation has the following
+solution
+\begin{equation}
+j(v) = \rho_0 v \left [ 1 + \left ( 1 - \gamma \right )
+  \frac{v^2}{2 c_{s,0}^2} \right ]^{1/(\gamma-1)}
+\end{equation}
+If we take $\gamma\rightarrow 1$ we get the solution above for the
+isothermal case.  The flux reaches a maximum of
+\begin{equation}
+j_\mathrm{max} = \rho_0 c_{s,0} \left ( \frac{2^\gamma}{\gamma+1}
+\right )^{1/(\gamma-1)} \frac{1}{\sqrt{2\gamma+2}}
+\end{equation}
+at a velocity of
+\begin{equation}
+  v = \sqrt{\frac{2}{\gamma+1}} c_{s,0}.
+\end{equation}
+Unlike the isothermal case, the flux vanishes at
+$v=0$ and $v=c_{s,0}\sqrt{2/(\gamma-1)}$.  How can we understand this
+second velocity when the flux vanishes?   Along a streamline of the
+gas we have
+\begin{equation}
+\frac{v^2}{2} + w = w_0 = \frac{P + \epsilon}{\rho} = \frac{P +
+  (\gamma-1)^{-1} P}{\rho} = \frac{\gamma}{\gamma-1} \gamma^{-1} c_{s,0}^2
+\end{equation}
+The maximum velocity that the gas can attain is
+\begin{equation}
+v = \sqrt{2 w_0} = \sqrt{2 c_{s,0}^2/(\gamma-1)} = c_{s,0} \sqrt{2/(\gamma-1)}
+\end{equation}
+% Since we have a solution for $j(v)$, it would be nice to find the
+% velocity at which the momentum flux is maximized for a given mass
+% flux.   The momentum flux is
+% \begin{equation}
+% f(v) = P + \rho v^2 = P + j(v) v = \frac{c_s^2 \rho}{\gamma} + j(v) v
+% = \frac{c_s^2 j(v)}{v \gamma} + j(v) v
+% \end{equation}
+% Let's take
+% \begin{equation}
+% \left . \dd{f}{v}\right|_{j(v)} = j(v) \left [ \frac{1}{\gamma} \left
+%     ( \left(\gamma-1\right ) \frac{c_s^2}{\rho v} \left (-\rho
+%       \frac{v}{c_s^2}\right ) - \frac{c_s^2}{v^2} \right ) + 1 \right ]
+% \end{equation}
+% \begin{equation}
+% \left . \dd{f}{v}\right|_{j(v)} = j(v) \left [ 1 - \frac{\gamma-1 +
+%     \frac{c_s^2}{v^2}}{\gamma} \right ]
+% \end{equation}
+% so
+% \begin{equation}
+% v = c_s.
+% \end{equation}
+
+% The maximum momentum flux as a function of velocity (not for fixed mass
+% flux) occurs at a different velocity.  We have
+% \begin{equation}
+% f(v) = \frac{c_s^2 \rho}{\gamma} - \rho v^2
+% \end{equation}
+% so
+% \begin{equation}
+% \dd{f}{v} = \left ( \frac{\gamma-1}{\gamma} c_s^2 + \frac{1}{\gamma}
+%   c_s^2 \right - v^2) \left ( -\rho \frac{v}{c_s^2} \right )  - 2 v \rho= \rho v \left
+%   (3-\frac{v^2}{c_s^2}\right )
+% \end{equation}
+% and the maximum occurs at $v=\sqrt{3} c_s$.
+
+\item{\bf Stream Bed}
+
+  Fig.~\ref{fig:channel} shows how the level of the surface changes
+  for a flow passing over an obstacle.  For an initial depth of
+  $z_0=1$ and $g=10$ and a bump height of $y(x)=0.1 e^{-x^2}$, find the
+  solutions to Bernoulli's equation (Eq.~\ref{eq:bern}) for $z$ as a
+  function of $x$ and the initial velocity $v_0$.  You may find
+  several solutions for a given $x$.   Also you should only worry
+  about the positive real solutions for $z$.  What are the values of
+  the critical velocities $v_0$?
+
+{\bf Answer:}
+
+The solution follows from Eq.~\ref{eq:675} by plugging in the values
+of $y(x)$, $z_0=1$, $g=10$ and $v_0$ which you are going to vary to look
+at the different solutions.  This yields
+\begin{equation}
+A = \frac{v_0^2}{2}, B=\frac{v_0^2}{2} + 10 \left [ 1 - 0.1 e^{-x^2}
+  \right ], C = 10.
+\end{equation}
+Next we use Eq.~\ref{eq:cubic_sol} to find the value of $\cos 3 t$.
+This equation will yield several values of $3t$ because the cosine
+function is symmetric and periodic.  They are
+\begin{equation}
+3 t = 3 t_1, 3 \left (-t_1 \right ), 
+3 \left ( t_1 + \frac{2}{3} \pi \right ), 
+3 \left ( \frac{2}{3} \pi - t_1 \right ),
+3 \left ( t_1 + \frac{4}{3} \pi \right ), 
+3 \left ( \frac{4}{3} \pi - t_1 \right ).
+\end{equation}
+Because we are interested in the value of $\cos t$, the first two
+results yield the same value.  Let's draw a picture with the various
+possibilities numbered:
+
+\newcommand{\circlepic}[2]{
+\begin{tikzpicture}
+\draw (0,0) circle (#2) 
+      (0,0) -- ++(#1:#2) node {1} 
+      (0,0) -- ++(-#1:#2) node {2}
+      (0,0) -- ++(120+#1:#2) node {3}
+      (0,0) -- ++(120-#1:#2)  node {4}
+      (0,0) -- ++(240+#1:#2) node {5}
+      (0,0) -- ++(240-#1:#2) node {6} ; 
+\end{tikzpicture}
+}
+\circlepic{25}{1.5} \circlepic{35}{1.5} \circlepic{60}{1.5}
+
+Because we are only interested in the $x-$coordinate (the cosine of
+the angle), we see that solutions 1 and 2, 3 and 6 and 4 and 5 are
+equivalent, so we only need to keep the solutions with $t$ between
+zero and $\pi$.  In the left diagram we used $t=25^\circ$ so we only have
+a single value with $\cos t$ greater than zero. We can discard
+negative values of $\cos t$ because that would yield that the surface
+of the water lies underneath the surface of the bottom.
+
+For $t_1>30^\circ$ there are two positive solutions.  The centre
+diagram has $t_1=35^\circ$. These solutions coincide for
+$t_1=60^\circ$ (right diagram).  Where this condition holds the flow
+is travelling at the critical velocity.  The value of $v_0$ that
+causes the flow to travel at the critical velocity over the peak of
+the bump is the critical value of $v_0$.   In general, we only have to
+be concerned with solutions (1) and (4), the rest are repeats or
+negative.
+
+\item{\bf Sound Velocity}
+
+  Show that for a linear sound wave {\em i.e.} one in which $\delta
+  \rho \ll \rho$ that the velocity $v$ of fluid motion is much less
+  than $c_s$. Estimate the maximum longitudinal fluid velocity in the
+  case of a sound wave in air at STP in the case of a disturbance
+  which sets up pressure fluctuations of order 0.1\%.
+
+{\bf Answer:}
+
+Starting with Eq.~\ref{eq:660} we can relate the velocity of the fluid
+in the wave to the pressure disturbance,
+\begin{equation}
+{\bf v}' = \frac{p'}{\rho_0} \frac{{\bf k} }{\omega}, v' =
+\frac{p'}{\rho_0} \frac{1}{c_s} = c_s \frac{\rho'}{\rho_0} =
+\frac{p'}{p_0} \frac{c_s}{\gamma}
+\end{equation}
+where $p' = c_s^2 \rho'$ because $c_s^2=\partial p/\partial \rho$.
+Furthermore, the adiabatic exponent is given by $\gamma=\partial \ln
+p/\partial \ln \rho=(\rho/p) c_s^2$.
+
+\end{enumerate}
+
+\ifx\bookloaded\undefined
+\end{document}
+\end
+\fi
+%%% Local Variables:
+%%% TeX-master: "book"
+%%% End:

@@ -1,0 +1,60 @@
+\ifx\bookloaded\undefined
+\documentclass{article}
+\usepackage{graphicx}
+\newcommand{\be}{\begin{equation}}
+\newcommand{\ee}{\end{equation}}
+\newcommand{\rmmat}[1]{\hbox{\rm #1}}
+\newcommand{\rmscr}[1]{{\hbox{\rm \scriptsize #1}}}
+\newcommand{\comment}[1]{\relax}
+\begin{document}
+\fi
+\section{Chapter 5}
+\begin{enumerate}
+\item{\bf Bremsstrahlung:}
+
+Consider a sphere of ionized hydrogen plamsa that is undergoing
+spherical gravitational collapse.  The sphere is held at uniform
+temperature, $T_0$, uniform density and constant mass $M_0$ during the
+collapse and has decreasing radius $R_0$.  The sphere cools by
+emission of bremsstrahlung radiation in its interior.  At $t=t_0$ the
+sphere is optically thin.
+\begin{enumerate}
+\item What is the total luminosity of the sphere as a function of
+  $M_0, R(t)$ and $T_0$ while the sphere is optically thin?
+\item
+What is the luminosity of the sphere as a function of time after it
+becomes optically thick in terms of $M_0, R(t)$ and $T_0$?
+\item
+Give an implicit relation in terms of $R(t)$ for the time $t_1$ when
+the sphere becomes optically thick.
+\item
+Draw a curve of the luminosity as a function of time.
+\end{enumerate}
+
+{\bf Answer:}
+
+\begin{enumerate}
+\item 
+$L = \epsilon^{ff} \frac{4}{3} \pi R^3 = \frac{2^5 \pi
+  e^6}{3 h m c^3} \left ( \frac{2\pi k T}{3m} \right )^{1/2}
+  \left (\frac{M}{m_p \frac{4}{3} \pi R^3} \right)^2 {\bar g}_{B} \frac{4}{3} \pi R^3
+$, so $L \propto R^{-3}$.
+\item
+$L=\sigma_{SB} T^4 4 \pi R^2$
+\item
+$
+\sigma_{SB} T^4 4 \pi R^2 = \frac{2^5 \pi
+  e^6}{3 h m c^3} \left ( \frac{2\pi k T}{3m} \right )^{1/2}
+  \left (\frac{M}{m_p}\right)^2  \frac{3}{4 \pi R^3} {\bar g}_{B}
+$
+\item
+Draw your graph with luminosity increasing with time as $R(t)^{-3}$
+and then decreasing after a certain time as $R(t)^2$.
+\end{enumerate}
+\end{enumerate}
+\ifx\bookloaded\undefined
+\end{document}
+\fi
+%%% Local Variables:
+%%% TeX-master: "book"
+%%% End:

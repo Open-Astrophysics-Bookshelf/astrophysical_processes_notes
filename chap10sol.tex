@@ -1,0 +1,160 @@
+
+\section{Chapter 10} 
+\begin{enumerate}
+\item{\bf The Number of Levels}
+
+I fit a Morse function to the potential of  H$_2^+$.  The parameters
+were
+\begin{equation}
+E_{n,0} = -0.065 \frac{e^2}{a_0}, B_n = 0.07 \frac{e^2}{a_0}, \beta_n
+= 0.7 a_0^{-1}, R_0 = 2.5 a_0
+\end{equation}
+How many vibrational levels does H$_2^+$ have?   How many rotational
+levels does each vibrational level typically have?
+
+{\bf Answer:}
+
+Let's first to the rotational levels.  When we increase the value
+of the angular momentum from $L$ to $L+1$ and the energy of the
+molecule decreases, we have reached the maximum value of $L$.  From
+Eq.~(14) we have
+\begin{equation}
+4 \hbar^2 \frac{(L+1)^2}{k \mu_{AB} R_0^4} = 1
+\end{equation}
+so
+\begin{equation}
+L_\rmscr{max} = \left ( \frac{k \mu_{AB} R_0^4}{4 \hbar^2} \right )^{1/2} - 1
+\end{equation}
+We need to determine $k$.  This is related to the parameters that I
+gave in the question, we know that $\omega^2 = k/\mu_{AB}$ and in the Morse
+potential $\omega^2 = 2 \beta_n^2 B_n$ so
+\begin{equation}
+k = 2\beta_n^2 B_n 
+\end{equation}
+and
+\begin{equation}
+L_\rmscr{max} = \left ( \frac{2 \beta_n^2 B_n  \mu_{AB} R_0^4}{4 \hbar^2} \right )^{1/2} - 1
+\end{equation}
+I'm going to substitute the units for the various quantities into the
+expression above
+\begin{equation}
+L_\rmscr{max} = \left ( \frac{\beta_n B_n e^2 m_p a_0 R_0^4}{4
+  \hbar^2} \right )^{1/2} - 1 = \left ( \frac{\beta_n B_n m_p R_0^4}{4 m_e} \right )^{1/2} - 1 
+\end{equation}
+where I used $\mu_{AB}=m_p/2$ and $e^2 a_0=\hbar^2/m_e$.  The
+expression in the parenthesis is dimensionless!  I get
+\begin{equation}
+L_\rmscr{max} = 23.79.
+\end{equation}
+Because $L$ ranges from zero to $L_\rmscr{max}$, I have 24 or 25
+levels.
+
+A formula for the number of vibrational levels is given explicitly in
+Eq. (19).  The number of levels is
+\begin{equation}
+\frac{(2 \mu_{AB} B_n)^{1/2}}{\beta_n \hbar} + \frac{1}{2} = 
+\frac{B_n^{1/2}}{\beta_n} \left ( m_p \frac{e^2}{a_0} a_0^2 \hbar^{-2}
+\right )^{1/2}  + \frac{1}{2} = 
+\frac{B_n^{1/2}}{\beta_n} \left ( \frac{m_p}{m_e} \right )^{1/2}  +
+\frac{1}{2} = 16.7
+\end{equation}
+
+\item{\bf Nuclear Overlap}
+
+Consider two deuterons bound by a single electron as in question (1).
+What is the probability that the two deuterons lie on top of each
+other, {\ie} that $R<4$~fermi, the diameter of the deuteron?   What is the
+probability if the two deuterons are bound by a single muon, $m_\mu
+\approx 207 m_e$?  You can find the eigenfunctions of the Morse
+potential on Wikipedia.
+
+If you assume that whenever the deuterons overlap they fuse and that
+you get to ``roll the dice'' once each oscillation period, calculate
+the fusion rate in both cases.
+
+{\bf Answer:}
+\index{muon-catalysed fusion}
+
+The probability of overlap is simply the squared modulus of the
+nuclear wavefunction evaluated at $r=0$ integrated over the volume
+$4/3 \pi (4~\mathrm{fermi})^3$.  The nuclear wavefunction is given by
+\begin{equation}
+\Psi_n(z) = N_n z^{\lambda - n - \frac{1}{2}} e^{-z/2} L_n^{2\lambda-2n-1}(z)
+\end{equation}
+where $\lambda=\sqrt{2 M B_n}/(\beta_n \hbar)$ and the normalization
+\begin{equation}
+N_n=n! \left [ \frac{\beta_n (2\lambda - 2 n - 1)}{\Gamma(n+1)
+    \Gamma(2\lambda - n)} \right]^{1/2} 
+\end{equation}
+and $L^{\alpha}_n$ is a Laguerre polynomial and $z=2\lambda
+e^{-(x-x_e)}$ and $x=\beta_n r$.   This wavefunction is in terms of
+$r$ as a one-dimensional coordinate; it is analogous to the function
+$R(r)$ in the expansion of the atomic wavefunction in spherical
+symmetry.   The complete wavefunction is
+\begin{equation}
+\psi(r,\theta,\phi) = \frac{1}{\sqrt{4\pi}} r^{-1} \Psi_0(z) ,
+\end{equation}
+so the probability of the two nuclei being within 4~fermi of each
+other is given by
+\begin{equation}
+P = \int_0^{4~\mathrm{fermi}}  d r \left | \Psi \left (2 \lambda \exp
+  \left [ \beta_n R_0 \right ] \right ) \right |^2 = \frac{4~\mathrm{fermi}}{a_0} \left | \Psi\left(2 \lambda \exp
+  \left [ \beta_n R_0 \right ]\right) \right |^2
+\end{equation}
+
+Since we are interested in the ground state, $n=0$ so
+\begin{equation}
+L_n^{2\lambda-2n-1} = 1 ~\mathrm{and}~ N_n = \left [ \frac{\beta_n ( 2
+    \lambda -1)}{\Gamma(2\lambda)} \right ]^{1/2} 
+\end{equation}
+which simplifies matters.  What remains is to calculate determine how
+the value of $\lambda$ depends on the mass of the binding particle
+muon or electron.  We have
+\begin{equation}
+\lambda = \frac{\sqrt{2 M A e^2/a_0}}{B a_0^{-1} \hbar} =
+\frac{\sqrt{2 A}}{B} \sqrt{\frac{M}{m}}
+\end{equation}
+where $M$ is the reduced mass of the pair of deuterons and $m$ is the
+mass of the muon or electron.  The constants $A$ and $B$ are simply
+the numerical constants $0.07$ and $0.7$ that define the parameters of
+the Morse potential in dimensionless units.  For the electronically bound
+system $\lambda=22.9$ and for the muonically bound system
+$\lambda=1.59$.
+
+What remains is to evaluate the wavefunctions in both cases, for the
+electron we have
+\begin{equation}
+\Psi(R=0) = 7.5 \times 10^{-30}
+\end{equation}
+and for the muon we have
+\begin{equation}
+\Psi(R=0) = 2.0 \times 10^{-3}.
+\end{equation}
+Converting these to probabilities yields 
+\begin{equation}
+P_\mathrm{electron} = 5 \times 10^{-63}, P_\mathrm{muon} = 6 \times 10^{-8}.
+\end{equation}
+To get a fusion rate we should multiply these by the typical frequency
+of the systems say $\omega=2\beta_n^2 B_n/M=2 A B^2 e^2/(a_0^3 m_D/2)$
+or $1.2 \times 10^{16}$~Hz for the electron and $3.6 \times
+10^{19}$~Hz for the muon.  Therefore, we get a rate of three deuterium
+fusions over the age of the universe in one ton of deuterium for
+electronically bound molecules or $2 \times 10^{12}$~Hz for the
+muonically bound molecule or about 4 million times over the 2.2$\mu$s
+lifetime of the muon.  
+
+It turns out that the rate-limiting step in muonic fusion is the
+formation of muonic molecules which takes about one thousand times
+longer than the fusion, but even this is not the killer.  It is the
+fact that about one percent of the time the muon stays stuck to the
+fusion product so cannot catalyse another reaction.  The first person
+to consider muon-catalysed fusion was John David Jackson, and Eugene
+Wigner suggested that ``alpha sticking'' could be a problem.  This
+process was the original ``cold fusion,'' and it almost breaks even
+(within a factor of a few).
+\index{cold fusion}
+\end{enumerate}
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "book"

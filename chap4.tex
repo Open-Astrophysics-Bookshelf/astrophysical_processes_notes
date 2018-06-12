@@ -1,0 +1,923 @@
+\chapter{Special Relativity}
+\label{cha:special-relativity}
+\index{special relativity}
+\section{Back to Maxwell's Equations}
+\label{sec:back-maxw-equat}
+Earlier we looked at Maxwell's equations in a vacuum,
+\begin{eqnarray}
+{\bf \nabla} \cdot {\bf E} = 0 & {\bf \nabla} \cdot {\bf B} =
+0 \nonumber \\
+{\bf \nabla} \times {\bf E} = -\frac{1}{c} \frac{\partial {\bf
+    B}}{\partial t} &
+{\bf \nabla} \times {\bf H} = +\frac{1}{c} 
+\frac{\partial {\bf D}}{\partial t} 
+\label{eq:265}
+\end{eqnarray}
+and found that they have wave solutions,
+\begin{equation}
+ {\bf   \nabla}^2 {\bf E}
+-\frac{1}{c^2} \frac{\partial^2 {\bf E}}{\partial t^2} = 0
+\label{eq:266}
+\end{equation}
+and a similar equation for the magnetic field.  The waves travel at a
+velocity $c$, which turns out to be the speed of light.  The speed of
+light had been known approximately since the 1600's (does anyone know
+how?). 
+
+Maxwell's and his contemporaries spoke of light travelling through
+some medium known as the aether.  Michelson and Morley attempted to
+measure the motion of the Earth through the aether, but failed.
+
+Looking at the Michelson-Morley experiment closely shows what is
+happening.  Lorentz proposed that to understand the null result of the
+experiment objects moving through the aether contract by
+$\gamma^{-1}=\sqrt{1-v^2/c^2}$ where $\gamma$ is the Lorentz factor.
+
+Einstein's insight was that if the speed of light was the same for
+everyone moving uniformly, one would get the apparent ``Lorentz''
+contraction without needing the aether through which light propagates
+or for the aether to contract objects.  The aether was originally
+proposed by Aristotle and experiments agreed with it for about 2,200
+years, so throwing it away was a big deal.
+
+\section{Lorentz Transformations} 
+\label{sec:lorentz-transf}
+\index{special relativity!Lorentz transformations}
+
+Let's imagine two people moving at a velocity $v$ relative to each
+other in the $x$-direction.   Let's also assume that their coordinate
+systems coincide at $t=0$, and that one emits a light pulse at
+$t=t'=0$ from $x=x'=0$.  After a time has elapsed the light has
+reached positions that satisfy,
+\begin{equation}
+x^2+y^2+z^2 - c^2 t^2 = 0 ~\rmmat{and}~
+x'^2+y'^2+z'^2 - c^2 t'^2 = 0.
+\label{eq:267}
+\end{equation}
+We can satisfy these equations if
+\begin{eqnarray}
+x' &=& \gamma (x-vt) \\
+y' &=& y \\
+z' &=& z \\
+t' &=& \gamma \left ( t - \frac{v}{c^2} x \right )
+\label{eq:268}
+\end{eqnarray}
+and the following inverse relations
+\begin{equation}
+x = \gamma ( x' + v t'), t=\gamma \left (t'+\frac{v}{c^2} x' \right
+)~\rmmat{and the other two equations.}
+\label{eq:269}
+\end{equation}
+
+\subsection{Length Contraction}
+\label{sec:length-contraction}
+\index{special relativity!length contraction}
+
+Let's look at the results with the aether again.   If we have a rod of
+length $L_0$ in the primed frame what it is length in the unprimed
+frame.
+\begin{equation}
+L_0 = x_2' - x_1' = \gamma ( x_2 - x_1 ) = \gamma L.
+\label{eq:270}
+\end{equation}
+We have define the length to be the extent of an object measured at a
+particular time.  Notices that someone in the primed frame would claim
+that the person measured the position of one end of the stick at a
+different time from the other.
+
+\subsection{Adding velocities}
+\label{sec:adding-velocities}
+\index{special relativity!adding velocities}
+
+Let's do a final example.  Someone in the primed frame throws a ball
+in the $x'$-direction with velocity $u_x'$ from $x'=0$ at $t'=0$, what
+velocity will someone measure in the unprimed frame.  After a time
+$t'$ the ball will be at $x'=u_x' t'$.  Let's use the inverse
+transformation to calculate its coordinates in the unprimed frame,
+\begin{equation}
+x = \gamma ( u_x' t' + v t' ), t = \gamma \left ( t' + \frac{v}{c^2} u_x'
+t' \right ).
+\label{eq:271}
+\end{equation}
+The velocity $u_x$ in the unprimed frame is
+\begin{equation}
+u_x = \frac{x}{t} = 
+\frac{\gamma ( u_x' t' + v t' )}{\gamma \left ( t' + \frac{v}{c^2} t'
+  u_x'\right )} = \frac{ u' + v }{1 + v u_x'/c^2}
+\label{eq:272}
+\end{equation}
+If the particle had velocity components in the $y'$ or $z'$ directions
+the corresponding components in the unprimed frame are
+\begin{equation}
+u_y = \frac{y}{t} = 
+\frac{\gamma ( u_y' t' )}{\gamma \left ( t' + \frac{v}{c^2} t'
+  u_x'\right )} = \frac{ u_y' }{\gamma ( 1 + v u_x'/c^2 )}
+\label{eq:273}
+\end{equation}
+and similarly for the $z$-direction.
+
+The apparent direction of the particle is different in the two frames,
+\begin{equation}
+\tan \theta = \frac{u_y}{u_x} = \frac{u_y'}{\gamma ( u_x' + v )} =
+\frac{u' \sin\theta'}{\gamma ( u' \cos\theta' + v )}.
+\label{eq:274}
+\end{equation}
+This is the aberration equation.  
+Let's for an example take $u'=c$ and $\theta'=\pi/2$.   We could
+imagine that this is the emission from a dipole moving at a velocity
+$v$.  We get
+\begin{equation}
+\tan \theta = \frac{c}{\gamma v}~\rmmat{or}~\sin\theta = \frac{1}{\gamma}
+\label{eq:275}
+\end{equation}
+
+\subsection{Doppler Effect}
+\label{sec:doppler-effect}
+\index{special relativity!Doppler effect}
+\index{Doppler effect}
+We have a radio transmitter in the primed frame radiating at a
+frequency $\omega'$.  According to the time dilation, in the unprimed
+frame it oscillates more slowly at a time inverval 
+$\Delta t=2\pi \gamma/\omega$.. The
+time between the arrival for two crests of the wave in the unprimed
+frame is  given by,
+\begin{equation}
+\Delta t_A = \Delta t - \frac{d}{c} = \Delta t \left (  1 -
+\frac{v}{c} \cos\theta \right ).
+\label{eq:276}
+\end{equation}
+so
+\begin{equation}
+\omega = \frac{2 \pi}{\Delta t_A} = \frac{\omega'}{\gamma \left (  1 -
+\frac{v}{c} \cos\theta \right )}
+\label{eq:277}
+\end{equation}
+
+\section{Four-Vectors}
+\label{sec:four-vectors}
+\index{special relativity!four-vectors}
+\index{four-vectors}
+
+We have found many strange properties of special relativity in a
+rather {\em ad hoc} manner.  All of these properties resulted from the
+fact that
+\begin{equation}
+s^2 = -c^2 \tau^2 = -c^2 t^2 + x^2 + y^2 + z^2
+\label{eq:278}
+\end{equation}
+is the same for all observers travelling uniformly relative to each
+other.   In three dimensions we can think about vectors whose length
+$x^2+y^2+z^2$ is invariant with respect to rotations.  Once we
+establish that a certain quantity is a vector we can use the
+transformation properties of the vectors under rotation to determine
+what its value is in any other frame.
+
+Similarly in relativity, it is convenient to define something called a
+four-vector whose components transform between rotated frames and
+frames moving at different velocities such that the equation above
+holds.  A four vector is simply
+\begin{equation}
+x^\mu = \left [ \begin{array}{c} ct \\ x\\ y\\ z \end{array} \right ]
+\label{eq:279}
+\end{equation}
+and 
+\begin{equation}
+s^2 = \sum_{\mu=0}^3 \sum_{\nu=0}^3 \eta_{\mu\nu} x^\mu x^\nu \equiv
+\eta_{\mu\nu} x^\mu x^\nu \equiv  x^\mu x_\mu 
+\label{eq:280}
+\end{equation}
+where
+\begin{equation}
+\eta_{\mu\nu} = \eta^{\mu\nu} = \left [ 
+\begin{array}{rrrr}
+-1 & 0 & 0 & 0 \\
+ 0 & 1 & 0 & 0 \\
+ 0 & 0 & 1 & 0 \\
+ 0 & 0 & 0 & 1 
+\end{array}
+\right ]
+~\rmmat{and}~
+x_\mu = \left [ -ct~x~y~z \right ].
+\label{eq:281}
+\end{equation}
+This tensor $\eta_{\mu\nu}$ defines the metric for flat spacetime.  It
+is called the metric because you need it to convert various four
+vectors (and other objects tensors) into scalars that we can measure.
+We have selected the particular convention that time-time component is
+negative (like in Misner, Thorne and Wheeler).  Jackson use the
+opposite convention.  If the index is upstairs the vector is
+contravariant and if it is downstairs it is convariant.
+
+Now we can write the transformation between two frames very concisely
+\begin{equation}
+x'^\mu = \Lambda^\mu_{~\nu} x^\nu
+\label{eq:282}
+\end{equation}
+where
+\begin{equation}
+\Lambda^\mu_{~\nu} = \left [ 
+\begin{array}{rrrr}
+\gamma      & -\beta \gamma  & 0 & 0 \\
+-\beta\gamma &         \gamma & 0 & 0 \\
+          0 &             0  & 1 & 0 \\
+          0 &             0  & 0 & 1 
+\end{array}
+\right ]
+\label{eq:283}
+\end{equation}
+This matrix looks remarkably similar to a rotation matrix.  For
+example,
+\begin{equation}
+A = \left [ 
+\begin{array}{rrrr}
+\cos \theta & -\sin\theta   & 0 & 0 \\
+\sin\theta &  \cos\theta & 0 & 0 \\
+          0 &             0  & 1 & 0 \\
+          0 &             0  & 0 & 1 
+\end{array}\right ] 
+\label{eq:284}
+\end{equation}
+This is no coincidence.  A boost (shift between frames with two
+different velocities) is like a rotation in spacetime.  However,
+we have in the rotation case we have
+\begin{equation}
+\cos^2\theta + \sin^2\theta = 1
+\label{eq:285}
+\end{equation}
+while in the boost case we have
+\begin{equation}
+\gamma^2 - (\beta\gamma)^2 = \gamma^2 ( 1 - \beta^2 ) = 1.
+\label{eq:286}
+\end{equation}
+Sometimes people define the rapidity $\zeta$ such that $\gamma = \cosh
+\zeta$.  The nice thing about the rapidity is that like the angle
+$\theta$ it is additive for successive boosts.
+
+What about the transformation of the covariant vector?
+\begin{equation}
+s^2 = x^\mu x_\mu = x'^\alpha x'_\alpha = \Lambda^\alpha_\mu 
+{\tilde \Lambda}_\alpha^\nu  x^\mu x_\nu
+\label{eq:287}
+\end{equation}
+which tells us that
+\begin{equation}
+\Lambda^\alpha_\mu 
+{\tilde \Lambda}_\alpha^\nu  = \delta^\nu_\mu
+\label{eq:288}
+\end{equation}
+so the covariant vector transforms using the inverse matrix.
+
+Let's try to find some physically meaningful four-vectors.    We know
+that a displacement is a four-vector.  Let's try to find a four-vector
+related to the velocity of a particle.
+\begin{equation}
+U^\mu = \frac{d x^\mu}{d t^?}
+\label{eq:289}
+\end{equation}
+The numerator is a displacement that transforms as a four-vector.  For
+the left-hand side also to be a four-vector the denominator must be
+the same in all frames (a Lorentz scalar).  The only one is $d\tau$
+which we defined earlier.  This is the time measured by someone moving
+with the particle.  We have
+\begin{equation}
+U^\mu = \gamma_u \left [ \begin{array}{c} c \\ u_x \\ u_y \\ u_z \end{array} 
+    \right ] = \gamma_u \left [ \begin{array}{c} c \\ {\bf u}
+  \end{array} \right ]
+\label{eq:290}
+\end{equation}
+What this means is that for each second measured by someone moving
+with the particle, $\gamma$ times one second elapses for us and the
+particle travels $\gamma {\bf u}$ times one second.
+
+What is the magnitude of $U^\mu$?   
+\begin{equation}
+U^\mu U_\mu = -\left (\gamma_u c\right)^2 - \left ( \gamma_u {\bf u}
+\right )^2 = -c^2 \gamma_u^2 \left ( 1 - \beta^2 \right ) = -c^2 
+\label{eq:291}
+\end{equation}
+If a particle is at rest its four-velocity is given by
+$U^0=c$ and $U^i=0$.  
+
+In non-relativistic mechanics, we define the momentum to be the mass
+times the velocity, similarly we can define the four-momentum to 
+$p^\mu = m U^\mu$.  Let's look at the properties of this vector in
+more detail.  Its components are
+\begin{equation}
+p^\mu = \gamma_u m \left [ \begin{array}{c} c \\ u_x \\ u_y \\ u_z \end{array} 
+    \right ] = \left [ \begin{array}{c} \gamma_u m c \\ {\bf p}
+  \end{array} \right ]
+\label{eq:292}
+\end{equation}
+Let's expand the first component to see what it is
+\begin{eqnarray}
+p_t &=& \gamma_u m c = \left (1 - \frac{v^2}{c^2} \right )^{-1/2} m c \approx
+ m c + \frac{1}{2} m \frac{v^2}{c} \\
+    &=& \frac{m c^2 + \rmmat{KE}}{c} = \frac{E}{c} \\
+\label{eq:293}
+\end{eqnarray}
+If we calculate $p^\mu p_\mu$ we find the relativistic relationship
+between energy and momentum 
+\begin{eqnarray} 
+p^\mu p_\mu &=& -(m c)^2 =  {\bf p}\cdot {\bf p} - \frac{E^2}{c^2} \\
+E &=& \sqrt{c^2 p^2 + m^2 c^4}
+\label{eq:294}
+\end{eqnarray}
+
+Another important four-vector shows up in the equation for the
+propagation of an electromagnetic wave.  The electric and magnetic
+fields of the wave are proportional to $\cos ({\bf k}\cdot {\bf x} -
+\omega t)$.  If both fields vanish at a point and time in spacetime,
+all observers should agree on this regardless of their motion so 
+\begin{equation}
+{\bf k}\cdot {\bf x} - \omega t = k_\mu x^\mu 
+\label{eq:295}
+\end{equation}
+is a scalar. Because $x^\mu$ is a four-vector, 
+\begin{equation}
+k^\mu = \left [ \begin{array}{c}
+\omega/c \\ {\bf k} \end{array} \right ]
+\label{eq:296}
+\end{equation}
+must be one as well.
+This leads to a quick way to derive the redshift formula.  The person
+observing a wave finds 
+\begin{equation}
+-\omega' = k^\mu U'_\mu = -\gamma \left (
+\omega - {\bf k}\cdot {\bf u} \right ) = -\gamma \omega \left ( 1 -
+\frac{v}{c}\cos\theta\right ) 
+\label{eq:297}
+\end{equation}
+
+\section{Tensors}
+\label{sec:tensors}
+\index{special relativity!tensors}
+\index{tensors}
+
+We have essentially stumbled upon a few nice four-vectors, but there
+is a more systematic way of dealing with four-vectors, scalars and
+other quantities like the transformation matrix $\Lambda^\mu_{~\nu}$.
+All of these objects are examples of tensors.
+
+We can work out how tensors transform by looking at a few examples.  
+The quantity
+\begin{equation}
+T^{\mu\nu} = A^{\mu} B^{\nu}
+\label{eq:298}
+\end{equation}
+is a tensor.  Let's use the Lorentz matrix to transform to a new frame
+\begin{equation}
+T'^{\alpha\beta} = A'^{\alpha} B'^{\beta} = \Lambda^\alpha_{~\mu} A^{\mu}
+\Lambda^\beta_{~\nu} B^{\nu} = \Lambda^\alpha_{~\mu} 
+\Lambda^\beta_{~\nu} T^{\mu\nu}.
+\label{eq:299}
+\end{equation}
+We can find similar results for mixed tensors and covariant tensors.
+
+Right now, we can build a contravariant vector by taking a set of
+coordinates $x^i$ for a event in spacetime and we can construct a
+covariant vector by applying the metric $\eta_{\mu\nu}$ to lower the
+index of the vector.  How else can we make a covariant vector?
+
+Let's say there is a scalar field defined over all spacetime.  This just means a 
+Lorentz invariant number at each point and time.   We could ask how much this number 
+changes as one goes from one event in spacetime to another:
+\begin{equation}
+\Delta f = f \left (x^{\mu} + \Delta x^\mu \right) -  f \left (x^{\mu}\right)
+\label{eq:300}
+\end{equation}
+The quantity on the left is clearly a scalar because it is the
+different in the value of a scalar field at two points.  Let's imagine that we take
+$\Delta x^\mu$ to be really smaller so that $\Delta f$ is proportional to 
+$\Delta x^\mu$ then we have
+\begin{equation}
+\Delta f = \frac{\partial f}{\partial x^{\mu}} \Delta x^\mu \equiv f_{,\mu} \Delta x^\mu
+\label{eq:301}
+\end{equation}
+Because $\Delta x^\mu$ transforms as a contravariant vector and $\Delta f$ doesn't 
+transform, $f_{,\mu}$ must transform as a covariant vector.
+
+We could also imagine taking the derivative of the vector field to create a tensor, 
+for example,
+\begin{equation}
+A^{\mu}_{,\nu} = \frac{\partial A^\mu}{\partial x^{\nu}}
+\label{eq:302}
+\end{equation}
+If we take $A^{\mu}$ to be the vector potential plus the scalar
+potential,
+\begin{equation}
+A^\mu = \left [ \begin{array}{c}
+\phi \\ {\bf A} \end{array} \right ],
+\end{equation}
+we have
+\begin{equation}
+\partial_\nu \partial^\nu A^{\mu} = \frac{4 \pi}{c} J^\mu~\rmmat{and}~\partial_\alpha A^\alpha = 0 
+\label{eq:303}
+\end{equation}
+gives the equations of electrodynamics in the Lorenz gauge, where
+\begin{equation}
+J^\mu = \left [ \begin{array}{c}
+c \rho \\ {\bf J} \end{array} \right ].
+\end{equation}
+
+We have argued that we can only measure the fields themselves, so we
+would like to figure out how the fields transform.  Under rotations
+the fields act like vectors.  Can we generalize the electric and
+magnetic field to be four-vectors?
+
+The answer is no.   Let's take a look at definitions of the 
+fields in terms of the potentials,
+\begin{eqnarray}
+{\bf E} &=&  - \nabla \phi -\frac{1}{c} \pp{\bf A}{t} \\
+{\bf B} &=& \nabla \times {\bf A}
+\label{eq:304}
+\end{eqnarray}
+Let's look at the $x-$components of the fields 
+\begin{eqnarray}
+E_x &=& - \pp{\phi}{x} -\frac{1}{c} \pp{A_x}{t} = A_{0,1} - A_{1,0} \\
+B_x &=& \pp{A_z}{y} - \pp{A_y}{z} = A_{3,2} - A_{2,3} 
+\label{eq:305}
+\end{eqnarray}
+so the electric and magnetic fields seem to be the components of the second rank tensor,
+\index{special relativity!field tensor}
+\begin{equation}
+F_{\alpha\beta} = -\left ( A_{\alpha,\beta} - A_{\beta,\alpha} \right ) = \left [
+\begin{array}{cccc} 
+0   & -E_x & -E_y & -E_z \\
+E_x &    0 &  B_z &  -B_y \\
+E_y & -B_z &   0  &  B_x \\
+E_z &  B_y &  -B_x &  0
+\end{array}
+\right ] 
+\label{eq:306}
+\end{equation}
+where the index $\alpha$ labels the rows and $\beta$ labels the columns.
+Let's look first at the Lorentz force equation,
+\begin{equation}
+\dd{\bf p}{t} = q \left ( {\bf E} + \frac{\bf v}{c} \times {\bf B} \right )
+\label{eq:307}
+\end{equation}
+To generalize this we know that ${\bf p}$ transforms as the space-part
+of the four-vector $p^\mu$.  We also need to use the proper time $\tau$ instead of the 
+coordinate time $t$, this gives
+\begin{equation}
+\dd{\bf p}{\tau} = \frac{q}{c} \left ( U_0 {\bf E} + {\bf U} \times {\bf B} \right )
+\label{eq:308}
+\end{equation}
+
+\paragraph{Something to think about.}
+Why did the velocity terms on the right-hand side become four velocities?
+
+We also need an equation for the time-like component of the four-momentum.
+\begin{equation}
+\dd{p_t}{\tau} = \frac{q}{c} {\bf U} \cdot {\bf E}.
+\label{eq:309}
+\end{equation}
+We can combine these equations into a single equation using the field tensor,
+\begin{equation}
+\dd{p^\alpha}{\tau} = m \dd{U^\alpha}{\tau} = \frac{q}{c} F^{\alpha}_{~~\beta} U^\beta
+\label{eq:310}
+\end{equation}
+or
+\begin{equation}
+\frac{d}{d\tau}
+\left [ \begin{array}{c}
+E \\
+p_x \\
+p_y \\
+p_z
+  \end{array}
+  \right ]
+= \frac{\gamma q}{c} \left [ 
+\begin{array}{cccc}
+0   & E_x & E_y & E_z \\
+E_x &  0  & B_z & -B_y \\
+E_y & -B_z &  0  & B_x \\
+E_z & B_y & -B_x &  0
+  \end{array}
+\right ]
+ \left [ \begin{array}{c}
+     c \\
+     v_x \\
+     v_y \\
+     v_z 
+  \end{array}
+\right ]
+\end{equation}
+which defines the field tensor without reference to the potentials.
+The timelike components of this mixed tensor are not antisymmetric but
+it does have the advantage that its components are independent of the
+signature that you are using.
+
+Similarly Maxwell's equations can be written in the compact form
+\begin{equation}
+F^{\alpha\beta}_{~~,\beta} = \frac{4\pi}{c} J^\alpha~\rmmat{and}~{\cal F}^{\alpha\beta}_{~~,\beta} = 0
+\label{eq:311}
+\end{equation}
+where 
+\begin{equation}
+{\cal F}^{\alpha\beta} = \frac{1}{2} \epsilon^{\alpha\beta\gamma\delta}F_{\gamma\delta} = \left [
+\begin{array}{cccc} 
+0   & -B_x & -B_y & -B_z \\
+B_x &    0 & E_z &  -E_y \\
+B_y & -E_z  &   0  & E_x \\
+B_z & E_y &  -E_x &  0
+\end{array}
+\right ] 
+\label{eq:312}
+\end{equation}
+To construct ${\cal F}^{\alpha\beta}$ from $F^{\alpha\beta}$ we put
+${\bf E}\rightarrow {\bf B}$ and ${\bf B}\rightarrow-{\bf E}$.  This
+is called a duality transformation.
+
+\section{Transformation of Radiative Transfer}
+\label{sec:transf-radi-transf}
+\index{special relativity!radiative transfer}
+The equations of radiative transfer follow the intensity of the
+radiation field.  We would like to understand how this and other
+radiative transfer quantities transform relativistically.
+
+As I argued earlier, the intensity of a radiation field is related to
+the phase space density of photons.  Phase space density is simply the
+number of particles in a certain range of momenta in a particular
+location,
+\begin{equation}
+f = \frac{d N}{d^3 {\bf p}' d^3 {\bf x}'}.
+\label{eq:313}
+\end{equation}
+We would like to see how $f$ transforms relativistically.   First the
+numerator is simply the number of particles in the region of phase
+space that we can count and all should agree upon.   The second term
+in the denominator is the volume that the particles occupy.  Let's
+assume that the primed frame is moving a velocity $\beta c$ in the
+$x-$direction relative to the unprimed frame.  For convenience let's
+assume that the origins of the two coordinate systems coincide at
+$t=t'=0$.  These assumptions cover all of the possibilities because
+the volumes $d^3 {\bf x}$ and $d^3 {\bf p}$ are invariant under
+rotations.  The following derivation follows one by Jeremy Goodman.
+We will take $c=1$ to simply the proof.
+
+First let's write momenta in the primed frame in terms of its values
+in the unprimed frame, we have
+\begin{eqnarray}
+p'_t &=& \gamma \left ( p_t - \beta p_x \right ) \\
+p'_x &=& \gamma \left ( p_x - \beta p_t \right ) \\
+p'_y &=& p_y \\
+p'_z &=& p_z .
+\end{eqnarray}
+Now let's construct the Jacobian of the transformation,
+\begin{equation}
+\left | \begin{array}{ccc}
+\frac{\partial  p'_x}{\partial p_x} & \frac{\partial  p'_x}{\partial p_y} & \frac{\partial 
+p'_x }{ \partial p_z} \\
+\frac{\partial  p'_y}{\partial p_x} & \frac{\partial  p'_y}{\partial p_y} & \frac{\partial 
+p'_z }{ \partial p_z} \\
+\frac{\partial  p'_z}{\partial p_x} & \frac{\partial  p'_z}{\partial p_y} & \frac{\partial 
+p'_z }{ \partial p_z }
+  \end{array}
+\right | =
+\left | \begin{array}{ccc}
+\gamma \left ( 1 - \beta \frac{\partial  p_t}{\partial p_x } \right ) & -\gamma
+\beta \frac{\partial  p_t}{\partial p_y} & -\gamma \beta \frac{\partial 
+p_t }{ \partial p_z} \\
+0  & 1 & 0 \\
+0 & 0 & 1 
+  \end{array}
+\right |
+\end{equation}
+yielding the value of the Jacobian,
+\begin{equation}
+\gamma \left ( 1 - \beta \frac{\partial p_t}{\partial p_x} \right ).
+\end{equation}
+Now we can calculate $\partial p_t/\partial p_x$ from the relationship
+between the four momentum and mass
+\begin{equation}
+p_t^2 - {\bf p}^2 = m^2
+\end{equation}
+so $\partial p_t/\partial p_x=p_x/p_t$ and the Jacobian is
+\begin{equation}
+\gamma \left ( 1 - \beta \frac{p_x}{p_t} \right ) =
+\frac{\gamma \left ( p_t - \beta p_x \right )}{p_t} = \frac{p_t'}{p_t}.
+\end{equation}
+so 
+\begin{equation}
+d^3 {\bf p}' = \frac{p_t'}{p_t} d^3 {\bf p} ~\textrm{so}~
+\frac{ d^3 {\bf p}}{p_t} ~\textrm{is invariant.}
+\end{equation}
+Now let's look at the transformation of the length interval $dx$.
+Let's take two particles travelling at the same velocity but separated
+by some distance. First in the primed frame we have
+\begin{equation}
+x'_A = v' t_A' + x'_A(0), x'_B = v' t_B' + x'_B(0).
+\end{equation}
+To measure the distance between them in the primed frame we take
+$t'_A=t'_B$ so $\Delta x'=x'_A(0)-x'_B(0)$.  Let's substitute the
+values of $x'_A$ and $t'_A$ in terms of $x_A$ and $t_A$ to yield
+\begin{equation}
+\gamma \left (x_A - \beta t_A \right ) = v' \gamma \left (t_A - \beta x_A\right )
++ x_A(0)
+\end{equation}
+and solving for $x_A$ yields
+\begin{equation}
+x_A = \frac{\beta + v'}{1+\beta v'} t_A + \frac{x_A'(0)}{\gamma \left (1 +
+  \beta v'\right )}.
+\end{equation}
+Notice how the particle travels at a different velocity in the new
+frame and the relativistic addition of velocities.  Now we find that
+\begin{equation}
+\Delta x = \frac{\Delta x'}{\gamma \left (1 +
+  \beta v'\right )}. 
+\end{equation}
+Looking at the denominator, we have
+\begin{equation}
+\gamma \left ( 1 + \beta v' \right ) =  \frac{\gamma\left ( p'_t + \beta p'_x
+\right ) }{p'_t} = \frac{p_t}{p'_t}
+\end{equation}
+where we have used $v'=p'_1/p'_t$ and the inverse Lorentz
+transformation, so we find
+\begin{equation}
+\Delta x = \Delta x' \frac{p'_t}{p_t} 
+ ~\textrm{so}~
+p_t d^3 {\bf x} ~\textrm{is invariant.}
+\end{equation}
+% We know that
+% \begin{equation}
+% dx=\gamma^{-1} dx', dy=dy', dz=dz'
+% \label{eq:314}
+% \end{equation}
+% so the volume in the second frame is smaller by a factor of $\gamma$
+% due to the Lorentz contraction,
+% \begin{equation}
+% d^3 {\bf x} = \gamma^{-1} d^3 {\bf x}'
+% \label{eq:315}
+% \end{equation}
+% Let's imagine in the primed frame that the mean momentum of the
+% photons ${\bf p}'$ is small compared to the spread in the momenta
+% $d{\bf p}'$.  Let's calculate the spread in the value of $dp^0$.
+% \begin{eqnarray}
+% (p'^0 + dp'^0)^2 - ({\bf p}' + d {\bf p}' )^2 &=& 0 \\
+% (p'^0)^2 + 2 dp'^0 p'^0 + (dp'^0)^2 - {\bf p}'^2 - 2{\bf p}' \cdot d {\bf p}'
+% - d{\bf p}'^2 &=& 0 \\
+% 2 dp'^0 p'^0 + (dp'^0)^2 - \left( d{\bf p}'^2 \right ) &=&0 .
+% \label{eq:316}
+% \end{eqnarray}
+% The final equation shows that the $dp'^0$ is second order so we can
+% neglect it in what follows. Now let's calculate the components of the
+% momentum in the unprimed frame,
+% \begin{equation}
+% dp_y' d p_z' = dp_y dp_x ~\rmmat{and}~ dp_x = \gamma \left (dp_x' +
+% \beta dp_t' \right ), dp_x = \gamma d p_x'
+% \label{eq:317}
+% \end{equation}
+% so we have
+% \begin{equation}
+% d^3 {\bf p} d^3 {\bf x} = \gamma d^3 {\bf p}' \gamma^{-1} d^3 {\bf x}'
+% = d^3 {\bf p}' d^3 {\bf x}'
+% \label{eq:318}
+% \end{equation}
+Therefore, $d^3 {\bf x} d^3 {\bf p}$ is Lorentz invariant and
+\begin{equation}
+f = \frac{d N}{d^3 {\bf p}' d^3 {\bf x}'}. = \frac{d N}{d^3 {\bf p}
+  d^3 {\bf x}},
+\label{eq:319}
+\end{equation}
+phase-space density is a Lorentz invariant.
+
+Let's calculate the energy density of the photon field,
+\begin{eqnarray}
+h\nu f d^3 {\bf p} = h \nu f p^2 dp d\Omega &=& u_\nu (\Omega) d\Omega
+d\nu \\
+h\nu f \left (\frac{h\nu}{c} \right )^2 d \left (\frac{h\nu}{c}\right
+) d\Omega &=& \frac{I_\nu}{c} d \Omega d\nu \\
+h^4 \nu^3 c^{-3} f d\nu d\Omega &=& \frac{I_\nu}{c} d \Omega d\nu \\
+\frac{h^4}{c^2} f d\nu d\Omega &=& \frac{I_\nu}{\nu^3} d\nu d\Omega
+\label{eq:320}
+\end{eqnarray}
+Because the left-hand side is a bunch of Lorentz invariants we find
+that
+\begin{equation}
+\frac{I_\nu}{\nu^3} = \rmmat{Lorentz invariant}
+\label{eq:321}
+\end{equation}
+A second more heuristic way to find this result is to focus on the
+intensity of  blackbody radiation
+\begin{equation}
+I_\nu = B_\nu(T) = \frac{2 h}{c^2} \frac{\nu^3}{\exp ( h \nu / k T) - 1}.
+\end{equation}
+To preserve the shape of the blackbody function, the ratio $h \nu/k T$
+should be invariant with boosts.  The constants, $h$ and $c$, must
+also be invariant, so we have
+\begin{equation}
+\frac{I_\nu}{\nu^3} = \frac{B_\nu(T)}{\nu^3} = \frac{2 h}{c^2}
+\frac{1}{\exp ( h \nu / k T) - 1} = \rmmat{Lorentz invariant}.
+\end{equation}
+Because the source function $S_\nu$ appears in the equations of
+radiative transfer as $I_\nu - S_\nu$, $S_\nu$ must have the same
+transformation properties as $I_\nu$, {\em i.e.}
+\begin{equation}
+\frac{S_\nu}{\nu^3} = \rmmat{Lorentz invariant}
+\label{eq:322}
+\end{equation}
+The optical depth $\tau$ is simply the logarithm of the fraction of
+radiation that remains after passing through a slab of absorbing
+material we have
+\begin{equation}
+\tau = \frac{l \alpha_\nu}{\sin \theta} = \frac{l}{\nu \sin \theta}
+\nu \alpha_\nu = \frac{l c}{k_y} \nu \alpha_\nu = \rmmat{Lorentz invariant}
+\label{eq:323}
+\end{equation}
+If we move relative to the slab in the $x-$direction, the thickness of
+the slab in the $y-$direction, $l$, does not change.  Although $\nu$
+and $\sin \theta$ will change, $k_y$ will not change because it is not
+in the direction of the motion, so we have
+\begin{equation}
+\nu \alpha_\nu = \rmmat{Lorentz invariant}
+\label{eq:324}
+\end{equation}
+Finally, we have $j_\nu = \alpha_\nu S_\nu$, so
+\begin{equation}
+\frac{j_\nu}{\nu^2} = \rmmat{Lorentz invariant}
+\label{eq:325}
+\end{equation}
+These relations allow us to calculate the radiative transfer 
+through a medium in whichever frame is convenient.  We could calculate
+the source function and absorption in the rest-frame of the material 
+and the radiative transfer in the ``lab'' frame.  Or we could
+calculate everything in the rest frame and translate the intensity
+to the ``lab'' frame.
+
+\section{Further Reading}
+
+To learn more about special relativity, consult Chapter 12
+of
+\begin{itemize}
+\item Jackson, J. D., {\em Classical Electrodynamics}.
+\end{itemize}
+Please note that Jackson uses the opposite signature to here, so some
+formulas may differ.
+
+\section{Problems}
+
+\begin{enumerate}
+\item{\bf The Ladder and the Barn: A Spacetime Diagram:}
+
+This problem will work best if you have a sheet of graph paper.
+In a spacetime diagram one draws a particular coordinate (in our case
+$x$)  along the horizontal direction and the time coordinate
+vertically.  People also generally draw the path of a light ray at
+45$^\circ$.  This sets the relative units of the two axes.
+\begin{enumerate}
+\item Draw a spacetime diagram and label the axes $x$ and
+  $t$.  The $t$-axis is the path of Emma through the spacetime.
+
+\item Draw the world line of someone travelling at
+  $\frac{3}{5}$ of the speed of light.  The world line should
+  intersect with the origin of the spacetime diagram.  Label this
+  world line $t'$.  The $t'$-axis is the path of Kara through the
+  spacetime. 
+
+\item Draw the $x'$ axis on the graph.   Here's a hint about
+  where it should go.   The light ray bisects the angle between the
+  $x$ and $t$ axes.  Kara who is travelling along $t'$ will find that
+  the speed of light is the same for her, so the light ray must also
+  bisect the angle between $x'$ and $t'$.
+
+\item Parallel to Emma's time axis draw the walls of the barn
+  in pencil.  The barn is 4.5 meters wide in Emma's frame.
+
+\item Draw Kara's ladder along Kara's $x$-axis.   The ladder
+is 5 meters long in Kara's frame.  How long is it in Emma's frame.
+
+\item Draw the world lines of the ends of Kara's ladder.
+These lines are parallel to Kara's time axis.
+
+\item Erase a portion of the barn walls to allow Kara's ladder
+  to fit through.   
+
+\item Using the diagram, explain how Kara and Emma can
+  understand how the too-long ladder fits in the too-small barn.
+\end{enumerate}
+
+\item{\bf The Fermi Process:}
+
+One model to understand how cosmic rays are accelerated is through
+shocks. The main idea is that a charge particle can cross a shock and
+turned around by the tangled mangetic field and recross the shock.
+Each time the charge does this it gains energy.   
+
+To understand this let's use a simplified model in which two mirrors
+are travelling toward each other at some velocity $v$.  When a
+particle hits the mirror, its energy in the frame of the mirror
+remains unchanged but its velocity and therefore the spacelike
+components of the four-momentum change sign.
+\begin{enumerate}
+\item Draw a diagram with the two mirrors.
+
+\item For argument's
+sake, let's first focus on the mirror on the left and consider that
+the mirror on the right is moving.   What is the four-velocity in this
+frame of the mirror on the left ($U_{l}^\mu$)?  What is the four-velocity in this
+frame of the mirror on the right ($U_{r}^\mu$)?
+
+\item Now let's focus on the mirror on the right and consider that
+the mirror on the left is moving.  What is the four-velocity in this
+frame of the mirror on the left ($U'^\mu_l$)?  What is the
+four-velocity in this frame of the mirror on the right ($U'^\mu_r$)?
+
+\item To start let's assume that the particle of mass $m$
+  approaches the mirror on the left at the velocity of the mirror on
+  the right.  What is the four-momemtum of the particle ($p^\mu$) in
+  the frame of the mirror on the left?
+
+\item The particle bounces off of the mirror.  What is its
+  four-momentum now?
+
+\item Now the particle is approaching the mirror on the
+  right.  What is the zeroth component of the four-momentum of the
+  particle in the frame of the right-hand mirror?   One could do a
+  Lorentz transformation but it is easier to use $U^\mu_r p_\mu$ to
+  determine the energy of the particle in the primed frame.
+
+\item Using the answer to 6, construct the four-momentum of
+  the particle in the frame of the right-hand mirror ($p'_\mu$).
+
+\item The particle bounces off of the mirror.  What is its
+  four-momentum now?
+
+\item Now the particle is approaching the mirror on the
+  left.  What is the zeroth component of the four-momentum of the
+  particle in the frame of the left-hand mirror?   Again one could 
+  do a Lorentz transformation but it is easier to use $U'^\mu_l p'_\mu$ to
+  determine the energy of the particle in the unprimed frame.
+
+\item Compare the energy of the particle in step (d) to the
+  energy of the particle in step (i).  Has the energy of the particle
+  increased?  Let's let the relative velocity of the mirrors approach
+  the speed of light.
+$$
+\beta \approx 1 - \frac{1}{2\gamma^2}
+$$
+  By what factor does the energy of the particle increase each time it
+  goes back and forth.
+
+\item  The final element is the fact that only a tiny
+  fraction of the particles bounce back and forth.  Let's take that
+  fraction to be $10^{-5}$ and $\gamma=100$.  What can you say about
+  the final distribution of particle energies?
+
+\end{enumerate}
+\item{\bf Boosting}
+We are going to figure out how times and energies measured by someone in motion differ from what we might measure.
+\begin{enumerate}
+
+\item Use special relativity (the Minkowski metric) to figure this
+  out. I measure a photon to have an energy $E$. What is the
+  four-momentum of the photon?
+
+\item My pal is travelling toward me in the opposite direction of the
+  photon at a velocity $\beta c$. What is his four-velocity? Use the
+  definition $\gamma = \left ( 1- \beta^2\right)^{-1/2}$ to simplify
+  the expression. What energy would he measure for the photon? What
+  does the expression look like as $\gamma$ gets much larger than one?
+
+\item If my pal observes the photon to have an energy of 100~MeV while
+  I say its energy is less than 500~keV, what is the minimal value of
+  $\gamma$ for my pal (take $\beta \approx 1$ to make life easier)?
+
+\item My pal is still coming toward me at a velocity $\beta c$. When
+  he is a distance $r$ away from me (at a time $t_0$) he emits a photon
+  toward me. How long does it take this photon to reach me?
+
+\item From his point of view a short time $\Delta t$ later he emits
+  another photon toward me. How long is $\Delta t$ in my frame and
+  when do I receive the second photon? What is the difference in time
+  between when I receive the first and second photons? What does the
+  expression look like as $\gamma$ gets much larger than one? Compare
+  it with you answer to (b).
+\end{enumerate}
+
+\item{\bf Precession}
+We will calculate the transformation that results from a pair of
+boosts in different directions.
+\begin{enumerate}
+\item Write out the Lorentz transformation matrix for a boost in the
+  $x-$direction to a velocity $\beta_x$.
+\item Write out the Lorentz transformation matrix for a boost in the
+  $y-$direction to a velocity $\beta_y$.
+\item
+  Write out the Lorentz transformation matrix for a boost in the
+  $x-$direction to velocity $\beta_x$ followed by boost to a velocity
+  $\beta_y$ in the $y-$direction.
+\item
+  Write out the Lorentz transformation matrix for a boost in the
+  $x-$direction to velocity $\beta_x$, followed by boost to a velocity
+  $\beta_y$ in the $y-$direction, followed a boost in the
+  $x-$direction to velocity $-\beta_x$ followed by boost to a velocity
+  $-\beta_y$ in the $y-$direction.  
+\item Now you have undone both boosts and have zero velocity, did you
+  get the identity?  Why or why not?
+\end{enumerate}
+
+\end{enumerate}
+%%% Local Variables:
+%%% TeX-master: "book"
+%%% End:

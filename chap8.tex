@@ -1,0 +1,748 @@
+\chapter{Atomic Structure}
+\label{cha:atomic-structure}
+\index{atomic structure}
+So far we have used classical and semi-classical approaches to
+understand how radiation interacts with matter.  We have generally
+treat the electrons (the lightest charged particle so the biggest
+emitter) classically and the radiation either classically or as coming
+in quanta (i.e. semi-classically).  We also derived some important
+relationships between how atoms emit and absorb radiation, but to
+understand atomic processes in detail we will have to treat the
+electrons quantum mechanically.  
+
+\index{Schrodiner equation}
+\index{atomic structure!Schrodiner equation}
+In quantum mechanics we characterize the state of a particles (or
+group of particles) by the wavefunction ($\Psi$).   The wavefunction
+evolves forward in time according to the {\em time-dependent
+  Schrodinger equation}
+\begin{equation}
+i\hbar \pp{\Psi}{t} = H \Psi
+\label{eq:450}
+\end{equation}
+where $H$ is the Hamiltonian operator.  If the Hamiltonian is
+independent of time we can solve this equation by
+\begin{equation}
+\Psi({\bf r}, t) = \psi({\bf r}) e^{-iEt/\hbar}
+\label{eq:451}
+\end{equation}
+where $\psi$ satisfies the {\em time-independent Schrodinger
+  equation},
+\begin{equation}
+H\psi = E \psi
+\label{eq:452}
+\end{equation}
+where $E$ is the energy and $\psi$ is the wave function of the
+corresponding energy state.  We can imagine the operator $H$ as a
+matrix that multiplies the state vector $\psi$, so this equation is an
+eigenvalue equation with $E$ as the eigenvalue and $\psi$ as an
+eigenvector (or eigenfunction) of the matrix (or operator) $H$.
+
+The Hamiltonian classically is the sum of the kinetic energy and the
+potential energy of the particles.  This realization allows us to
+write the equation that the wavefunction of an atom must satisfy
+\be\left( -\frac{\hbar^2}{2m} \sum_j \nabla_j^2 - E - Ze^2 \sum_j
+\frac{1}{r_j} + \sum_{i>j} \frac{e^2}{r_{ij}} \right ) \psi
+({\bf r}_1,{\bf r}_2,\ldots,{\bf r}_j) = 0 
+\end{equation}
+We have neglect the spin of the electrons, relativistic and nuclear 
+effects.  For most atomic states, these effects can be treated at
+perturbations.  We can simplify these equations by using
+\begin{equation}
+a_0 = \frac{\hbar}{me^2} = 0.529 \times 10^{-8}~\rmmat{cm}w~\rmmat{and}~
+\frac{e^2}{a_0} = 4.36 \times 10^{-11} \rmmat{erg} = 27.~ \rmmat{eV}
+\label{eq:453}
+\end{equation}
+and the unit of length and energy respectively.  This gives the
+following dimensionless equation
+\begin{equation}
+\left( \frac{1}{2} \sum_j \nabla_j^2 + E - Z \sum_j
+\frac{1}{r_j} + \sum_{i>j} \frac{1}{r_{ij}} \right ) \psi
+({\bf r}_1,{\bf r}_2,\ldots,{\bf r}_j) = 0 
+\label{eq:454}
+\end{equation}
+\section{A single electron in a central field}
+\label{sec:single-electr-centr}
+\index{atomic structure!central field}
+
+Let's first treat the case of a single electron in a central field.  
+Although in principle this approximation will only apply accurately to
+hydrogen, it is extremely powerful (it explains the periodic table for
+example).  We can imagine that when we focus on a single electron in
+an atom, the sum of all the other electrons averages out to a
+spherical distribution.  This assumption isn't perfect for all atoms,
+but the imperfections can be treated as perturbations. 
+
+As the electron gets really far from the atom, the potential
+approaches
+\begin{equation}
+V(r) \rightarrow \frac{Z-N+1}{r} 
+\label{eq:455}
+\end{equation}
+where $N$ is the total number of electrons.  On the other hand near
+the nucleus the potential looks like
+\begin{equation}
+V(r) \rightarrow \frac{Z}{r}.
+\label{eq:456}
+\end{equation}
+This effect is called shielding.
+
+If the potential is a function of the radial distance from the nucleus
+alone the Schrodinger equation is separable,
+\begin{equation}
+\psi(r,\theta,\phi) = r^{-1} R(r) Y(\theta,\phi)
+\label{eq:457}
+\end{equation}
+where the functions $Y(\theta,\psi)$ are the {\em spherical harmonics}
+\begin{equation}
+Y=Y_{lm} (\theta,\phi) = \left [ \frac{(l-|m|)!}{(l+|m|)!}
+  \frac{2l+1}{4\pi} \right ]^{1/2} (-1)^{(m+|m|)/2} P_l^{|m|} (\cos\theta)e^{im\phi}
+\label{eq:458}
+\end{equation}
+where $P_l^m(x)$ are the Legendre polynomials.
+
+The functions $Y_{lm}$ are eigenfunctions of the angular momentum
+operator.   If the potential only depends on the radius, angular
+momentum is conserved classically.  This means quantum-mechanically
+that the Hamiltonian commutes with the angular momentum operator, and
+that the wavefunctions that satify the Hamiltonian also are
+eigenfunction of the angular momentum operator (${\bf L}={\bf r}\times
+{\bf p}$).   We have
+\begin{equation}
+{\bf L}^2 Y_{lm} = l(l+1) Y_{lm} ~\rmmat{and}~L_z Y_{lm} = m Y_{lm}
+\ee 
+so the total angular momentum of the state is related to $l$ and the
+$z-$component of the angular momentum is related to $m$.  Both $l$ and
+$m$ take on integral values with $-l < m < l$.  The states with
+different values of $l$ have special letters associated with them we
+have $s$, $p$, $d$, $f$ and $g$ for $l=0,1,2,3,4$ respectively.
+
+The angular eigenfunctions are orthronormal so
+\begin{equation}
+\int d\Omega Y_{lm}^*(\theta,\phi) Y_{l'm'}(\theta,\phi) = \delta_{l,l'}
+\delta_{m,m'}.
+\label{eq:459}
+\end{equation}
+The angular eigenfunctions take this form regardless of the form of
+the central potential.  They are simply the eigenfunctions of the
+angular momentum operator.
+
+The radial part of the wavefunction satisfies the equation
+\begin{equation}
+\frac{1}{2} \frac{d^2 R_{nl}}{dr^2} + \left [ E - V(r) -
+  \frac{l(l+1)}{2r^2} \right ] R_{nl} = 0 
+\label{eq:460}
+\end{equation}
+This equation is pretty straightforward to understand.  The first term
+is simply the kinetic term (like the Laplacian in the 3-D Schrodinger
+equation).  The next term is the energy eigenvalue.  $V(r)$ is the
+radial potential and the term proportional to $l(l+1)$ is the
+centripetal potential.
+
+Because the equation does not depend on $m$, the radial wavefunction
+only depends on $l$.  Because it is an eigenvalue equation we also
+expect each $l$ value to have several solutions labeled by $n$.
+
+As we have defined them in Eq.~\ref{eq:457}, the radial eigenfunctions have the
+following normalization.  
+\begin{equation}
+\int_0^\infty R_{nl}(r) R_{n'l} (r) dr = \delta_{n,n'}
+\label{eq:461}
+\end{equation}
+Because the radial eigenfunctions for different values of $l$ satisfy
+different equations, there is no orthogonality relation for the radial
+wavefunctions with different $l$ values.  
+
+\index{atomic structure!hydrogen}
+If $V(r)=-Z/r$, we have the following solutions
+\begin{eqnarray}
+R_{nl}(r) &=& - \left \{ \frac{Z(n-l-1)!}{n^2 \left [ (n+1)! \right ]^3}
+\right \} e^{-\rho/2} \rho^{l+1} L_{n+1}^{2l+1} (\rho) \\
+E_n &=& -\frac{Z^2}{2 n^2} \\
+\rho &=& \frac{2 Z r}{n}
+\label{eq:462}
+\end{eqnarray}
+where $L_{n+l}^{2l+1}$ are the associated Laguerre polynomials.   
+
+To make things concrete some of the radial functions are
+\begin{eqnarray}
+R_{10} &=& 2 Z^{3/2} r e^{-Zr} \\
+R_{20} &=& \left ( \frac{Z}{2} \right )^{3/2} (2-Zr) r e^{-Zr/2} \\
+R_{21} &=& \left ( \frac{Z}{2} \right )^{3/2} \frac{Zr^2}{\sqrt{3}} e^{-Zr/2} 
+\label{eq:463}
+\end{eqnarray}
+The electrons themselves have spin, so we have an additional quantum
+number $m_s=\pm \frac{1}{2}$ to denote the spin of an electron.
+
+\section{Energies of Electron States}
+\label{sec:energ-electr-stat}
+\index{atomic structure!multi-electron}
+The energy levels of the hydrogen atom at this level of approximation
+simply depend on the quantum number $n$.   For atoms with more than
+one electron the picture is more complicated.  The most important
+effect is that when an electron is far from the nucleus the charge of
+the nucleus is shielded by the other electrons, so wavefunctions that
+get closer to the nucleus see the full charge of the nucleus and lie
+lower in energy.  
+
+If we look at Eq.~\ref{eq:460}, we see that the centripetal term is proportional
+to $l(l+1)$, so we would expect that wavefunctions with larger values
+of $l$ typically stay further from the nucleus, so we have the rule
+that for a given value of $n$ states with smaller values of $l$ are
+more bound.   {\em N.B.}  This result only applies to atoms with more
+than one electron, so at this level of approximation, the $2s$
+($n=2,l=0$) and $2p$ ($n=2,l=1$) are degenerate.   Actually, it is
+relativistic effects that remove this degeneracy.
+
+Sometimes this shielding effect is stronger than the change in the
+principal quantum number so we have the following ordering of states
+\begin{equation}
+1s 2s 2p 3s 3p [4s 3d] 4p [5s 4d] 5p [6s 4f 5d] 6p [7s 5f 6d] 7p\ldots
+\label{eq:464}
+\end{equation}
+The energies of the levels in brackets is really  close so sometimes
+the filling order varies from atom to atom because of the {\em Hund's
+  rules} below.  I have used the letters $s, p, d, f, g \ldots$ to
+denote $l = 0,1,2,3,4 \ldots$ of the single electron states.
+
+A second important fact is that because electrons are
+indistinguishable, the wave function of more than one electron must be
+antisymmetric with respect to interchange of any two electrons (within
+the axioms of non-relativistic QM it could have be symmetric, but one
+can prove in relativistic QM that the wavefunction must be
+antisymmetric -- the spin-statistics theorem).
+
+This has several important consequences.   Two electrons cannot occupy
+the same state.  We can label the states by their quantum numbers, $n,
+l, m_l, m_s$ where $l < n$, $-l\leq m_l \leq l$, $m_s=\pm
+\frac{1}{2}$.   This is quite important.  If electrons were bosons
+(particles that can occupy the same state), atoms would not have the
+structure that they do.  All of the electrons would simply drop down
+to the lowest energy state available.
+
+\index{atomic structure!Slater determinant}
+\index{Slater determinant}
+Furthermore, we generally try to solve the multielectron problem by
+assuming that the wavefunction of all the electrons is the
+antisymmetrized product of single electron wavenfunctions,
+\begin{equation}
+\psi ({\bf r}_1,{\bf r}_2 \ldots {\bf r}_n) = \frac{1}{\sqrt{N!}} \left |
+\begin{array}{cccc} 
+u_a({\bf r}_1) & u_a({\bf r}_2) & \cdots u_a({\bf r}_n) \\
+u_b({\bf r}_1) & u_b({\bf r}_2) & \cdots u_b({\bf r}_n) \\
+\vdots \\
+u_k({\bf r}_1) & u_k({\bf r}_2) & \cdots u_k({\bf r}_n) \\
+\end{array}
+\right |
+\label{eq:465}
+\end{equation}
+This is called the {\em Slater determinant}.
+
+\index{atomic structure!Hartree-Fock equations}
+\index{Hartree-Fock equations}
+When you substitute this into the multi-particle Schrodinger equation
+you get an equation for each electron state (the {\em Hartree-Fock equations})
+\begin{equation}
+F u_i({\bf r}_1) = E_i u_i({\bf r}_1)
+\label{eq:466}
+\end{equation}
+where
+\begin{equation}
+F = \frac{p_i^2}{2m} - \frac{Z e^2}{r} + V({\bf r}_1).
+\label{eq:467}
+\end{equation}
+where the potential $V$ has two terms, one is called the {\em direct
+  interaction} term and the other is called the {\em exchange
+  interaction term}.
+\begin{equation}
+V({\bf r}_1) = \sum_j \left [ J_j({\bf r}_1)+ (-1)^S K_j({\bf r}_1) \right ] 
+\label{eq:468}
+\end{equation}
+where $S=m_{s,i}+m_{s,j}$ and
+\index{atomic structure!direct interaction}
+\index{atomic structure!exchange interaction}
+\begin{eqnarray}
+J_j({\bf r}_1) u_i({\bf r}_1) &=& \left [ \int d^3 {\bf r}_2 u_j^*({\bf r}_2) \left (
+\frac{e^2}{r_{12}} \right ) u_j({\bf r}_2) \right ] u_i({\bf r}_1) \\
+K_j({\bf r}_1) u_i({\bf r}_1) &=& \left [ \int d^3 {\bf r}_2 u_j^*({\bf r}_2) \left (
+\frac{e^2}{r_{12}} \right ) u_i({\bf r}_2) \right ] u_j({\bf r}_1) 
+\label{eq:469}
+\end{eqnarray}
+The term $J_j$ is simply the potential that one electron in the state
+$i$ feels from another electron in the state $j$.  The $K_j$ term has
+no classical analogue.  
+
+Let's try to understand what this means.  When we solve this set of
+equations we imagine that all of the other electrons are fixed and we
+are try to solve for a single extra electron.  Let's imagine that we
+only have two electrons. The total energy of the first electron 
+including the effect of the second electron is
+\begin{equation}
+\int d^3 {\bf r}_1 u_1^*({\bf r}_1)  \left ( \frac{p_1^2}{2m} - Z
+  \frac{e^2}{r_1} + J_2({\bf r}_1) + (-1)^S K_2({\bf r}_1) \right )
+u_2 ({\bf r}_1)
+\label{eq:470}
+\end{equation}
+Both $J$ and $K$ are positive, so if $S=1$ the system has slightly lower
+energy.  
+
+\index{atomic structure!Hund's rules}
+\index{Hund's rules}
+yIn multielectron systems this result holds for any pair of electrons,
+so we get two rules of thumb (called {\em Hund's rules}) that all
+other things being equal
+\begin{enumerate}
+\item
+States with the spin of the electrons aligned have lower energies, or
+states with larger total spin ($S$) lie lower in energy.
+\item
+Of those states with a given spin, those with the largest value of $L$
+tend to lie lower in energy.
+\end{enumerate}
+The second rule comes about because a large value of $L$ implies that
+the electrons are orbiting the nucleus in the same direction which
+reduces the value of the $J$ integral.
+
+These two rules order electron configurations (lists of the values of
+$n$ and $l$ for a set of electrons: {\em e.g.} $4p4d$) into terms with equal
+energies labels by the total orbital and spin angular momentum ($L$
+and $S$) {\em e.g.} $^3F$.  The superscript is the $2S+1$, the multiplicity
+of the spin states and the letter is the value of $L$ using the rules
+described earlier.
+
+\section{Perturbative Splittings}
+\label{sec:pert-splitt}
+\index{atomic structure!perturbations}
+
+\subsection{Spin-Orbit Coupling}
+\label{sec:spin-orbit-coupling}
+\index{atomic structure!spin-orbit coupling}
+\index{atomic structure!fine structure}
+\index{spin-orbit coupling}
+
+There are various fine structure splittings enter due to relativistic
+corrections.  The simplest of these is the spin-order coupling.
+Let's imagine that we move into the frame of the electron, we are
+moving through an electric field so there is a magnetic field
+\begin{equation}
+{\bf B} = - \frac{1}{c} {\bf v} \times {\bf E} = \frac{{\bf l}}{mecr} \frac{dU}{dr}
+\label{eq:471}
+\end{equation}
+where $U(r)$ is the electrostatic potential.  The electron has a
+magnetic moment of 
+\begin{equation}
+{\bf \mu} = -\frac{e}{mc} {\bf s}
+\label{eq:472}
+\end{equation}
+The magnetic  energy of the electron in the field is
+\begin{equation}
+H_{so} = \frac{1}{2m^2 c^2} {\bf s}\cdot{\bf l} \frac{1}{r} \frac{d U}{dr}
+\label{eq:473}
+\end{equation}
+Notice that this is one-half of what you would expect.  This is due to
+a relativistic effect called {\em Thomas precession}.   More important
+to notice is that the spin-orbit term vanishes as $c\rightarrow
+\infty$, so it is indeed a relativistic correction.  For a single
+electron because $dU/dr$ is positive we find that if ${\bf s} \| {\bf
+  l}$ the energy of the state is higher so lower values of $j$ the
+total angular momentum have lower energies.
+
+For hydrogen we have
+\begin{equation}
+1s [2s_{1/2} 2p_{1/2}] 2p_{3/2} 
+\label{eq:474}
+\end{equation}
+where the states in the brackets are still degnerate.
+
+In multiple electron systems we find that
+\begin{equation}
+H_{so} = \xi {\bf S}\cdot {\bf L}
+\label{eq:475}
+\end{equation}
+where the value of $\xi$ depends on the configuration.
+
+Let's focus on states with the same values of $S$ and $L$ but
+different values of $J$.  We know that
+\begin{equation}
+{\bf J}^2 = ({\bf L} + {\bf S}) \cdot ({\bf L} + {\bf S})
+= {\bf L}^2 + {\bf S}^2 + 2{\bf L}\cdot{\bf S}
+\label{eq:476}
+\end{equation}
+so we can write 
+\begin{equation}
+H_{so} = \frac{1}{2} \xi \left  ({\bf J}^2 - {\bf L}^2 - {\bf S}^2
+\right ) = \frac{1}{2} C \left [ J(J+1) - L(L+1) - S(S+1) \right ]
+\label{eq:477}
+\end{equation}
+so if $L$ and $S$ are fixed we have
+\begin{equation}
+E_{J+1} - E_J = C (J+1)
+\label{eq:478}
+\end{equation}
+The value of $C$ can be positive (shells less than half-full) or
+negative (shells more than half-full).  Notice that we recover the
+result for hydrogen; the $2p$ shell is clearly less than half-full.
+
+We can make sense of the situtation of a nearly full shell but
+realizing that a completely full shell is spherically symmetric so a
+nearly full level acts as if it has a few holes whose charge and
+magnetic moment have the opposite sign of an electrons.
+
+\subsection{Zeeman Effect and Nuclear Spin}
+\label{sec:zeem-effect-nucl}
+\index{atomic structure!Zeeman effect}
+\index{Zeeman effect}
+
+The Zeeman effect is the splitting of atomic levels on the basis of
+the value of the total angular momentum in the direction of the
+magnetic field $m_J$.  This is why the quantum number $m$ uses the
+letter $m$; it stands for ``magnetic''.  The picture is similar to the
+spin-orbit coupling except we are looking at the interaction of the
+total magnetic moment of the atom with the magnetic field
+\begin{equation}
+U_B = -{\bf \mu} \cdot {\bf B}
+\label{eq:479}
+\end{equation}
+where
+\begin{equation}
+{\bf \mu} = - \sum \left [ \frac{1}{2} \left (\frac{e}{mc}\right )
+  {\bf l}_i + \left (\frac{e}{mc}\right )
+  {\bf s}_i \right ]
+\label{eq:480}
+\end{equation}
+If we average over the precession of the magnetic moments around the
+imposed magnetic field we get the following splitting
+\begin{equation}
+U_B = \frac{1}{2} \left ( \frac{e\hbar B}{mc} \right ) g M_J
+\label{eq:481}
+\end{equation}
+where
+\begin{equation}
+g(J,L,S) = 1 + \frac{J(J+1)+S(S+1)-L(L+1)}{2J(J+1)}
+\label{eq:482}
+\end{equation}
+
+\index{atomic structure!hyperfine structure}
+\index{hyperfine structure}
+A related effect that is really important astrophysically is that the
+nucleus itself has a magnetic moment
+\begin{equation}
+\mu_N = g \frac{e}{2Mc} {\bf I}
+\end{equation} 
+that can interact with the magnetic moment of the electron.  ${\bf I}$
+is the total angular momentum of the proton and that total angular
+momentum of the system is ${\bf F}={\bf J}+{\bf I}$
+
+We can have transitions where the orientation of ${\bf J}$ changes
+with respect to ${\bf I}$ so we have a splitting depending on the
+value of $M_J$.  An important case is the ground state of hydrogen 
+which is a $^2S_{1/2}$ term.  The proton has spin $1/2$ so we can have
+$F=0$ and $F=1$.  The splitting between these two states corresponds
+to a frequency of 1420~MHz or $\lambda=21$~cm.
+
+It is simplest to see this effect by considering the nucleus to be
+stationary and averaging the effect of the electron over its
+wavefunction.   There are two separate effects the interaction of the
+magnetic moment of the nucleus with that of the current induced by the
+electron orbital angular momentum and the interaction between the two
+magnetic moments themselves.  
+
+The magnetic field produced by the orbiting electron is given by
+\begin{equation}
+{\bf B}=-2 \mu_B \frac{{\bf l}}{r^3}
+\end{equation}
+where $r$ is the distance between the electron and the nucleus and
+${\bf l}$ is the orbital angular momentum of the electron.   The
+situtation for the intrinsic magnetic moment of the electron is a bit
+more subtle.  The field of a magnetic dipole is given by
+\begin{equation}
+{\bf B}=\frac{1}{r^3} \left [ 3 \left ( \bm{\mu} \cdot \mathbf{\hat{r}} \right
+) \mathbf{\hat{r}} - \bm{\mu}  \right ].
+\end{equation}
+However this is not the entire picture because there is the
+possibility that the electron and the nucleus lie right on top of each
+other.  Let's imagine that the magnetic moment of the electron is
+produced by a small ring of current of radius $R$ and integrate the
+total magnetic flux passing outside the ring through the plane of the
+ring according the formula above
+\begin{equation}
+\Phi_\textrm{\scriptsize Outside} = \int_\textrm{\scriptsize Outside} {\bf B} \cdot {\bf dA} = \mu
+\int_R^\infty \frac{1}{r^3} 2\pi r d r = 2\pi\frac{\mu}{R} 
+\end{equation}
+and the flux clearly points in a direction opposite to the magnetic
+moment of the electron.  Now the total flux through the entire plane
+that contains the current ring should vanish (the magnetic field is
+divergence free), so within the ring we have
+\begin{equation}
+\Phi_\textrm{\scriptsize Inside} = \int_\textrm{\scriptsize Inside} {\bf B}_\textrm{\scriptsize Inside}
+ \cdot {\bf dA} = {\bar{\bf B}} \pi R^2
+\end{equation}
+and
+\begin{equation}
+{\bar{\bf B}}=2\frac{\mbox{\boldmath$\mu$}}{R^3}.
+\end{equation}
+Now let's integrate this mean field over a small sphere of radius $R$
+to yield
+\begin{equation}
+\int_{S(R)} {\bar{\bf B}} dV = \frac{8\pi}{3} \mbox{\boldmath$\mu$}.
+\end{equation}
+This yields a correction to the dipole field called the {\em Fermi
+  contact interaction},
+\begin{equation}
+{\bf B}=\frac{1}{r^3} \left [ 3 \left ( \bm{\mu} \cdot \mathbf{\hat{r}} \right
+) \mathbf{\hat{r}} - \bm{\mu}_s  \right ] + \frac{8\pi}{3}
+\bm{\mu} \delta^3 ({\bf r}).
+\end{equation}
+A second way to obtain this result is to take the expression for the
+vector potential of a point magnetic dipole
+\begin{equation}
+{\bf A} = \frac{\mbox{\boldmath$\mu$} \times {\bf r}}{r^3}
+\end{equation}
+and calculate the magnetic field, ${\bf B} = \nabla \times {\bf A}$.
+
+Combining this result with the orbital contribiution yields a complete
+expression for the hyperfine splitting, since the energy of a magnetic
+dipole in a magnetic field is given by $U=-\bm{\mu}\cdot
+{\bf B}$,
+\begin{equation}
+H_\textrm{\scriptsize HFS} = -\frac{8\pi}{3}
+\mbox{\boldmath$\mu$}_e\cdot \bm{\mu}_N  \delta^3 ({\bf
+  r})  + \frac{1}{r^3} 
+\left [ \mbox{\boldmath$\mu$}_e\cdot \bm{\mu}_N - 3
+  \frac{\left({\bf r} \cdot  \bm{\mu}_e \right )
+    \left({\bf r} \cdot  \mbox{\boldmath$\mu$}_N \right )}{r^2} -
+  \frac{e}{mc} {\bf L} \cdot\mbox{\boldmath$\mu$}_N 
+\right ].
+\end{equation}
+One can observe that the first term vanishes for states with $l>0$
+and the second term vanishes for $l=0$.
+
+
+
+\section{Thermal Distributions of Atoms}
+\label{sec:therm-distr-atoms}
+\index{atomic structure!thermal distribution}
+
+In thermal equilibrium the number of atoms in a particular state is
+proportional to $ge^{-\beta E}$ where $\beta=1/kT$ and $g$ is the
+statistical weight or degeneracy of the state (for $L-S-$coupling
+$g=2(2J+1)$), so we find that
+\begin{equation}
+N_i = \frac{N}{U} g_i e^{-\beta E_i}
+\label{eq:483}
+\end{equation}
+where $N$ is the total number of atoms and $U$ is a normalization
+factor
+\begin{equation}
+U = \sum g_i e^{-\beta E_i}.
+\label{eq:484}
+\end{equation}
+We already run into a problem.  Atoms generally have a certain
+ionization energy (for example, hydrogen has 13.6~eV) but there are an
+infinite number of states between the ground state and the ionization
+level so $e^{-\beta E_i}$ approaches a constant for large $i$ and
+$g_i$ typically increases so $U$ will diverge.   
+
+In practice this is not really a problem for two reasons.  First, for
+temperatures less than $10^4$~K only the ground state is typically
+populated so it is okay to take $U=g_0$.  Second is that atoms don't
+live in spendid isolation.  The size of the highly excited states of
+atoms increases as $n^2$ so we only have to sum over the states until
+we reach 
+\begin{equation}
+n_\rmscr{max}^2 a_0 Z^{-1} \sim N^{-1/3}, ~~ n_\rmscr{max} ~ \left (
+\frac{Z}{a_0}\right)^{1/2} N^{-1/6}.
+\label{eq:485}
+\end{equation}
+
+\subsection{Ionization Equilibrium - the Saha Equation}
+\label{sec:ioniz-equil-saha}
+\index{atomic structure!Saha equation}
+\index{Saha equation}
+\index{atomic structure!ionization equilibrium}
+\index{ionization equilibrium}
+
+Let's consider a electron and ions in the ground state in
+equilibrium with neutral atoms also in the ground state
+\begin{equation}
+\frac{d N_0^+(v) }{N_0} = \frac{g_e g_0^+}{g_0} \exp \left [ 
+-\frac{E_I + \frac{1}{2} m_e v^2}{kT} \right ]
+\label{eq:486}
+\end{equation}
+where
+\begin{equation}
+g_e = \frac{2 dx_1 dx_2 dx_3 dp_1 dp_2 dp_3}{h^3}
+\label{eq:487}
+\end{equation}
+and $v$ is the velocity of the electron.
+
+The volume $dx_1 dx_2 dx_3$ contains a single electron, so $dx_1 dx_2
+dx_3=N_e^{-1}$.  Furthermore, if we assume that the electron velocity
+distribution is isotropic we can derive
+\begin{equation}
+\frac{d N_0^+}{N_0} = \frac{8 \pi m_e^3}{h^3} \frac{g_0^+}{N_e g_0} 
+ \exp \left [ 
+-\frac{E_I + \frac{1}{2} m_e v^2}{kT} \right ] v^2 d v
+\label{eq:488}
+\end{equation}
+Let's integrate over the electron's velocity to get,
+\begin{equation}
+\frac{N_0^+ N_e}{N_0} = \left ( \frac{2\pi m_e kT}{h^2} \right)^{3/2}
+\frac{2g_0^+}{g_0} e^{-E_I/kT}
+\label{eq:489}
+\end{equation}
+We know that the ratio of the number of atoms in any state to those in
+the ground states is simply $g_0/U(T)$, so we can get {\em Saha's
+  equation}
+\begin{equation}
+\frac{N^+ N_e}{N} = \left ( \frac{2\pi m_e kT}{h^2} \right)^{3/2}
+\frac{2 U^+(T)}{U(T)} e^{-E_I/kT}.
+\label{eq:490}
+\end{equation}
+We can also derive a Saha equation that connects any two stages of 
+ionization, 
+\begin{equation}
+\frac{N_{j+1} N_e}{N_j} = \left ( \frac{2\pi m_e kT}{h^2} \right)^{3/2}
+\frac{2 U_{j+1}(T)}{U_j(T)} e^{-E_{I,j,j+1}/kT}.
+\label{eq:491}
+\end{equation}
+
+In astrophysical contexts, there is generally a mixture of different
+elements.  Some elements such as the alkali metals have very small
+values of $E_I$ so they may dominate the number of electrons in the
+gas when more abundant elements such as hydrogen are completely
+neutral.
+
+A bit of nomenclature: HI is neutral hydrogen, HII is ionized
+hydrogen, Fe XXVI has a single electron, and Fe I has all twenty six.
+Don't confuse HII with H$_2$.
+
+\section{A Practical Aside - Orders of Magnitude}
+\label{sec:pract-aside-order}
+\index{order-of-magnitude calculations}
+One of the most important tools that a card-carrying astrophysics has
+is the order of magnitude estimate.  The order of magnitude estimate
+combines the lack of rigour of dimensional analysis with the lack of
+accuracy of keeping track of only the exponents; this makes
+multiplication in your head easier!
+
+The first part of the tool is the knowledge of the various constants
+of nature in c.g.s units but you only need to keep the exponent in
+your head.  A glance at Table~\ref{tab:physical} shows that some of
+the physical constants are easier to remember than others, but one can
+exploit the relationships between them a remember only a few key
+numbers to obtain the the rest.
+
+\begin{table}
+\caption{Common Physical Constants in c.g.s.}
+\label{tab:physical}
+{\footnotesize
+\begin{center}
+\begin{tabular}{lrcr}
+\hline
+\multicolumn{1}{c}{Name} &
+\multicolumn{1}{c}{Value} &
+\multicolumn{1}{c}{Units} &
+\multicolumn{1}{c}{Exponent}
+ \\ \hline \\
+\multicolumn{4}{c}{Mathematical Quantities} \\ \\
+$\pi$ & $3.14$ & & 0.5 \\
+Arc Second & $4.86 \times 10^{-6}$ & & -5.5 \\ 
+\hline
+\\
+\multicolumn{4}{c}{Astrophysical Quantities} \\ \\
+Mass of Sun, M$_\odot$ & $1.99 \times 10^{33}$ & g & 33.5 \\
+Luminosity of Sun, L$_\odot$ & $3.83 \times 10^{33}$ & erg s$^{-1}$ & 33.5 \\
+Radius of Sun, R$_\odot$ & $6.96 \times 10^{10}$ & cm & 11 \\
+Mass of Earth, M$_\oplus$ & $5.98 \times 10^{27}$ & g & 28 \\
+Radius of Earth, R$_\oplus$ & $6.38 \times 10^{8}$ & cm & 9 \\
+$2 \pi R_\oplus$ & $40,000$ & km & 4.5 \\
+Year & $3.16 \times 10^7$ & s & 7.5 \\
+Parsec & $3.09 \times 10^{18}$ & cm & 18.5 \\
+Astronomical Unit & $1.50 \times 10^{13}$ & cm & 13 \\   \hline
+\\
+\multicolumn{4}{c}{Physical Constants} \\
+\\
+Speed of light & $3.00 \times 10^{10}$ & cm s$^{-1}$ & 10.5 \\
+Newton's Constant $G$ & $6.67 \times 10^{-8}$ & dyn cm$^{2}$g$^{-2}$
+& $-7$ \\
+                      & $(2\pi)^2$ & AU$^{-3}$yr$^{-2}$
+M$_{\odot}^{-1}$ & 1.5 \\ 
+Thomson cross-section, $\sigma_T$ & $6.65 \times 10^{-25}$ & cm$^{2}$
+& $-24$ 
+\\ 
+Electron mass, $m_e$ & $9.11 \times 10^{-28}$ & g & $-27$ \\
+                    & 511 & keV c$^{-2}$ & 2.5 \\
+Proton mass, $m_p$ & $1.67 \times 10^{-24}$ & g & $-27$ \\
+                    & 938 & MeV c$^{-2}$ & 3 \\
+Electron-scattering opacity & 0.4 &
+cm$^{-2}$ g$^{-1}$ & $-0.5$ \\
+~~~~$\kappa_e=\sigma_T/m_p$ & \\
+$m_p/m_e$ & 1836.109 & & 3  \\
+Planck constant, $h$& $6.63 \times 10^{-27}$ & erg s & $-26$ \\
+Reduced Planck constant, & $1.05 \times 10^{-27}$
+& erg s & $-27$ \\
+~~~~$\hbar=h/(2\pi)$ & \\
+$\hbar c$ & $3.16 \times 10^{-17}$ & erg cm & $-16.5$ \\
+Fine structure constant,  & $1/137.$ & & $-2$
+\\
+~~~~$\alpha=e^2/(\hbar c)$ & \\
+Electron Compton Wavelength, &
+$3.86 \times 10^{-11}$ & cm & -10.5 \\
+~~~~$\lambdabare=\hbar/(m_e c)$ & \\
+Bohr radius, $a_0=\lambdabare/\alpha$ & 0.529 & \r{A} $= 10^{-8}$cm & -8.5 \\
+Boltzmann constant, $k_B$ & $1.38 \times 10^{-16}$ & erg K$^{-1}$ &
+$-16$ \\
+Stephan-Boltzmann constant, $\sigma$ & $5.67 \times 10^{-5}$ & erg
+cm$^{-2}$s$^{-1}$K$^{-4}$ &
+$-4.5$ \\
+Electron volt, eV & $1.60 \times 10^{-12}$ & erg & $-12$ \\
+                   & $11600$ &  K $k_b^{-1}$ & 4 \\
+\\ \hline
+\end{tabular}
+\end{center}
+}
+\end{table}
+\clearpage
+\section{Problems}
+\begin{enumerate}
+\item{\bf Particles in a Box}
+
+A reasonable model for the neutrons and protons in a nucleus is that
+they are confined to a small region.   Let's take a one-dimensional
+model of this.  The potential is $V(x)$ is zero everywhere for $0<x<l$
+and infinite otherwise.  This means that 
+\begin{equation}
+-\frac{\hbar^2}{2m} \frac{d^2 \psi}{d x^2} = E_n \psi ~\rmmat{if}~0<x<l
+\label{eq:492}
+\end{equation}
+and $\psi=0$ if $x<0$ or $x>l$.  
+What are the energy levels of this system?
+
+\item{\bf Hyperfine Transition - Ballpark}
+
+Calculate the energy and wavelength of the hyperfine transition of the
+hydrogen atom.  You may use the following formula for the energy of
+two magnets near to each other
+\begin{equation}
+E = -\frac{{\bf \mu}_1 \cdot {\bf \mu}_2}{r^3}
+\label{eq:493}
+\end{equation}
+We are looking for an order of magnitude estimate of the wavelength.
+I got 151~cm which is in the ballpark.
+
+\item{\bf Hyperfine Transition - Precise}
+
+Calculate the energy and wavelength of the transition of hydrogen with
+the spin of the electron and proton aligned to antialigned.  Assume
+that the electron is in the ground state.
+
+\item{\bf Density and Ionization}
+
+Calculate the ionized fraction of pure hydrogen as a function of the
+density for a fixed temperature.  You may take $U(T)=g_0=2$ and 
+$U^+(T)=g_0^+=2$.
+\end{enumerate}
+%%% Local Variables:
+%%% TeX-master: "book"
+%%% End:

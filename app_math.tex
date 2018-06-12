@@ -1,0 +1,167 @@
+\chapter{Mathematical Appendix}
+\label{cha:math-append}
+
+\section{The Integral of $x^3/(e^x-1)$}
+\label{sec:integral-b_nut}
+
+The integral can be evaluated using a Taylor series
+\begin{equation}
+\int_0^\infty \frac{x^3}{e^x - 1} d x
+= \int_0^\infty \frac{x^3 e^{-x}}{1-e^{-x}} d x =
+\int_0^\infty x^3 \sum_{n=1}^{\infty} e^{-nx} d x
+\label{eq:796}
+\end{equation} 
+Let's look at each term in the sum (we can do this because each
+term in the sum is a convergent integral)
+\begin{equation}
+\int_0^\infty x^3 e^{-nx} dx = \frac{1}{n^4} \int_0^\infty u^3 e^{-u}
+du.
+\label{eq:801}
+\end{equation}
+The integral 
+\begin{equation}
+\int_0^\infty u^3 e^{-u} du = \left . -u^3 e^{-u} \right |_0^\infty 
++ 3 \int_0^\infty u^2 e^{-u} du
+\end{equation}
+and
+\begin{equation}
+\int_0^\infty u^3 e^{-u} du = 3 \left ( \left . -u^2 e^{-u}
+  \right|_0^\infty  + 2 \int_0^\infty u e^{-u} du  \right )
+\end{equation}
+and
+\begin{equation}
+\int_0^\infty u^3 e^{-u} du = 3 \times 2 \times \left ( \left . -u e^{-u}
+  \right|_0^\infty  + \int_0^\infty e^{-u} du  \right ) = 6
+\end{equation}
+to yield
+\begin{equation}
+\int_0^\infty \frac{x^3}{e^x - 1} d x = \sum_{n=1}^\infty \frac{6}{n^4}.
+\label{eq:800}
+\end{equation}
+This result can be generalized to yield
+\begin{equation}
+\int_0^\infty \frac{x^\alpha}{e^x - 1} d x = \sum_{n=1}^\infty
+\frac{\Gamma(\alpha+1)}{n^\alpha} = \Gamma(\alpha+1) \zeta(\alpha+1).
+\label{eq:828}
+\end{equation}
+For odd positive values of $\alpha$ the summation can be solved with contour
+integration.  Let's start with
+$$
+\sum_{n=1}^\infty \frac{1}{n^4}
+$$ 
+to evaluate.  We will use a basic result from complex analysis that
+the integral of an analytic function around a closed contour vanishes
+if the contour contains no poles.  Let's examine the function
+\begin{equation}
+f(z) = \frac{\pi \cot (\pi z)}{z^4} dz
+\label{eq:795}
+\end{equation}
+that has poles at $z= \ldots, -2, -1, 0, 1, 2 \ldots$ and for large
+values of $z$ $f(z)$ quickly approaches zero, so the integral 
+\begin{figure}
+\begin{center}
+\begin{tikzpicture}
+\foreach \x in {1,...,4} {
+\fill (\x,0) circle (0.05) ;
+\fill (-\x,0) circle (0.05) ;
+}
+\draw (0,0) circle (0.05);
+\foreach \x in {-4,...,4} {
+\draw [->] (\x,0.2) arc (90:360:0.2) arc (0:90:0.2);
+}
+\draw [->] (-5,0) -- (5,0);
+\draw [->] (0,-2) -- (0,2);
+\end{tikzpicture}
+\end{center}
+\caption{The poles of $f(z)$ in the complex plane}
+\label{fig:polesfz}
+\end{figure}
+\begin{equation}
+\lim_{R\rightarrow \infty }\oint_{C_R} f(z) dz = 0
+\label{eq:797}
+\end{equation}
+where $C_R$ is a circle of radius $R$.  The sum of the integrals about
+all of the poles must vanish.  Fig.~\ref{fig:polesfz} shows all of the
+poles.  At the poles (solid points in the figure) other than at the
+origin, the function is given by
+\begin{equation}
+f(z) \approx \frac{1}{n^4} \frac{1}{z-n}
+\label{eq:798}
+\end{equation}
+that we can integrate along the loops in the figure by substituting
+$z=n+R e^{i\theta}$ so $dz = i R e^{i\theta} d\theta$ and
+\begin{equation}
+\lim_{R\rightarrow 0} \oint_{C_R} f(z) dz = 
+\lim_{R\rightarrow 0} \int_0^{2\pi} \frac{1}{n^4} \frac{1}{R e^{i\theta}} i R
+e^{i\theta} d\theta = \frac{i}{n^4} \int_0^{2\pi} d\theta = 2\pi i \frac{1}{n^4}
+\label{eq:829}
+\end{equation}
+where $C_R$ is a circle of radius $R$ centered on the pole.   Let's
+combine this result with the integral around the large loop
+(Eq.~\ref{eq:797}) to give
+\begin{equation}
+0 = 4\pi i \sum_{n=1}^\infty \frac{1}{n^4} + \lim_{R\rightarrow 0}
+\oint_{C_R} f(z) dz
+\label{eq:799}
+\end{equation}
+where the first term is the sum we seek and the second term is an
+integral is over a circle surrounding the origin.  The leading term in
+the integral about the origin is proportional to $z^{-5}$ and $\oint
+z^{-n} dz=0$ if $n\neq 1$, so we have to look at higher order terms,
+specifically
+\begin{equation}
+f(z) = \frac{1}{z^5} - \frac{\pi^2}{3 z^3} - \frac{\pi^4}{45 z} +
+\cdots 
+\label{eq:803}
+\end{equation}
+so we have
+\begin{equation}
+0 = 4\pi i \sum_{n=1}^\infty \frac{1}{n^4} + 2\pi i \left ( -
+  \frac{\pi^4}{45} \right )
+\label{eq:802}
+\end{equation}
+and 
+\begin{equation}
+ \sum_{n=1}^\infty \frac{6}{n^4} = 6 \frac{\pi^4}{45\times 2} = \frac{\pi^4}{15}.
+\end{equation}
+
+\section{Parseval's Theorem}
+\label{sec:an-math-asid}
+\index{Fourier transform!Parseval's theorem}
+
+We have stated a rather useful result,
+\begin{equation}
+\int_{-\infty}^{\infty} |E(t)|^2 dt = 2\pi \int_{-\infty}^{\infty} 
+|{\hat E}(\omega)|^2 d \omega.
+\label{eq:159}
+\end{equation}
+We now have the tools to prove it quickly,
+\begin{eqnarray}
+\int_{-\infty}^{\infty} |E(t)|^2 dt &=& \int_{-\infty}^{\infty} d t
+  \int_{-\infty}^{\infty} {\hat E}(\omega')
+e^{-i\omega' t} d \omega'.
+  \int_{-\infty}^{\infty} {\hat E}^*(\omega)
+e^{i\omega t} d \omega \\
+&=& \int_{-\infty}^{\infty}  \int_{-\infty}^{\infty}
+  \int_{-\infty}^{\infty} d t d\omega' d \omega
+ {\hat E}(\omega') {\hat E}^*(\omega)
+e^{-i\omega' t} e^{i\omega t} 
+\label{eq:160}
+\end{eqnarray}
+The integral over time is simply Fourier transform of $2\pi
+e^{-i\omega' t}$ which we know,
+\begin{eqnarray}
+\int_{-\infty}^{\infty} |E(t)|^2 dt &=& 2\pi 
+\int_{-\infty}^{\infty}
+  \int_{-\infty}^{\infty} d\omega' d \omega
+ {\hat E}(\omega') {\hat E}^*(\omega) \delta (\omega -\omega') \\
+ &=& 2 \pi \int_{-\infty}^{\infty} d \omega
+ {\hat E}(\omega) {\hat E}^*(\omega) =2 \pi \int_{-\infty}^{\infty}
+ |{\hat E}(\omega)|^2  d \omega
+\label{eq:161}
+\end{eqnarray}
+
+
+%%% Local Variables:
+%%% TeX-master: "book"
+%%% End:

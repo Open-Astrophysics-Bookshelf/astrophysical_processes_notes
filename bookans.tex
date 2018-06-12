@@ -1,0 +1,39 @@
+\documentclass[10pt]{article}
+\def\bookloaded{\true}
+\ifx\pdftexversion\undefined
+  \usepackage[dvips]{graphicx}
+\else
+  \usepackage[pdftex]{graphicx}
+\fi
+\def\dddot#1{{\mathop{#1}\limits^{\vbox{ \hbox{\rm ...}}}}}
+\def\gtrsim{\mathop{\sim}\limits^{>}}
+\def\lesssim{{\mathop{\sim}\limits^{<}}}
+\newcommand{\be}{\begin{equation}}
+\newcommand{\ee}{\end{equation}}
+\newcommand{\rmmat}[1]{\hbox{\rm #1}}
+\newcommand{\rmscr}[1]{{\hbox{\rm \scriptsize #1}}}
+\newcommand{\comment}[1]{\relax}
+\newcommand{\dd}[2]{\frac{d {#1}}{d {#2}}}
+\newcommand{\pp}[2]{\frac{\partial {#1}}{\partial {#2}}}
+\newcommand{\betabold}{\mbox{\boldmath $\beta$}}
+\newcommand{\epbold}{\mbox{\boldmath $\epsilon$}}
+\newcommand{\lambdabare}{\lambda_e\!\!\!\!\!\!^-~}
+\newcommand{\ie}{{\em i.e.}}
+\begin{document}
+
+\title{Fundamentals of Astrophysics\\{\large Answers for ASTR 402/500}}
+\author{Jeremy S. Heyl}
+\maketitle
+
+
+
+\include{week3ans}
+\include{week4ans}
+\include{week7sol}
+\include{week8sol}
+\include{week9sol}
+\include{week10sol}
+\include{week11sol}
+
+\end{document}
+\end

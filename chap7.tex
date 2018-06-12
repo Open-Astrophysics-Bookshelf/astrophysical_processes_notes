@@ -1,0 +1,548 @@
+\chapter{Compton Scattering}
+\label{cha:compton-scattering}\index{Compton scattering}
+When we looked at the scattering of light by electrons we assumed that
+the energy of photon was not changed by the scattering and that the
+electron was not relativistic.  Compton scattering involves dropping
+these two assumptions.
+
+\section{The Kinematics of Photon Scattering}
+\label{sec:kinem-phot-scatt}
+\index{Compton scattering!kinematics}
+
+We assumed that the light carries only energy but it also carries
+momentum so when an electron scatters light some momentum may be
+transferred between the light and the electron.  Let's consider that
+the electron is at rest (we can always move into the frame of the
+electron).  Initially we have
+\begin{equation}
+p^\mu_{ei} = \left [ \begin{array}{c}mc\\ {\bf 0}  \end{array} \right
+] ~\rmmat{and}~ p^\mu_{\gamma i} = \frac{E_i}{c} \left [
+  \begin{array}{c}1 \\ {\bf n}_i  \end{array} \right
+]
+\label{eq:397}
+\end{equation}
+and after the scattering we have
+\begin{equation}
+p^\mu_{ef} = \left [ \begin{array}{c}\frac{E}{c}\\ {\bf p}  \end{array} \right
+] ~\rmmat{and}~ p^\mu_{\gamma i} = \frac{E_f}{c} \left [
+  \begin{array}{c}1 \\ {\bf n}_f  \end{array} \right
+]
+\label{eq:398}
+\end{equation}
+The conservation of energy-momentum tells us that
+\begin{equation}
+p^\mu_{ei} + p^\mu_{\gamma i}  = p^\mu_{ef} + p^\mu_{\gamma f} 
+\label{eq:399}
+\end{equation}
+or
+\begin{equation}
+p^\mu_{ef}  = p^\mu_{ei} + p^\mu_{\gamma i} -  p^\mu_{\gamma f} 
+\label{eq:400}
+\end{equation}
+Let's calculate the square of both sides,
+\begin{eqnarray}
+p^\mu_{ef} 
+p_{\mu,ef} &=&
+( p^\mu_{ei} + p^\mu_{\gamma i} -  p^\mu_{\gamma f} ) 
+( p_{\mu,ei} + p_{\mu,\gamma i} -  p_{\mu,\gamma f} ) \\
+m^2 c^2 &=& m^2 c^2 + 2 p^\mu_{ei} p_{\mu,\gamma i} - 2p^\mu_{ei}
+p_{\mu,\gamma f} - 2 p^\mu_{\gamma f} p_{\mu,\gamma i}  \\
+0 &=& 2 m E_i - 2 m E_f - 2 \frac{E_i E_f}{c^2} \left ( 1 - \cos\theta
+\right ) \\
+E_f &=& \frac{E_i}{1+ \frac{E_i}{mc^2} \left ( 1 - \cos\theta
+\right )}
+\label{eq:401}
+\end{eqnarray}
+We can write this really compactly by using the relationship between
+the energy and wavelength of a photon ($E=hc/\lambda$),
+\begin{equation}
+\lambda_f = \lambda_i + \frac{h}{mc} \left (1 - \cos \theta \right )
+\label{eq:402}
+\end{equation}
+A cute thing to ask is what is the final energy of the photon if the 
+initial energy is much greater than the electron's rest-mass.  We get
+\begin{equation}
+E_f \approx \frac{mc^2}{1-\cos\theta}
+\label{eq:403}
+\end{equation}
+
+There is a second important change.  If the energy of the photon
+changes dramatically, {\em i.e.} $E_f \ll E_i$, the cross section for
+the scattering is reduced from $\sigma_T$. Specifically
+\begin{equation}
+\dd{\sigma}{\Omega} = \frac{r_0^2}{2} \left ( \frac{E_f}{E_i}
+\right )^2 \left ( \frac{E_i}{E_f} + \frac{E_f}{E_i} - \sin^2 \theta
+\right )
+\label{eq:404}
+\end{equation}
+for unpolarized radiation. 
+
+\section{Inverse Compton Scattering}
+\label{sec:inverse-compt-scatt}
+\index{inverse Compton scattering}
+\index{Compton scattering!inverse}
+
+In Compton scattering the photon always loses energy to an electron
+initially at rest.   Inverse Compton scattering corresponds to the
+situation where the photon gains energy from the electron because the
+electron is in motion.
+
+Let's imagine that the electron is travelling along the $x-$axis with
+Lorentz factor $\gamma$.  Furthermore, let's think about the lab frame
+(unprimed) and the electron's rest frame (primed).  The initial and
+final energies 
+\begin{equation}
+E_i' = E_i \gamma \left ( 1 - \beta \cos \theta_i \right )~\rmmat{and}~
+E_f = E_f' \gamma \left ( 1 - \beta \cos \theta_f' \right )
+\label{eq:405}
+\end{equation}
+where $\theta$ is the angle that the photon makes with the $x-$axis in
+the lab frame.  Furthermore, we know that
+\begin{equation}
+E'_f = \frac{E'_i}{1+ \frac{E'_i}{mc^2} \left ( 1 - \cos\Theta \right)}
+\label{eq:406}
+\end{equation}
+where $\Theta$ is the angle between the incident and scattered photon
+in the rest-frame of the electron.
+
+Let's consider the case we $E_i' \ll m c^2$ so $E_i' \approx E_f'$.
+If we look at the redshift formulae we find that
+\begin{equation}
+E_f = E_i \gamma^2 \left ( 1 - \beta \cos \theta \right ) \left ( 1 +
+\beta \cos \theta_f' \right )
+\label{eq:407}
+\end{equation}
+Let's consider the case of relativistic electrons.  If we assume that
+the photon distribution is isotropic, the angle $\langle \cos\theta
+\rangle = 0$.  $\langle \cos\theta_f'\rangle$ is also zero because the
+scatter photon is forward-backward symmetric in the rest-frame of the
+electron so we
+find that
+\begin{equation}
+E_f = \gamma^2 E_i
+\label{eq:408}
+\end{equation}
+when averaged over angle.
+
+\subsection{Inverse Compton Power - Single Scattering}
+\label{sec:inverse-compt-power}
+
+Let's consider an isotropic distribution of photons and
+derive the total power emitted by an electron passing through. 
+
+We will first make use on some of the transformation rules that we
+derived for the phase-space density of photons.  Let $v dE$ be the
+density of photons having energy in the range $dE$.  The number of
+photons in a box over the energy range is a Lorentz invariant
+\begin{equation}
+v dE d^3 x = v' dE' d^3 x'
+\label{eq:409}
+\end{equation}
+Remember that $d^3 x = \gamma^{-1} d^3 x'$ and that $E = \gamma E'$ (with
+forward-backward symmetry) so we
+find that
+\begin{equation}
+\frac{v dE}{E} = \frac{v' dE'}{E'} = \rmmat{Lorentz Invariant}
+\label{eq:410}
+\end{equation}
+Let's switch to the rest-frame of the electron.   The total power
+scattered in the electron's rest frame is
+\begin{equation}
+\dd{E_f}{t} = \dd{E_f'}{t'} = c \sigma_T \int E_f' v' d E'
+\label{eq:411}
+\end{equation}
+where we have assumed that $E_i' \ll m c^2$.  The first equality holds
+because the emitted power is a Lorentz invariant. {\bf Why is this true?}
+
+Let's assume that the change in the energy of the photon in the
+rest frame of the electron is negligible compared to the change in the
+energy of the photon in the lab frame, {\em i.e.} $\gamma^2 - 1 \gg
+E/(m c^2)$, so $E_f'=E'$, so we have
+\begin{equation}
+\dd{E_f}{t} = c \sigma_T \int E'^2 \frac{v' dE'}{E'} = c
+\sigma_T \int E'^2 \frac{v dE}{E}
+\label{eq:412}
+\end{equation}
+The redshift formula for photons is 
+\begin{equation}
+E' = E \gamma \left ( 1 - \beta \cos\theta \right )
+\label{eq:413}
+\end{equation}
+so we have
+\begin{equation}
+\dd{E_f}{t} = c \sigma_T \gamma^2 \int \left ( 1  - \beta
+\cos\theta \right )^2 E v dE = c \sigma_T \gamma^2 \left ( 1 + \frac{1}{3}
+\beta^2 \right ) U_\rmscr{ph}
+\label{eq:414}
+\end{equation}
+where
+\begin{equation}
+U_\rmscr{ph} = \int E v dE
+\label{eq:415}
+\end{equation}
+
+The rate of decrease of the total initial photon energy is
+\begin{equation}
+\dd{E}{t} = -c\sigma_T \int E v dE = -\sigma_T c U_\rmscr{ph}
+\label{eq:416}
+\end{equation}
+so the total change in the energy of the electron and converted into
+the increased energy of the radiation field is
+\begin{equation}
+\dd{E_\rmscr{rad}}{t} = \dd{E_f}{t} + \dd{E}{t} = c\sigma_T
+U_\rmscr{ph} \left [ \gamma^2 \left ( 1 + \frac{1}{3} \beta^2 \right )
+  - 1 \right ] = \frac{4}{3} \sigma_T c \gamma^2 \beta^2 U_\rmscr{ph}.
+\label{eq:417}
+\end{equation}
+Let's compare this with the synchrotron power of the same electron,
+\begin{equation}
+P = 
+\frac{2}{3} r_0^2 c \beta^2_\perp \gamma^2 B^2 = \frac{2}{3}
+\left ( \frac{3}{8\pi} \sigma_T \right ) c \left ( \frac{2}{3} \beta^2
+\right ) \left ( 8\pi U_B \right ) = \frac{4}{3} \sigma_T c \gamma^2 \beta^2
+ U_B 
+\label{eq:418}
+\end{equation}
+\subsection{Inverse Compton Spectra - Single Scattering}
+\label{sec:inverse-compt-spectr}
+
+Let's suppose that we have an isotropic distribution of photons of a
+single energy $E_0$ and a beam of electrons travelling along the
+$x-$axis with energy $\gamma m c^2$ and density $N$.  Let's also use
+an intensity that counts the number of photons not their energies so
+\begin{equation}
+I(E) = \frac{I_\nu}{h \nu} = F_0 \delta (E-E_0).
+\label{eq:419}
+\end{equation}
+What does the intensity look like in the rest frame of the electrons.
+Remember that $I_\nu/\nu^3$ was a Lorentz invariant so we have
+\begin{eqnarray}
+I'(E',\mu') &=& F_0 \left (\frac{E'}{E}\right)^2 \delta (E-E_0)\\
+& =& F_0
+\left (\frac{E'}{E_0}\right)^2 \delta (\gamma E' (1+\beta\mu') -E_0) \\
+&=&  \frac{F_0}{\gamma\beta E'} 
+\left (\frac{E'}{E_0}\right)^2 \delta \left (\mu' - \frac{E_0-\gamma
+  E'}{\gamma\beta E'} \right )
+\label{eq:420}
+\end{eqnarray}
+In the rest frame of the electrons the emission coefficient is simply
+proportional to the mean intensity,
+\begin{equation}
+j'(E_f') = N' \sigma_T \frac{1}{2} \int_{-1}^1 I'(E_f',\mu') d \mu'
+\label{eq:421}
+\end{equation}
+where we have assumed that $E_f'=E'$.  Because $I'$ is proportional to
+a delta function, the integral is trivial giving
+\begin{equation}
+j'(E_f') = \frac{N' \sigma_T E_f' F_0}{2 E_0^2  \gamma
+  \beta}~\rmmat{if}~ \frac{E_0}{\gamma (1+\beta)} < E_f' < \frac{E_0}{\gamma(1-\beta)}
+\label{eq:422}
+\end{equation}
+and zero otherwise.  Now we can transform into the lab frame, using
+the fact that $j_\nu/\nu^2$ is a Lorentz invariant. We have
+\begin{eqnarray}
+j(E_f,\mu_f) &=& \frac{E_f}{E_f'} j'(E_f') \\
+&=& \frac{N \sigma_T E_f F_0}{2 E_0^2 \gamma^2 \beta}  \\ 
+& &~~\rmmat{if}~
+\frac{E_0}{\gamma (1+\beta)(1-\beta \mu_f)} < E_f <
+\frac{E_0}{\gamma(1-\beta)(1-\beta \mu_f)} \nonumber
+\label{eq:423}
+\end{eqnarray}
+and zero otherwise. {\bf Where did the extra $\gamma$ come from?}.
+
+Let's assume that there are many beams isotropically distributed, so
+we need to find the mean value of $j(E_f,\mu_f)$ over angle,
+\begin{equation}
+j(E_f) = \frac{1}{2} \int_{-1}^1 j(E_f,\mu_f) d\mu_f
+\label{eq:424}
+\end{equation}
+Depending on the value of $E_f/E_0$ this integral may vanish.
+Specifically the integrand is non-zero only if $\mu_f$ lies in the
+range
+\begin{equation}
+\frac{1}{\beta} \left [ 1 - \frac{E_0}{E_f} \left ( 1 + \beta \right )
+  \right ] < \mu_f < 
+\frac{1}{\beta} \left [ 1 - \frac{E_0}{E_f} \left ( 1 - \beta \right )
+  \right ].
+\label{eq:425}
+\end{equation}
+Putting this together and integrating yields,
+\begin{equation}
+j(E_f) = \frac{N \sigma_T F_0}{4 E_0 \gamma^2 \beta^2} \left \{
+\begin{array}{lc}
+  (1+\beta) \frac{E_f}{E_0} - (1 -\beta ),  & \frac{1-\beta}{1+\beta} <
+  \frac{E_f}{E_0} < 1 \\
+  (1+\beta) - \frac{E_f}{E_0} (1 -\beta ),  & 1 < 
+  \frac{E_f}{E_0} < \frac{1+\beta}{1-\beta} \\
+  0, & \rmmat{otherwise}
+\end{array}
+\right .
+\label{eq:426}
+\end{equation}
+If $\gamma \gg 1$, the second portion of the emission dominates (many
+more photons gain energy than lose) and we can derive a simple
+approximation.  Let 
+\begin{equation}
+x \equiv \frac{E_f}{4\gamma^2 E_0}
+\label{eq:427}
+\end{equation}
+and we find that
+\begin{equation}
+j(E_f) = \frac{3 N \sigma_T F_0}{4\gamma^2 E_0} \underbrace{\left [ \frac{2}{3} (
+1 - x ) \right ]}_{f_\rmscr{iso}(x)}
+\label{eq:428}
+\end{equation}
+The mean energy of the scattering photon has $x=1/2$ or $E_f=2\gamma^2
+E_0$ [see equation (15)].
+
+To be more precise, we could have relaxed the assumption that the
+scattering is isotropic and we would have found
+\begin{equation}
+f(x) = 2 x \ln x + x + 1 - 2 x^2, ~~~ 0 < x < 1 .
+\label{eq:429}
+\end{equation}
+Here the mean energy of the scattered photon is slightly lower $4/3
+\gamma^2 E_0$.
+
+Now we have all of the ingredients to determine the  spectrum
+of radination scattered off of a power-law distribution of electrons,
+$d N = C \gamma^{-p} d \gamma$.  We have
+\begin{eqnarray}
+\frac{d E}{dV dt dE_f} &=& 4 \pi E_f j(E_f) \\
+&=& \frac{3}{4} c \sigma_T C \int d E \left ( \frac{E_f}{E} \right )  v(E)
+\int_{\gamma_1}^{\gamma_2} d \gamma \gamma^{-p-2} f \left (
+\frac{E_f}{4\gamma^2 E} \right ) \\
+&=& 3\sigma_T c C 2^{p-2} E_f^{-(p-1)/2} \times \\ 
+\nonumber & & ~~~\int d E E^{(p-1)/2} v(E)
+\int_{x_1}^{x_2} x^{(p-1)/2} f(x) dx
+\label{eq:430}
+\end{eqnarray}
+so we find that the scattered photons have an energy distribution
+$E^{-s}$ where $s=(p-1)/2$.  This is the same index as for synchrotron
+radiation. {\bf Can you say why?}
+
+This power-law distribution is valid over a limited range of photon
+energies.  If the initial photon distribution peaks at ${\bar E}$ the
+power-law will work between $4 \gamma_1^2 {\bar E}$ and $4 \gamma_2^2
+{\bar E}$
+
+\section{Repeated Scattering}
+\label{sec:repeated-scattering}
+\index{inverse Compton scattering!Compton $y$-parameter}
+
+Let's now look at the case where a photon might scatter off of the
+electrons many times before it manages to tranverse the hot plasma.
+Let's define the Compton $y$-parameter to be
+\begin{equation}
+y \equiv \left [ \begin{array}{c}\rmmat{average fractional} \\
+    \rmmat{energy change per} \\ \rmmat{scattering} \end{array} \right
+] \times  \left [ \begin{array}{c}\rmmat{mean number of } \\
+    \rmmat{scatterings} \end{array} \right] 
+\label{eq:431}
+\end{equation}
+The second part of this expression is simply related to the optical
+depth.  Specifically, a good heuristic is that it is
+Max($\tau_{es},\tau_{es}^2$) where
+\begin{equation}
+\tau_{es} = \rho \kappa_{es} R = \rho \frac{\sigma_T}{m_p} R.
+\label{eq:432}
+\end{equation}
+if we neglect absorption.
+
+The first term requires a bit more thought.   First let's do the
+non-relativistic limit,  Let's imagine that to lowest order the
+electron is not moving, so we can use Eq.~(\ref{eq:401}) to lowest order
+\begin{equation}
+E_f \approx E_i \left [ 1 - \frac{E_i}{mc^2} \left ( 1 - \cos\theta \right )
+  \right ] = E_f \left [ 1 - \frac{E_i}{mc^2} \right ]
+\label{eq:433}
+\end{equation}
+where the second equality holds after averaging over $\cos\theta$.
+However, the electrons have some thermal motion so we would expect
+that there would be an additional term proportional to the thermal
+energy of the electrons,
+\begin{equation}
+\frac{E_f - E_i}{E_i} = -\frac{E_i}{mc^2}  + \frac{\alpha k T}{mc^2}.
+\label{eq:434}
+\end{equation}
+Let's suppose that the photons and electrons are in thermal
+equilibrium with each other but only scattering is important.  In this
+case, the number of photons cannot change.  Also let's assume that the
+number of photons is small so the number of photons of a particular
+energy is
+\begin{equation}
+d N = K E^2 e^{-E/kT} dE
+\label{eq:435}
+\end{equation}
+Because the photons and electrons are in equlibrium the average change
+in the energy of a photon must be zero
+\begin{eqnarray}
+\langle E_f - E_i \rangle &=& -\frac{\langle E_i^2 \rangle}{mc^2}  +
+\frac{\alpha k T}{mc^2} \langle E_i \rangle = 0. \\
+&=& -\frac{12 (kT)^2}{mc^2} + \frac{3 \alpha (kT)^2}{mc^2} = 0
+\label{eq:436}
+\end{eqnarray}
+so $\alpha=4$ and we find that the fractional change in the photon's
+energy per scattering is
+\begin{equation}
+\frac{E_f - E_i}{E_i} = \frac{1}{mc^2}\left ( 4 k T - E_i \right )
+\label{eq:437}
+\end{equation}
+
+We have already worked through the ultrarelatistic case, from equation
+(24), we find that
+\begin{equation}
+E_f - E_i \approx \frac{4}{3} \gamma^2 E_i
+\label{eq:438}
+\end{equation}
+If the electrons are ultrarelativistic, they follow the distribution
+in Eq.~(\ref{eq:435}), so we have
+\begin{equation}
+\frac{E_f - E_i}{E_f} \approx \frac{4}{3} \left [ 12 \left (
+  \frac{kT}{mc^2} \right )^2 \right ] = 16  \left (
+  \frac{kT}{mc^2} \right )^2.
+\label{eq:439}
+\end{equation}
+Combining these results we can calculate the Compton $y-$parameter in
+the two regimes
+\begin{eqnarray}
+y_{NR} &=& \frac{4kT}{mc^2} \rmmat{Max} (\tau_{es},\tau_{es}^2) \\
+y_{R} &=& \left ( \frac{4kT}{mc^2} \right )^2 \rmmat{Max} (\tau_{es},\tau_{es}^2) 
+\label{eq:440}
+\end{eqnarray}
+Essentially the Compton $y-$parameter tracks how the energy of a
+photon changes as it passes through a cloud of hot electrons.
+Specifically, the energy of a photon will be $E=e^y E_i$ after passing
+through a cloud of non-relativistic electrons with $kT \gg E$
+
+\section{Repeated Scattering with Low Optical Depth}
+\label{sec:repe-scatt-with}
+
+We saw how a power-law energy distribution of electrons can yield a
+power-law energy distribution of photons.  This is not too
+surprising.  However, it is also possible to produce a power-law
+distribution of photons from a thermal distribution of electrons if
+the optical depth to scattering is low.  This will also give some
+insight about how one gets power-law energy distributions in general.
+
+Let $A$ be the mean amplification per scattering,
+\begin{equation}
+A \equiv \frac{E_f}{E_i} \sim \frac{4}{3} \langle \gamma^2 \rangle =
+16 \left ( \frac{kT}{mc^2} \right )^2.
+\label{eq:441}
+\end{equation}
+The probability that a photon will scatter as it passes through a
+medium is simply $\tau_{es}$ if the optical depth is low, and the
+probability that it will undergo $k$ scatterings $p_k \sim
+\tau_{es}^k$ and its energy after $k$ scatterings is $E_k=A^k E_i$, so we have
+\begin{equation}
+\frac{E_k}{E_i} = A^k~\rmmat{and}~p_k=\tau_{es}^k
+\label{eq:442}
+\end{equation}
+The intensity after scattering looks like
+\begin{equation}
+I(E_k) = I(E_i) p_k = I(E_i) \tau_{es}^k
+\label{eq:443}
+\end{equation}
+To make sense of this let's take the logarithm of the first expression
+in Eq.~\ref{eq:442} to get
+\begin{equation}
+k = \frac{\ln\frac{E_k}{E_i}}{\ln A}
+\label{eq:444}
+\end{equation}
+and substitute this into the intensity formula
+\begin{equation}
+I(E_k) = I(E_i) \exp \left ( \frac{\ln\tau_{es} 
+\ln\frac{E_k}{E_i}}{\ln A} \right ) = I(E_i) \left ( \frac{E_k}{E_i}
+\right )^{-\alpha}
+\label{eq:445}
+\end{equation}
+where
+\begin{equation}
+\alpha = \frac{-\ln \tau_{es}}{\ln A}
+\label{eq:446}
+\end{equation}
+The total Compton power in the output spectrum is
+\begin{equation}
+P = \int_{E_i}^{A^{1/2}mc^2} I(E_k) dE_k = I(E_i) E_i \left [
+  \int_1^{A^{1/2} mc^2/E_i} x^{-\alpha} dx \right ].
+\label{eq:447}
+\end{equation}
+If $\alpha \leq 1$ the factor in the brackets can get really large so
+we find that the amplification is important when 
+\begin{equation}
+\ln \frac{1}{\tau_{es}} \gtrsim \ln A
+\label{eq:448}
+\end{equation}
+so
+\begin{equation}
+A \tau_{es} \approx 16 \left ( \frac{kT}{mc^2} \right )^2.
+\tau_{es} \gtrsim 1
+\label{eq:449}
+\end{equation}
+which is equivalent to $y_R \gtrsim 1$ but $\tau_{es} < 1$
+
+
+\section{Problems}
+\begin{enumerate}
+
+\item{\bf The Sunyaev-Zeldovich Effect}
+\index{Sunyaev-Zeldovich effect}
+\index{inverse Compton scattering!Sunyaev-Zeldovich effect}
+
+\begin{enumerate}
+\item Let's say that you have a blackbody spectrum of temperature $T$
+  of photons passing through a region of hot plasma ($T_e$).   You can assume
+  that $T \ll T_e \ll m c^2/k$ 
+
+  What is the brightness temperature of the photons in the
+  Rayleigh-Jeans limit after passing through the plasma in terms of
+  the Compton $y-$parameter?
+\item Let's suppose that the gas has a uniform density $\rho$ and
+  consists of hydrogen with mass-fraction $X$ and helium with
+  mass-fraction $Y$ and other stuff $Z$.  You can assume that
+  $Z/A=1/2$ is for the other stuff.  What is the number density of
+  electrons in the gas?
+\item
+  If you assume that the gas is spherical with radius $R$, what is the
+  value of the Compton $y-$parameter as a function of $b$, the
+  distance between the line of sight and the center of the cluster?
+  You can assume that the optical depth is much less than one.
+\item 
+  Let's assume that the sphere contains $10^{15}$~M$_\odot$ of gas and
+  that the radius of the sphere is 1 Mpc, $X=0.7, Y=0.27$ and
+  $Z=0.03$ what is the value of the $y-$parameter?
+\item
+  Let's suppose that the blackbody photons are from the cosmic
+  microwave background.   What is the difference in the brightness 
+  temperature of the photons that pass through the cluster and those
+  that don't (including the sign)?   How does this difference compare
+  with the primordial fluctuations in the CMB?  How can you tell this
+  change in the spectrum due to the cluster from the primordial
+  fluctuations? 
+\end{enumerate}
+
+\item{\bf Synchrotron Self-Compton Emission Blazars}
+
+\begin{enumerate}
+\item
+What is the synchrotron emission from a single electron passing
+through a magnetic field in terms of the energy density of the
+magnetic field and the Lorentz factor of the electron?
+\item 
+The number density of the electrons is $n_e$ and they fill a
+spherical region of radius $R$.  What is the energy density of photons
+within the sphere, assuming that it is optically thin?
+\item
+What is the inverse Compton emission from a single electron passing
+through a gas of photons field in terms of the energy density of the
+photons and the Lorentz factor of the electron?
+\item
+What is the total inverse Compton emission from the region if you
+assume that the synchrotron emission provides the seed photons for the
+inverse Compton emission?  
+\end{enumerate}
+\end{enumerate}
+%%% Local Variables:
+%%% TeX-master: "book"
+%%% End:

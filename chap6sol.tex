@@ -1,0 +1,81 @@
+\ifx\bookloaded\undefined
+\documentclass{article}
+\usepackage{graphicx}
+\input book_defs
+\begin{document}
+\fi
+\section{Chapter 6}
+
+\begin{enumerate}
+\item{\bf Synchrotron Radiation:}
+
+An ultrarelativistic electron emits synchrotron radiation.  Show that
+its energy decreases with time according to
+\begin{equation}
+\gamma = \gamma_0 \left ( 1 + A \gamma_0 t \right )^{-1}, A=\frac{2e^4
+  B_\perp^2}{3m^3 c^5}.
+\label{eq:395}
+\end{equation}
+Here $\gamma_0$ is the initial value of $\gamma$ and $B_\perp = B
+\sin\alpha$.  Show that the time for the electron to lose half its
+energy is
+\begin{equation}
+t_{1/2} = \left (A\gamma_0\right)^{-1}
+\label{eq:396}
+\end{equation}
+How do you reconcile the decrease of $\gamma$ with the result of
+constant $\gamma$ for motion in a magnetic field?
+
+{\bf Answer:}
+
+$$
+P = -\dd{E}{t} = -m_e c^2 \dd{\gamma}{t} = \frac{2}{3} r_0^2 c \beta^2
+\gamma^2 B_\perp^2
+$$
+so
+$$
+\dd{\gamma}{t} = -\frac{2}{3} \frac{e^4}{m_e^3 c^5} B_\perp^2 \gamma^2
+$$
+where we have taken $\beta\approx 1$.  If the Lorentz factor
+$\gamma=\gamma_0$ at $t=0$, integrating this yields
+$$
+\frac{1}{\gamma} - \frac{1}{\gamma_0}  = \frac{2}{3} \frac{e^4}{m_e^3
+  c^5} B_\perp^2 t,
+$$
+and rearranging yields the answers above.
+
+\item{\bf Synchrotron Cooling More Precisely:}
+
+Derive the evolution of the energy of the electron (or $\gamma$)
+evolves in time without making the ultrarelativistic approximation.
+
+{\bf Answer:}
+
+Let's start with
+$$
+\dd{\gamma}{t} = -\frac{2}{3} \frac{e^4}{m_e^3 c^5} B_\perp^2 \beta^2
+\gamma^2 = -A (\gamma^2 -1 )
+$$
+so
+$$
+-A dt = \frac{1}{2} \left [ \frac{d\gamma}{\gamma-1} -
+  \frac{d\gamma}{\gamma+1} \right ]
+$$
+and the answer upon integrating is
+$$
+\gamma = \coth \left ( \coth^{-1} \gamma_0 + A t \right ) .
+$$
+
+\comment{\item{\bf Power-Law Distribution More Precisely:}
+
+Calculate the photon spectrum for a power-law distribution of electron
+energies as in \S~\ref{sec:spectral-index-power} including the
+normalization and polarization. }
+\end{enumerate}
+
+\ifx\bookloaded\undefined
+\end{document}
+\fi
+%%% Local Variables:
+%%% TeX-master: "book"
+%%% End:
