@@ -163,9 +163,9 @@ effective.
 \begin{tikzpicture}
 \begin{scope}[yscale=20,smooth]
 \clip (0,-0.1) rectangle (6,0.2);
-\draw[color=red] plot file{xegx.dat} ;
-\draw[color=blue] plot file{xeux.dat} ;
-\draw[dashed] plot file{xmorsex.dat} ;
+\draw[color=red] plot file{morse/xegx.dat} ;
+\draw[color=blue] plot file{morse/xeux.dat} ;
+\draw[dashed] plot file{morse/xmorsex.dat} ;
 \end{scope}
 \begin{scope}[yscale=20]
 \draw[->] (-0.2,-0.1) -- (6.2,-0.1) node[right] {$\frac{R}{a_0}$}; 
@@ -340,7 +340,7 @@ for the $R$ branch.
 
 \begin{figure}
 \begin{center}
-\begin{tikzpicture}
+\begin{tikzpicture}[scale=0.95]
 \foreach \nqn in {0,1}
   \foreach \lqn in {0,1,2,3} 
     \draw (0,\nqn*4+0.15*\lqn*\lqn+0.15*\lqn) -- (10,\nqn*4+0.15*\lqn*\lqn+0.15*\lqn) node [right] {$L=\lqn$};

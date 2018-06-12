@@ -43,6 +43,7 @@ F_1 R_1^2 = F_2 R_2^2.
 
 \begin{figure}
 \begin{tikzpicture}
+\begin{scope}[shift={(-6,-3)}]
 \foreach \alpha in {0,10}  {
 \begin{scope}[shift={(6,0)},rotate=\alpha]
 \draw (6,0) ellipse (0.2 and 0.4);
@@ -55,6 +56,7 @@ F_1 R_1^2 = F_2 R_2^2.
 }
 \draw (5.9,-0.8) -- (6.1,-0.6) -- (6.1,0.8) -- (5.9,0.6)  -- cycle ;
 \draw (6,1) node {$d\!A$} ;
+\end{scope}
 \foreach \y in {-0.5,-0.3,...,0.5}  
 {
 \draw [->] (0,\y) -- (5,\y);

@@ -11,7 +11,7 @@
 
 \begin{figure}
 \begin{center}
-\begin{tikzpicture}
+\begin{tikzpicture}[scale=0.95]
 \draw [thick] (0,2) -- (11,2) node [right] {$z=h$} (0,-2) -- (11, -2)
 node [right] {$z=-h'$} ;
 \draw plot [domain=0:11,samples=100] ( \x, {sin(32*\x+170)}) node [right] {$z=\zeta(x,t)$} ;

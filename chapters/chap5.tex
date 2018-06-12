@@ -464,8 +464,8 @@ $\omega=\gamma v/b$.
 \begin{tikzpicture}
 \draw[->] (-5.2,0) -- (3.2,0) node[right] {$\ln \omega$}; 
 \draw[->] (-5,-0.2) -- (-5,2.5) node[above] {$\frac{dW}{dA d\omega} (\omega, b)$};
-\draw plot [domain=-5:2,smooth] file{bremms0.dat} ;
-\draw plot [domain=-5:2,yscale=2,smooth] file{bremms1.dat} ;
+\draw plot [domain=-5:2,smooth] file{bremms/bremms0.dat} ;
+\draw plot [domain=-5:2,yscale=2,smooth] file{bremms/bremms1.dat} ;
 \draw [dashed] (-3,2) -- (2,2) node [right] {$\frac{q^2 c}{\pi^2 v^2 b^2}$} 
                (-2,.4655624413) -- (3,.4655624413) node [right]
                {$\frac{1}{\gamma^2}\frac{q^2 c}{\pi^2 v^2 b^2}$} 
@@ -493,8 +493,8 @@ where $x=\omega b_\mathrm{min}/(\gamma v)$.
 \begin{tikzpicture}
 \draw[->] (-4.2,0) -- (2.2,0) node[right] {$\omega b_\mathrm{min}/(\gamma v)$}; 
 \draw[->] (-4,-0.2) -- (-4,3) node[above] {$\frac{dW}{dA d\ln \omega}$};
-\draw plot [domain=-2:1,yscale=10,smooth,xscale=2] file{bremmst1.dat} ;
-%\draw plot [domain=-2:1,yscale=6,smooth,xscale=2] file{bremmst5.dat} ;
+\draw plot [domain=-2:1,yscale=10,smooth,xscale=2] file{bremms/bremmst1.dat} ;
+%\draw plot [domain=-2:1,yscale=6,smooth,xscale=2] file{bremms/bremmst5.dat} ;
 \draw (0,0.1)--(0,0) node[below] {\small{1}}
 (-2,0.1)--(-2,0) node[below] {\small{0.1}}
 (2,0.1)--(2,0) node[below] {\small{10}} ;
