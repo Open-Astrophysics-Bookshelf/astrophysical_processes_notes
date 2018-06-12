@@ -1,1 +1,1 @@
-# astrophysical_proceses_notes
+# Astrophysical Processes Notes
